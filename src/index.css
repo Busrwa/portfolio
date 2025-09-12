@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.vine {
+  position: fixed;      /* ekran boyunca sabit, arka planda */
+  top: 0;
+  height: 100vh;        /* tüm ekran yüksekliği */
+  width: auto;
+  z-index: 0;           /* en alt katman */
+  pointer-events: none; /* içerik ile etkileşimi engelle */
+}
+
+.vine-left {
+  left: 0px;
+}
+
+.vine-right {
+  right: 0px;
+  transform: scaleX(-1);
+}
+
+/* Navbar, içerik ve footer sarmaşıkların üstünde */
+.z-10 {
+  position: relative;
+  z-index: 10;
+}
