@@ -17,7 +17,24 @@ import email2 from '../assets/email/email2.png';
 import email3 from '../assets/email/email3.png';
 import emailDemo from '../assets/email/email-demo.mp4';
 
+import pdfCover from '../assets/pdfMerge/pdf_merge1.png';
+import pdf1 from '../assets/pdfMerge/pdf_merge1.png';
+import pdf2 from '../assets/pdfMerge/pdf_merge2.png';
+import pdf3 from '../assets/pdfMerge/pdf_merge3.png';
+import pdf4 from '../assets/pdfMerge/pdf_merge4.png';
 
+import blogCover from '../assets/blogScript/blog1.png';
+import blog1 from '../assets/blogScript/blog1.png';
+import blog2 from '../assets/blogScript/blog2.png';
+import blog3 from '../assets/blogScript/blog3.png';
+import blog4 from '../assets/blogScript/blog4.png';
+import blog5 from '../assets/blogScript/blog5.png';
+import blog6 from '../assets/blogScript/blog6.png';
+import blog7 from '../assets/blogScript/blog7.png';
+import blog8 from '../assets/blogScript/blog8.png';
+import blog9 from '../assets/blogScript/blog9.png';
+import blog10 from '../assets/blogScript/blog10.png';
+import blogDemo from '../assets/blogScript/blog-demo.mp4';
 
 const Projects = () => {
   const projects = [
@@ -48,8 +65,35 @@ Features:
 - Secure sending via SMTP`,
       image: emailCover,
       github: "https://github.com/Busrwa/Otomatik_E-posta_Gonderici",
-      screenshots: [email1, email2, email3], 
+      screenshots: [email1, email2, email3],
       demoVideo: emailDemo,
+    },
+    {
+      title: "📝 PDF Merger",
+      description: `A Python desktop application with a GUI to merge multiple PDF files into one.  
+
+Features:
+- Select multiple PDFs
+- Choose output location
+- User-friendly Tkinter interface
+- Success and error notifications`,
+      image: pdfCover,
+      github: "https://github.com/Busrwa/PDF_Birlestirici",
+      screenshots: [pdf1, pdf2, pdf3, pdf4],
+    },
+    {
+      title: "📚 Flask Blog App",
+      description: `A Flask-based blog application using SQLite.  
+
+Features:
+- User registration and login
+- Add, view, and filter posts by category
+- Categories: News, Technology, Health, Education
+- Modern and responsive UI`,
+      image: blogCover,
+      github: "https://github.com/Busrwa/Blog_Scripti",
+      screenshots: [blog1, blog2, blog3, blog4, blog5, blog6, blog7, blog8, blog9, blog10],
+      demoVideo: blogDemo,
     },
     {
       title: "Smart Trash Can",
