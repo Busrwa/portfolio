@@ -36,6 +36,17 @@ import blog9 from '../assets/blogScript/blog9.png';
 import blog10 from '../assets/blogScript/blog10.png';
 import blogDemo from '../assets/blogScript/blog-demo.mp4';
 
+import toDoCover from '../assets/toDoApp/toDo7.png';
+import toDo1 from '../assets/toDoApp/toDo1.png';
+import toDo2 from '../assets/toDoApp/toDo2.png';
+import toDo3 from '../assets/toDoApp/toDo3.png';
+import toDo4 from '../assets/toDoApp/toDo4.png';
+import toDo5 from '../assets/toDoApp/toDo5.png';
+import toDo6 from '../assets/toDoApp/toDo6.png';
+import toDo7 from '../assets/toDoApp/toDo7.png';
+import toDoDemo from '../assets/toDoApp/toDo-demo.mp4';
+
+
 const Projects = () => {
   const projects = [
     {
@@ -96,16 +107,18 @@ Features:
       demoVideo: blogDemo,
     },
     {
-      title: "Smart Trash Can",
-      description: `IoT project using ESP32, solar-powered, automatically opens lid and tracks trash fill level remotely.`,
-      image: "/assets/project1.png",
-      github: "#",
-    },
-    {
-      title: "Gold Bomb Game",
-      description: `A React Native game where users open chests to collect gold while avoiding bombs. Includes animations and sound effects.`,
-      image: "/assets/project1.png",
-      github: "#",
+      title: "📝 To-Do List App",
+      description: `A Python + Flask application to manage personal tasks and notes.  
+
+Features:
+- User registration and login
+- Add, view, and delete notes
+- User-specific notes stored in SQLite
+- Modern and responsive web interface`,
+      image: toDoCover,
+      github: "https://github.com/Busrwa/To_Do_List",
+      screenshots: [toDo1, toDo2, toDo3, toDo4, toDo5, toDo6, toDo7],
+      demoVideo: toDoDemo,
     },
   ];
 
