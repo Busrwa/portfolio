@@ -46,6 +46,10 @@ import toDo6 from '../assets/toDoApp/toDo6.png';
 import toDo7 from '../assets/toDoApp/toDo7.png';
 import toDoDemo from '../assets/toDoApp/toDo-demo.mp4';
 
+import tvCover from '../assets/tvApp/logo.png';
+import tv1 from '../assets/tvApp/tvApp1.png';
+import tv2 from '../assets/tvApp/tvApp2.png';
+import tvDemo from '../assets/tvApp/tvApp-Demo.mp4';
 
 const Projects = () => {
   const projects = [
@@ -119,6 +123,20 @@ Features:
       github: "https://github.com/Busrwa/To_Do_List",
       screenshots: [toDo1, toDo2, toDo3, toDo4, toDo5, toDo6, toDo7],
       demoVideo: toDoDemo,
+    },
+    {
+      title: "📺 TV Channels - Live Stream App",
+      description: `A React Native (Expo) mobile app that displays TV channels in a clean interface.
+
+Features:
+- Browse TV channels
+- Watch live streams via embedded WebView
+- Clean and minimal UI for focused viewing
+
+⚠️ This project repository is private to comply with copyright rules. A demo video and screenshots are provided to showcase the app functionality.`,
+      image: tvCover,
+      screenshots: [tv1, tv2],
+      demoVideo: tvDemo,
     },
   ];
 
