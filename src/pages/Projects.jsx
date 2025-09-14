@@ -51,8 +51,47 @@ import tv1 from '../assets/tvApp/tvApp1.png';
 import tv2 from '../assets/tvApp/tvApp2.png';
 import tvDemo from '../assets/tvApp/tvApp-Demo.mp4';
 
+import mindCapsCover from '../assets/mindcaps/icon.png';
+import mindCaps1 from '../assets/mindcaps/mindCaps1.png';
+import mindCaps2 from '../assets/mindcaps/mindCaps2.png';
+import mindCaps3 from '../assets/mindcaps/mindCaps3.png';
+import mindCaps4 from '../assets/mindcaps/mindCaps4.png';
+import mindCaps5 from '../assets/mindcaps/mindCaps5.png';
+import mindCaps6 from '../assets/mindcaps/mindCaps6.png';
+import mindCaps7 from '../assets/mindcaps/mindCaps7.png';
+import mindCaps8 from '../assets/mindcaps/mindCaps8.png';
+import mindCaps9 from '../assets/mindcaps/mindCaps9.png';
+import mindCaps10 from '../assets/mindcaps/mindCaps10.png';
+import mindCaps11 from '../assets/mindcaps/mindCaps11.png';
+import mindCaps12 from '../assets/mindcaps/mindCaps12.png';
+import mindCaps13 from '../assets/mindcaps/mindCaps13.png';
+import mindCaps14 from '../assets/mindcaps/mindCaps14.png';
+import mindCaps15 from '../assets/mindcaps/mindCaps15.png';
+import mindCapsDemo from '../assets/mindcaps/mincaps-demo.mp4';
+
+import smartHomeCover from '../assets/smartHome/smartHome1.jpg';
+import smartHome1 from '../assets/smartHome/smartHome1.jpg';
+import smartHomeDemo from '../assets/smartHome/smartHome-demo.mp4';
+
+
 const Projects = () => {
   const projects = [
+    {
+      title: "🌿 MindCaps - AI-Powered Psychological Support App",
+      description: `A React Native (Expo) mobile app integrated with a Flask backend that provides empathetic psychological support.  
+
+Features:
+- User text analysis and AI-generated supportive messages
+- Emotional analysis in JSON format (joy, sadness, fear, anger, disgust, surprise)
+- Motivational messages from the user's "future self"
+- Turkish and English support
+- Integrated React Native frontend and Flask backend
+- Secure handling of user inputs`,
+      image: mindCapsCover,
+      github: "https://github.com/Busrwa/MindCaps",
+      screenshots: [mindCaps1, mindCaps2, mindCaps3, mindCaps4, mindCaps5, mindCaps12, mindCaps13, mindCaps14, mindCaps15, mindCaps6, mindCaps7, mindCaps8, mindCaps9, mindCaps10, mindCaps11],
+      demoVideo: mindCapsDemo,
+    },
     {
       title: "🧊 What's in Your Fridge? - AR Recipe App",
       description: `A React Native (Expo) application that helps users discover recipes based on the ingredients available in their fridge or pantry.
@@ -138,6 +177,22 @@ Features:
       screenshots: [tv1, tv2],
       demoVideo: tvDemo,
     },
+    {
+      title: "🏠 Smart Home Security System",
+      description: `A smart home security system using ESP32, Arduino IDE, and Flask, providing real-time motion detection alerts with voice notifications.  
+
+Features:
+- Motion detection via ultrasonic sensor
+- Real-time alerts through Flask web interface
+- Voice and visual notifications
+- Remote access via web or mobile
+- Data management using SQLite`,
+      image: smartHomeCover, 
+      github: "https://github.com/Busrwa/SmartHomeSecuritySystem",
+      screenshots: [smartHome1], 
+      demoVideo: smartHomeDemo, 
+    },
+
   ];
 
   return (
