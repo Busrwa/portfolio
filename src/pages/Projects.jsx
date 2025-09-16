@@ -75,19 +75,19 @@ import smartHomeDemo from '../assets/smartHome/smartHome-demo.mp4';
 
 import swipeItCover from '../assets/swipeIt/swipeit-cover.png';
 import swipeit1 from '../assets/swipeIt/swipeIt1.jpg';
-import swipeit2 from '../assets/swipeIt/swipeIt12.jpg';
-import swipeit3 from '../assets/swipeIt/swipeIt13.jpg';
-import swipeit4 from '../assets/swipeIt/swipeIt14.jpg';
-import swipeit5 from '../assets/swipeIt/swipeIt15.jpg';
-import swipeit6 from '../assets/swipeIt/swipeIt16.jpg';
-import swipeit7 from '../assets/swipeIt/swipeIt17.jpg';
-import swipeit8 from '../assets/swipeIt/swipeIt18.jpg';
-import swipeit9 from '../assets/swipeIt/swipeIt19.jpg';
-import swipeit10 from '../assets/swipeIt/swipeIt110.jpg';
-import swipeit11 from '../assets/swipeIt/swipeIt111.jpg';
-import swipeit12 from '../assets/swipeIt/swipeIt112.jpg';
-import swipeit13 from '../assets/swipeIt/swipeIt113.jpg';
-import swipeit14 from '../assets/swipeIt/swipeIt114.jpg';
+import swipeit2 from '../assets/swipeIt/swipeIt2.jpg';
+import swipeit3 from '../assets/swipeIt/swipeIt3.jpg';
+import swipeit4 from '../assets/swipeIt/swipeIt4.jpg';
+import swipeit5 from '../assets/swipeIt/swipeIt5.jpg';
+import swipeit6 from '../assets/swipeIt/swipeIt6.jpg';
+import swipeit7 from '../assets/swipeIt/swipeIt7.jpg';
+import swipeit8 from '../assets/swipeIt/swipeIt8.jpg';
+import swipeit9 from '../assets/swipeIt/swipeIt9.jpg';
+import swipeit10 from '../assets/swipeIt/swipeIt10.jpg';
+import swipeit11 from '../assets/swipeIt/swipeIt11.jpg';
+import swipeit12 from '../assets/swipeIt/swipeIt12.jpg';
+import swipeit13 from '../assets/swipeIt/swipeIt13.jpg';
+import swipeit14 from '../assets/swipeIt/swipeIt14.jpg';
 
 const Projects = () => {
   const projects = [
