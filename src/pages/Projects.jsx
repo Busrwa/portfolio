@@ -44,7 +44,7 @@ import toDo4 from '../assets/toDoApp/toDo4.png';
 import toDo5 from '../assets/toDoApp/toDo5.png';
 import toDo6 from '../assets/toDoApp/toDo6.png';
 import toDo7 from '../assets/toDoApp/toDo7.png';
-import toDoDemo from '../assets/toDoApp/toDo-demo.mp4';
+import toDoDemo from '../assets/toDoApp/toDo-Demo.mp4';
 
 import tvCover from '../assets/tvApp/logo.png';
 import tv1 from '../assets/tvApp/tvApp1.png';
