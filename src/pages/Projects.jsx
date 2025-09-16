@@ -73,9 +73,41 @@ import smartHomeCover from '../assets/smartHome/smartHome1.jpg';
 import smartHome1 from '../assets/smartHome/smartHome1.jpg';
 import smartHomeDemo from '../assets/smartHome/smartHome-demo.mp4';
 
+import swipeItCover from '../assets/swipeIt/swipeit-cover.png';
+import swipeit1 from '../assets/swipeIt/swipeit1.jpg';
+import swipeit2 from '../assets/swipeIt/swipeit2.jpg';
+import swipeit3 from '../assets/swipeIt/swipeit3.jpg';
+import swipeit4 from '../assets/swipeIt/swipeit4.jpg';
+import swipeit5 from '../assets/swipeIt/swipeit5.jpg';
+import swipeit6 from '../assets/swipeIt/swipeit6.jpg';
+import swipeit7 from '../assets/swipeIt/swipeit7.jpg';
+import swipeit8 from '../assets/swipeIt/swipeit8.jpg';
+import swipeit9 from '../assets/swipeIt/swipeit9.jpg';
+import swipeit10 from '../assets/swipeIt/swipeit10.jpg';
+import swipeit11 from '../assets/swipeIt/swipeit11.jpg';
+import swipeit12 from '../assets/swipeIt/swipeit12.jpg';
+import swipeit13 from '../assets/swipeIt/swipeit13.jpg';
+import swipeit14 from '../assets/swipeIt/swipeit14.jpg';
 
 const Projects = () => {
   const projects = [
+    {
+      title: "📖 Swipe It - Book Recommendation App",
+      description: `A React Native (Expo) mobile app that allows users to swipe through books and movies to discover their favorites.  
+
+Features:
+- Swipe-based recommendation system (like Tinder)
+- Users can like, dislike, or add items to favorites
+- Firebase Auth for secure user login
+- Firestore database for storing user preferences and top items
+- Detailed view for each book
+- Weekly popularity ranking based on user interactions
+- Bad word filtering and rate-limiting for user submissions
+
+⚠️ This project repository is private to comply with copyright rules. Screenshots are provided to showcase the app functionality.`,
+      image: swipeItCover,
+      screenshots: [swipeit1, swipeit2, swipeit3, swipeit4, swipeit5, swipeit6, swipeit7, swipeit8, swipeit9, swipeit10, swipeit11, swipeit12, swipeit13, swipeit14],
+    },
     {
       title: "🌿 MindCaps - AI-Powered Psychological Support App",
       description: `A React Native (Expo) mobile app integrated with a Flask backend that provides empathetic psychological support.  
@@ -187,10 +219,10 @@ Features:
 - Voice and visual notifications
 - Remote access via web or mobile
 - Data management using SQLite`,
-      image: smartHomeCover, 
+      image: smartHomeCover,
       github: "https://github.com/Busrwa/SmartHomeSecuritySystem",
-      screenshots: [smartHome1], 
-      demoVideo: smartHomeDemo, 
+      screenshots: [smartHome1],
+      demoVideo: smartHomeDemo,
     },
 
   ];

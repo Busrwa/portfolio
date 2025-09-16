@@ -28,7 +28,9 @@ const Home = () => {
 
       {/* Açıklama */}
       <p className="text-gray-300 max-w-2xl mb-6 text-lg md:text-xl animate-fade-in delay-200">
-        I'm a Software Engineer passionate about building modern web and mobile applications using React, React Native (Expo), Django, and IoT solutions.
+        I'm a 4th-year Software Engineering student passionate about developing
+        modern web and mobile applications with React, React Native (Expo),
+        Django/Flask, and building IoT solutions with Arduino and ESP32.
       </p>
 
       {/* Call-to-action butonları */}

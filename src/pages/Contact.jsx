@@ -6,9 +6,39 @@ const Contact = () => (
     <p className="mb-4">
       Feel free to reach out for collaborations, projects, or just to say hi!
     </p>
-    <p className="text-teal-400 font-medium text-lg">
-      Email: <a href="mailto:busrayagcioglu2003@gmail.com" className="hover:underline">busrayagcioglu2003@gmail.com</a>
-    </p>
+    <div className="space-y-2 text-lg">
+      <p className="text-teal-400 font-medium">
+        Email:{' '}
+        <a
+          href="mailto:busrayagcioglu2003@gmail.com"
+          className="hover:underline"
+        >
+          busrayagcioglu2003@gmail.com
+        </a>
+      </p>
+      <p className="text-teal-400 font-medium">
+        LinkedIn:{' '}
+        <a
+          href="https://www.linkedin.com/in/busra-yagcioglu/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          linkedin.com/in/busra-yagcioglu
+        </a>
+      </p>
+      <p className="text-teal-400 font-medium">
+        GitHub:{' '}
+        <a
+          href="https://github.com/Busrwa"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          github.com/Busrwa
+        </a>
+      </p>
+    </div>
   </section>
 );
 
