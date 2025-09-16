@@ -228,7 +228,7 @@ Features:
   ];
 
   return (
-    <section id="projects" className="p-6 md:p-12 max-w-7xl mx-auto">
+    <section id="projects" className="scroll-mt-16 p-6 md:p-12 max-w-7xl mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 md:mb-10 text-center">
         My Projects
       </h2>

@@ -9,26 +9,26 @@ const Navbar = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
+
   const links = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
+    { name: "Resume", href: "#resume" }, // resume link eklendi
     { name: "Contact", href: "#contact" },
   ];
 
   const handleClick = (href) => {
     setIsOpen(false);
 
-    if (location.pathname === "/") {
-      // Ana sayfadaysak sadece scroll
-      const element = document.querySelector(href);
-      if (element) {
-        const yOffset = -64; // navbar yüksekliği kadar yukarı kaydır (h-16 = 64px)
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
-    } else {
-      // Başka sayfadaysak ana sayfaya git ve scroll yap
+    const element = document.querySelector(href);
+    if (element) {
+      const navbarHeight = document.querySelector('nav').offsetHeight; // navbar yüksekliği
+      const y = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+
+    if (location.pathname !== "/") {
       navigate("/", { state: { scrollTo: href } });
     }
   };

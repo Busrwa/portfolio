@@ -9,14 +9,15 @@ const Resume = () => (
     {/* Download CV */}
     <div className="flex justify-center mb-12">
       <a
-        href="/Busra_Yagcioglu_CV_ENG.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/resume.pdf" // public klasöründeki dosya adı
+        download="resume.pdf" // indirme için aynı isim
         className="px-6 py-3 bg-teal-400 text-gray-900 font-semibold rounded-lg hover:bg-teal-500 transition transform hover:scale-105 shadow-md"
       >
         Download CV
       </a>
     </div>
+
+
 
     <div className="grid md:grid-cols-2 gap-8 text-gray-300">
 
@@ -61,15 +62,15 @@ const Resume = () => (
         <div className="grid md:grid-cols-3 gap-6 text-sm">
           <div>
             <p className="text-teal-300 font-medium mb-2">Languages & Frameworks</p>
-            <p>Python (Flask, Django, DRF)<br/>JavaScript (React, React Native/Expo)<br/>C, C++</p>
+            <p>Python (Flask, Django, DRF)<br />JavaScript (React, React Native/Expo)<br />C, C++</p>
           </div>
           <div>
             <p className="text-teal-300 font-medium mb-2">Tools & Platforms</p>
-            <p>Firebase<br/>Git & GitHub<br/>SQL<br/>Figma (UI/UX)</p>
+            <p>Firebase<br />Git & GitHub<br />SQL<br />Figma (UI/UX)</p>
           </div>
           <div>
             <p className="text-teal-300 font-medium mb-2">Other</p>
-            <p>Arduino · ESP32 (IoT)<br/>Unity (basic game dev)<br/>REST API Integration</p>
+            <p>Arduino · ESP32 (IoT)<br />Unity (basic game dev)<br />REST API Integration</p>
           </div>
         </div>
       </div>
