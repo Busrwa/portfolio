@@ -12,11 +12,12 @@ export default function About() {
     >
       <h2 className="text-3xl font-bold mb-6 text-teal-400">About Me</h2>
       <p className="text-gray-300 leading-relaxed mb-4">
-        I'm a 4th-year Software Engineering student at Hasan Kalyoncu University. 
+        I'm a 4th-year Software Engineering student at Hasan Kalyoncu University
+        (<span className="text-teal-400">100% English Program, Full Scholarship</span>).
         I focus on web and mobile development (React, Django, Expo) and IoT solutions.
       </p>
       <p className="text-gray-300 leading-relaxed">
-        As DSC Lead, I organize hackathons, workshops, and collaborative tech projects. 
+        As DSC Lead, I organize hackathons, workshops, and collaborative tech projects.
         I enjoy building innovative projects and contributing to open-source communities.
       </p>
     </motion.section>

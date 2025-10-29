@@ -1,21 +1,27 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useLanguage } from "../contexts/LanguageContext";
+
+// SVG bayrakları import et
+import EnFlag from "../assets/flags/eng.png";
+import TrFlag from "../assets/flags/turkey.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+  const { language, toggleLanguage, t } = useLanguage();
 
   const location = useLocation();
   const navigate = useNavigate();
 
   const links = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Resume", href: "#resume" }, // resume link eklendi
-    { name: "Contact", href: "#contact" },
+    { name: t.nav.home, href: "#home" },
+    { name: t.nav.about, href: "#about" },
+    { name: t.nav.projects, href: "#projects" },
+    { name: t.nav.resume, href: "#resume" },
+    { name: t.nav.contact, href: "#contact" },
   ];
 
   const handleClick = (href) => {
@@ -23,7 +29,7 @@ const Navbar = () => {
 
     const element = document.querySelector(href);
     if (element) {
-      const navbarHeight = document.querySelector('nav').offsetHeight; // navbar yüksekliği
+      const navbarHeight = document.querySelector("nav").offsetHeight;
       const y = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
@@ -33,14 +39,15 @@ const Navbar = () => {
     }
   };
 
+  const title = language === "tr" ? "Büşra Yağcıoğlu Portföy" : "Busra Yagcioglu Portfolio";
 
   return (
     <nav className="bg-gray-800 text-white fixed w-full z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
-        <div className="font-bold text-xl">Busra Portfolio</div>
+        <div className="font-bold text-xl">{title}</div>
 
-        {/* Desktop menu */}
-        <div className="hidden md:flex space-x-6">
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-6 items-center">
           {links.map((link) => (
             <button
               key={link.name}
@@ -50,17 +57,44 @@ const Navbar = () => {
               {link.name}
             </button>
           ))}
+
+          {/* Language Toggle Button */}
+          <button
+            onClick={toggleLanguage}
+            className="ml-4 hover:scale-110 transition-transform"
+            title={language === "en" ? "Türkçe" : "English"}
+          >
+            <img
+              src={language === "en" ? TrFlag : EnFlag}
+              alt="flag"
+              className="w-6 h-6"
+            />
+          </button>
         </div>
 
-        {/* Mobile menu button */}
-        <div className="md:hidden flex items-center">
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center space-x-4">
+          {/* Language Toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="hover:scale-110 transition-transform"
+            title={language === "en" ? "Türkçe" : "English"}
+          >
+            <img
+              src={language === "en" ? TrFlag : EnFlag}
+              alt="flag"
+              className="w-6 h-6"
+            />
+          </button>
+
+          {/* Hamburger Menu */}
           <button onClick={toggleMenu}>
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-gray-800 px-4 py-4 flex flex-col space-y-2">
           {links.map((link) => (

@@ -1,8 +1,9 @@
-// src/sections/Projects.jsx
+// src/pages/Projects.jsx
 import React from 'react';
 import ProjectCard from '../components/ProjectCard.jsx';
+import { useLanguage } from '../contexts/LanguageContext';
 
-// Proje görselleri ve video dosyalarını import edebilirsin
+// Import all project images and videos (same as before)
 import fridgeCover from '../assets/fridge/fridge-cover.png';
 import fridge1 from '../assets/fridge/fridge1.png';
 import fridge2 from '../assets/fridge/fridge2.png';
@@ -90,150 +91,95 @@ import swipeit13 from '../assets/swipeIt/swipeIt13.jpg';
 import swipeit14 from '../assets/swipeIt/swipeIt14.jpg';
 
 const Projects = () => {
+  const { t } = useLanguage();
+  
   const projects = [
     {
-      title: "📖 Swipe It - Book Recommendation App",
-      description: `A React Native (Expo) mobile app that allows users to swipe through books and movies to discover their favorites.  
-
-Features:
-- Swipe-based recommendation system (like Tinder)
-- Users can like, dislike, or add items to favorites
-- Firebase Auth for secure user login
-- Firestore database for storing user preferences and top items
-- Detailed view for each book
-- Weekly popularity ranking based on user interactions
-- Bad word filtering and rate-limiting for user submissions
-
-⚠️ This project repository is private to comply with copyright rules. Screenshots are provided to showcase the app functionality.`,
+      id: 'swipeIt',
+      title: t.projects.swipeIt.title,
+      description: t.projects.swipeIt.desc,
       image: swipeItCover,
       screenshots: [swipeit1, swipeit2, swipeit3, swipeit4, swipeit5, swipeit6, swipeit7, swipeit8, swipeit9, swipeit10, swipeit11, swipeit12, swipeit13, swipeit14],
     },
     {
-      title: "🌿 MindCaps - AI-Powered Psychological Support App",
-      description: `A React Native (Expo) mobile app integrated with a Flask backend that provides empathetic psychological support.  
-
-Features:
-- User text analysis and AI-generated supportive messages
-- Emotional analysis in JSON format (joy, sadness, fear, anger, disgust, surprise)
-- Motivational messages from the user's "future self"
-- Turkish and English support
-- Integrated React Native frontend and Flask backend
-- Secure handling of user inputs`,
+      id: 'mindCaps',
+      title: t.projects.mindCaps.title,
+      description: t.projects.mindCaps.desc,
       image: mindCapsCover,
       github: "https://github.com/Busrwa/MindCaps",
       screenshots: [mindCaps1, mindCaps2, mindCaps3, mindCaps4, mindCaps5, mindCaps12, mindCaps13, mindCaps14, mindCaps15, mindCaps6, mindCaps7, mindCaps8, mindCaps9, mindCaps10, mindCaps11],
       demoVideo: mindCapsDemo,
     },
     {
-      title: "🧊 What's in Your Fridge? - AR Recipe App",
-      description: `A React Native (Expo) application that helps users discover recipes based on the ingredients available in their fridge or pantry.
-
-Features:
-- Input ingredients manually
-- Fetches recipes using TheMealDB API
-- Displays recipe details:
-  • Ingredients listed at the top
-  • Step-by-step instructions shown below
-- Clean UI with professional food images`,
+      id: 'fridge',
+      title: t.projects.fridge.title,
+      description: t.projects.fridge.desc,
       image: fridgeCover,
       github: "https://github.com/Busrwa/whatIsInMyFridge",
       screenshots: [fridge1, fridge2, fridge3, fridge4, fridge5],
       demoVideo: fridgeDemo,
     },
     {
-      title: "📧 Automatic Email Sender",
-      description: `A Python Flask application that automatically sends emails at scheduled times.  
-
-Features:
-- Input sender & receiver email, subject, message, and schedule
-- Supports one-time, weekly, monthly, and yearly sending
-- Success modal confirms email sent
-- Secure sending via SMTP`,
+      id: 'email',
+      title: t.projects.email.title,
+      description: t.projects.email.desc,
       image: emailCover,
       github: "https://github.com/Busrwa/Otomatik_E-posta_Gonderici",
       screenshots: [email1, email2, email3],
       demoVideo: emailDemo,
     },
     {
-      title: "📝 PDF Merger",
-      description: `A Python desktop application with a GUI to merge multiple PDF files into one.  
-
-Features:
-- Select multiple PDFs
-- Choose output location
-- User-friendly Tkinter interface
-- Success and error notifications`,
+      id: 'pdf',
+      title: t.projects.pdf.title,
+      description: t.projects.pdf.desc,
       image: pdfCover,
       github: "https://github.com/Busrwa/PDF_Birlestirici",
       screenshots: [pdf1, pdf2, pdf3, pdf4],
     },
     {
-      title: "📚 Flask Blog App",
-      description: `A Flask-based blog application using SQLite.  
-
-Features:
-- User registration and login
-- Add, view, and filter posts by category
-- Categories: News, Technology, Health, Education
-- Modern and responsive UI`,
+      id: 'blog',
+      title: t.projects.blog.title,
+      description: t.projects.blog.desc,
       image: blogCover,
       github: "https://github.com/Busrwa/Blog_Scripti",
       screenshots: [blog1, blog2, blog3, blog4, blog5, blog6, blog7, blog8, blog9, blog10],
       demoVideo: blogDemo,
     },
     {
-      title: "📝 To-Do List App",
-      description: `A Python + Flask application to manage personal tasks and notes.  
-
-Features:
-- User registration and login
-- Add, view, and delete notes
-- User-specific notes stored in SQLite
-- Modern and responsive web interface`,
+      id: 'todo',
+      title: t.projects.todo.title,
+      description: t.projects.todo.desc,
       image: toDoCover,
       github: "https://github.com/Busrwa/To_Do_List",
       screenshots: [toDo1, toDo2, toDo3, toDo4, toDo5, toDo6, toDo7],
       demoVideo: toDoDemo,
     },
     {
-      title: "📺 TV Channels - Live Stream App",
-      description: `A React Native (Expo) mobile app that displays TV channels in a clean interface.
-
-Features:
-- Browse TV channels
-- Watch live streams via embedded WebView
-- Clean and minimal UI for focused viewing
-
-⚠️ This project repository is private to comply with copyright rules. A demo video and screenshots are provided to showcase the app functionality.`,
+      id: 'tv',
+      title: t.projects.tv.title,
+      description: t.projects.tv.desc,
       image: tvCover,
       screenshots: [tv1, tv2],
       demoVideo: tvDemo,
     },
     {
-      title: "🏠 Smart Home Security System",
-      description: `A smart home security system using ESP32, Arduino IDE, and Flask, providing real-time motion detection alerts with voice notifications.  
-
-Features:
-- Motion detection via ultrasonic sensor
-- Real-time alerts through Flask web interface
-- Voice and visual notifications
-- Remote access via web or mobile
-- Data management using SQLite`,
+      id: 'smartHome',
+      title: t.projects.smartHome.title,
+      description: t.projects.smartHome.desc,
       image: smartHomeCover,
       github: "https://github.com/Busrwa/SmartHomeSecuritySystem",
       screenshots: [smartHome1],
       demoVideo: smartHomeDemo,
     },
-
   ];
 
   return (
     <section id="projects" className="scroll-mt-16 p-6 md:p-12 max-w-7xl mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 md:mb-10 text-center">
-        My Projects
+        {t.projects.title}
       </h2>
       <p className="text-gray-300 text-center mb-10 max-w-3xl mx-auto px-4 md:px-0">
-        Here are a few of my personal and academic projects showcasing my skills in React, React Native (Expo), Django, and IoT development.
+        {t.projects.subtitle}
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {projects.map((proj, idx) => (

@@ -1,6 +1,8 @@
+// src/App.jsx
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
+import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 
@@ -11,7 +13,6 @@ import ProjectDetail from './pages/ProjectDetail.jsx';
 import Resume from './pages/Resume.jsx';
 import Contact from './pages/Contact.jsx';
 
-/* 🌿 Sarmaşıklar için wrapper */
 const VinesWrapper = () => {
   const location = useLocation();
 
@@ -35,46 +36,47 @@ const VinesWrapper = () => {
   );
 };
 
-/* 🌟 ScrollToTop hook'u direkt App.jsx içinde */
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0); // Sayfa en üstten başlasın
+    window.scrollTo(0, 0);
   }, [pathname]);
   return null;
 };
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop /> {/* Route değişiminde otomatik scroll */}
+    <LanguageProvider>
+      <Router>
+        <ScrollToTop />
 
-      <div className="bg-gray-900 text-gray-300 min-h-screen relative">
-        <VinesWrapper />
+        <div className="bg-gray-900 text-gray-300 min-h-screen relative">
+          <VinesWrapper />
 
-        <div className="relative z-10">
-          <Navbar />
+          <div className="relative z-10">
+            <Navbar />
 
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Home />
-                  <About />
-                  <Projects />
-                  <Resume />
-                  <Contact />
-                </>
-              }
-            />
-            <Route path="/project-detail" element={<ProjectDetail />} />
-          </Routes>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Home />
+                    <About />
+                    <Projects />
+                    <Resume />
+                    <Contact />
+                  </>
+                }
+              />
+              <Route path="/project-detail" element={<ProjectDetail />} />
+            </Routes>
 
-          <Footer />
+            <Footer />
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </LanguageProvider>
   );
 }
 
