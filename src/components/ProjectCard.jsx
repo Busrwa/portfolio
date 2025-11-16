@@ -3,11 +3,11 @@ import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const ProjectCard = ({ id, title, description, image, github, link, screenshots = [], demoVideo }) => {
+const ProjectCard = ({ id, title, description, image, github, liveUrl, screenshots = [], demoVideo }) => {
   return (
     <Link
       to="/project-detail"
-      state={{ projectId: id, screenshots, demoVideo, github, link }}
+      state={{ projectId: id, screenshots, demoVideo, github, liveUrl }}
       className="block bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-teal-500/40 transition transform hover:-translate-y-1"
     >
       {/* Card Image */}
@@ -22,7 +22,7 @@ const ProjectCard = ({ id, title, description, image, github, link, screenshots 
           </p>
         </div>
 
-        {/* Github / Demo Links */}
+        {/* Github / Live Demo Links */}
         <div className="flex justify-start items-center space-x-3">
           {github && (
             <a
@@ -36,14 +36,14 @@ const ProjectCard = ({ id, title, description, image, github, link, screenshots 
               <FaGithub size={20} />
             </a>
           )}
-          {link && (
+          {liveUrl && (
             <a
-              href={link}
+              href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-teal-400 transition"
               onClick={(e) => e.stopPropagation()}
-              title="Demo Video"
+              title="Live Demo"
             >
               <FaExternalLinkAlt size={20} />
             </a>

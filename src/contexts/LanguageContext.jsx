@@ -20,7 +20,7 @@ export const translations = {
       resume: "Resume",
       contact: "Contact"
     },
-    
+
     // Home
     home: {
       greeting: "Hi, I'm Busra",
@@ -28,7 +28,7 @@ export const translations = {
       viewResume: "View Resume",
       myProjects: "My Projects"
     },
-    
+
     // About
     about: {
       title: "About Me",
@@ -66,11 +66,16 @@ export const translations = {
       cert3: "Work and Travel — USA (2023)",
       cert4: "B2 English — ST Giles, UK (2022)"
     },
-    
+
     // Projects
     projects: {
       title: "My Projects",
       subtitle: "Here are a few of my personal and academic projects showcasing my skills in React, React Native (Expo), Django, and IoT development.",
+      dsc: {
+        title: "🎓 DSC HKU Website",
+        desc: "Official website for Developer Student Clubs Hasan Kalyoncu University - A full-stack web application I developed.\n\nKey Features:\n• Admin panel for dynamic content management\n• Blog and event system with rich text editor (Quill)\n• Sponsor showcase with image upload capability\n• Responsive design optimized for all devices (desktop, tablet, mobile)\n• Contact form with FAQ section and validation\n• Archive system for past events and activities\n• SEO optimized pages with proper meta tags\n• Easter eggs and interactive elements for user engagement\n\nTech Stack:\n• Frontend: React, React Router, CSS3, Axios\n• Backend: Django REST Framework, PostgreSQL\n• Deployment: Netlify (Frontend), Render (Backend)\n• Storage: Cloudinary for image management\n\n⚠️ Project repositories (frontend & backend) are private due to security and organizational policies. Screenshots are provided to showcase the website functionality.",
+        liveUrl: "https://dschkuu.netlify.app/"
+      },
       swipeIt: {
         title: "📖 Swipe It - Book Recommendation App",
         desc: "A React Native (Expo) mobile app that allows users to swipe through books and movies to discover their favorites.\n\nFeatures:\n- Swipe-based recommendation system (like Tinder)\n- Users can like, dislike, or add items to favorites\n- Firebase Auth for secure user login\n- Firestore database for storing user preferences and top items\n- Detailed view for each book\n- Weekly popularity ranking based on user interactions\n- Bad word filtering and rate-limiting for user submissions\n\n⚠️ This project repository is private to comply with copyright rules. Screenshots are provided to showcase the app functionality."
@@ -108,7 +113,7 @@ export const translations = {
         desc: "A smart home security system using ESP32, Arduino IDE, and Flask, providing real-time motion detection alerts with voice notifications.\n\nFeatures:\n- Motion detection via ultrasonic sensor\n- Real-time alerts through Flask web interface\n- Voice and visual notifications\n- Remote access via web or mobile\n- Data management using SQLite"
       }
     },
-    
+
     // Resume
     resume: {
       title: "Resume",
@@ -132,29 +137,30 @@ export const translations = {
       skillsOther: "Other",
       certificates: "Certificates"
     },
-    
+
     // Contact
     contact: {
       title: "Get In Touch",
       subtitle: "Feel free to reach out for collaborations or just a friendly chat!",
       button: "Say Hello"
     },
-    
+
     // Footer
     footer: {
       rights: "All rights reserved."
     },
-    
+
     // Project Detail
     projectDetail: {
       back: "Back",
       notFound: "Project not found!",
       goBack: "Go Back",
+      liveDemo: "Live Demo 🚀",
       demoVideo: "Demo Video",
       videoError: "Opps… Your browser does not support the video tag."
     }
   },
-  
+
   tr: {
     // Navbar
     nav: {
@@ -164,7 +170,7 @@ export const translations = {
       resume: "Özgeçmiş",
       contact: "İletişim"
     },
-    
+
     // Home
     home: {
       greeting: "Merhaba, Ben Büşra",
@@ -172,7 +178,7 @@ export const translations = {
       viewResume: "Özgeçmişi Görüntüle",
       myProjects: "Projelerim"
     },
-    
+
     // About
     about: {
       title: "Hakkımda",
@@ -210,11 +216,16 @@ export const translations = {
       cert3: "Work and Travel — ABD (2023)",
       cert4: "B2 İngilizce — ST Giles, İngiltere (2022)"
     },
-    
+
     // Projects
     projects: {
       title: "Projelerim",
       subtitle: "React, React Native (Expo), Django ve IoT geliştirme becerilerimi sergileyen kişisel ve akademik projelerim.",
+      dsc: {
+        title: "🎓 DSC HKU Web Sitesi",
+        desc: "Developer Student Clubs Hasan Kalyoncu Üniversitesi resmi web sitesi - Geliştirdiğim full-stack web uygulaması.\n\nTemel Özellikler:\n• Dinamik içerik yönetimi için admin paneli\n• Zengin metin editörü (Quill) ile blog ve etkinlik sistemi\n• Resim yükleme özelliği ile sponsor vitrini\n• Tüm cihazlar için optimize edilmiş responsive tasarım (masaüstü, tablet, mobil)\n• Doğrulama özellikli iletişim formu ve SSS bölümü\n• Geçmiş etkinlikler ve aktiviteler için arşiv sistemi\n• Uygun meta etiketlerle SEO optimize edilmiş sayfalar\n• Kullanıcı etkileşimi için easter egg'ler ve interaktif öğeler\n\nTeknoloji Stack:\n• Frontend: React, React Router, CSS3, Axios\n• Backend: Django REST Framework, PostgreSQL\n• Deployment: Netlify (Frontend), Render (Backend)\n• Depolama: Görsel yönetimi için Cloudinary\n\n⚠️ Proje depoları (frontend & backend) güvenlik ve kurumsal politikalar nedeniyle gizlidir. Web sitesi işlevselliğini göstermek için ekran görüntüleri sağlanmıştır.",
+        liveUrl: "https://dschkuu.netlify.app/"
+      },
       swipeIt: {
         title: "📖 Swipe It - Kitap Öneri Uygulaması",
         desc: "Kullanıcıların kitaplar ve filmler arasında kaydırarak favorilerini keşfetmelerini sağlayan React Native (Expo) mobil uygulaması.\n\nÖzellikler:\n- Kaydırma tabanlı öneri sistemi (Tinder benzeri)\n- Beğenme, beğenmeme veya favorilere ekleme\n- Güvenli kullanıcı girişi için Firebase Auth\n- Kullanıcı tercihlerini ve popüler öğeleri saklamak için Firestore\n- Her kitap için detaylı görünüm\n- Kullanıcı etkileşimlerine göre haftalık popülerlik sıralaması\n- Kötü sözcük filtreleme ve kullanıcı gönderileri için hız sınırlama\n\n⚠️ Bu proje deposu telif kurallarına uyum için gizlidir. Uygulama işlevselliğini göstermek için ekran görüntüleri sağlanmıştır."
@@ -252,7 +263,7 @@ export const translations = {
         desc: "Sesli bildirimlerle gerçek zamanlı hareket algılama uyarıları sağlayan ESP32, Arduino IDE ve Flask kullanan akıllı ev güvenlik sistemi.\n\nÖzellikler:\n- Ultrasonik sensör ile hareket algılama\n- Flask web arayüzü ile gerçek zamanlı uyarılar\n- Sesli ve görsel bildirimler\n- Web veya mobil üzerinden uzaktan erişim\n- SQLite ile veri yönetimi"
       }
     },
-    
+
     // Resume
     resume: {
       title: "Özgeçmiş",
@@ -276,30 +287,40 @@ export const translations = {
       skillsOther: "Diğer",
       certificates: "Sertifikalar"
     },
-    
+
     // Contact
     contact: {
       title: "İletişime Geçin",
       subtitle: "İşbirliği veya sohbet için bana ulaşabilirsiniz!",
       button: "Merhaba De"
     },
-    
+
     // Footer
     footer: {
       rights: "Tüm hakları saklıdır."
+    },
+
+    // Project Detail
+    projectDetail: {
+      back: "Geri",
+      notFound: "Proje bulunamadı!",
+      goBack: "Geri Dön",
+      liveDemo: "Canlı Demo 🚀",
+      demoVideo: "Demo Video",
+      videoError: "Üzgünüz… Tarayıcınız video etiketini desteklemiyor."
     }
   }
 };
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState('en');
-  
+
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'en' ? 'tr' : 'en');
   };
-  
+
   const t = translations[language];
-  
+
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
       {children}

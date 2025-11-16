@@ -12,7 +12,7 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
   
-  const { projectId, screenshots = [], demoVideo, github } = location.state || {};
+  const { projectId, screenshots = [], demoVideo, github, liveUrl } = location.state || {};
   const [showModal, setShowModal] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
@@ -63,8 +63,18 @@ const ProjectDetail = () => {
       <h1 className="text-3xl md:text-4xl font-bold text-teal-400 mb-4">{title}</h1>
       <p className="text-gray-300 mb-12 leading-relaxed whitespace-pre-wrap">{description}</p>
 
-      {/* GitHub & Demo Video Buttons */}
+      {/* Live Demo, GitHub & Demo Video Buttons */}
       <div className="flex flex-wrap gap-4 mb-12">
+        {liveUrl && (
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded transition font-medium"
+          >
+            {t.projectDetail?.liveDemo || "Live Demo 🚀"}
+          </a>
+        )}
         {github && (
           <a
             href={github}

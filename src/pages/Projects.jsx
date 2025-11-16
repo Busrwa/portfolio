@@ -90,10 +90,27 @@ import swipeit12 from '../assets/swipeIt/swipeIt12.jpg';
 import swipeit13 from '../assets/swipeIt/swipeIt13.jpg';
 import swipeit14 from '../assets/swipeIt/swipeIt14.jpg';
 
+import dsc1 from '../assets/dsc/dsc1.png';
+import dsc2 from '../assets/dsc/dsc2.png';
+import dsc3 from '../assets/dsc/dsc3.png';
+import dsc4 from '../assets/dsc/dsc4.png';
+import dsc5 from '../assets/dsc/dsc5.png';
+import dsc6 from '../assets/dsc/dsc6.png';
+import dsc7 from '../assets/dsc/dsc7.png';
+import dsc8 from '../assets/dsc/dsc7.png';
+
 const Projects = () => {
   const { t } = useLanguage();
-  
+
   const projects = [
+    {
+      id: 'dsc',
+      title: t.projects.dsc.title,
+      description: t.projects.dsc.desc,
+      liveUrl: t.projects.dsc.liveUrl,
+      image: dsc1,
+      screenshots: [dsc1, dsc2, dsc3, dsc4, dsc5, dsc6, dsc7, dsc8],
+    },
     {
       id: 'swipeIt',
       title: t.projects.swipeIt.title,
