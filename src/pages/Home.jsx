@@ -51,13 +51,13 @@ const Home = () => {
       </p>
 
       <div className="flex flex-col items-center space-y-4 animate-fade-in delay-400">
-        <div className="flex space-x-4 flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center gap-4 w-full">
           {/* Görüntüleme butonu */}
           <a
             href={resumeFile}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-teal-400 text-gray-900 font-semibold rounded-lg hover:bg-teal-500 transition transform hover:scale-105 shadow-md"
+            className="w-full sm:w-auto px-6 py-3 bg-teal-400 text-gray-900 font-semibold rounded-lg hover:bg-teal-500 transition transform hover:scale-105 shadow-md text-center"
           >
             {language === "tr"
               ? "Özgeçmişi Görüntüle (Türkçe)"
@@ -68,7 +68,7 @@ const Home = () => {
           <a
             href={resumeFile}
             download={resumeFileName}
-            className="px-6 py-3 bg-gray-700 text-gray-100 font-semibold rounded-lg hover:bg-gray-600 transition transform hover:scale-105 shadow-md"
+            className="w-full sm:w-auto px-6 py-3 bg-gray-700 text-gray-100 font-semibold rounded-lg hover:bg-gray-600 transition transform hover:scale-105 shadow-md text-center"
           >
             {t.resume.download}
           </a>
@@ -76,11 +76,12 @@ const Home = () => {
           {/* Projeler butonu */}
           <a
             href="#projects"
-            className="px-6 py-3 border border-teal-400 text-teal-400 rounded-lg hover:bg-teal-400 hover:text-gray-900 transition transform hover:scale-105 shadow-md"
+            className="w-full sm:w-auto px-6 py-3 border border-teal-400 text-teal-400 rounded-lg hover:bg-teal-400 hover:text-gray-900 transition transform hover:scale-105 shadow-md text-center"
           >
             {t.home.myProjects}
           </a>
         </div>
+
 
         {/* Sosyal medya ikonları */}
         <div className="flex justify-center space-x-6 text-2xl mt-6">
