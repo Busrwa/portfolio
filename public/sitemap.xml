@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/Busra_Yagcioglu_CV.pdf</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/Busra_Yagcioglu_CV_ENG.pdf</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Project Detail Pages -->
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/project-detail/smartBin</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/project-detail/dsc</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/project-detail/swipeIt</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/project-detail/mindCaps</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/project-detail/fridge</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/project-detail/email</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/project-detail/pdf</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/project-detail/blog</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/project-detail/todo</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/project-detail/tv</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://busrayagcioglu.netlify.app/project-detail/smartHome</loc>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>

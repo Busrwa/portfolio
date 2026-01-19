@@ -186,6 +186,11 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
       viewMobile: "Mobile",
 
       videoError: "Oops… Your browser does not support the video tag."
+    },
+    notFound: {
+      title: "Page Not Found",
+      description: "The page you are looking for doesn't exist or the URL is incorrect.",
+      button: "Go Back Home"
     }
 
   },
@@ -366,6 +371,11 @@ Smart Bin, sürdürülebilir atık yönetimi, hijyenik kullanım ve akıllı şe
       viewMobile: "Mobil",
 
       videoError: "Üzgünüz… Tarayıcınız video etiketini desteklemiyor."
+    },
+    notFound: {
+      title: "Sayfa Bulunamadı",
+      description: "Aradığınız sayfa mevcut değil veya URL yanlış yazıldı.",
+      button: "Ana Sayfaya Dön"
     }
   }
 };

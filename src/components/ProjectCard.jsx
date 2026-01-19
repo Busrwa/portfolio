@@ -1,4 +1,3 @@
-// src/components/ProjectCard.jsx
 import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -16,7 +15,7 @@ const ProjectCard = ({
 }) => {
   return (
     <Link
-      to="/project-detail"
+      to={`/project-detail/${id}`}
       state={{
         projectId: id,
         screenshots,
@@ -27,14 +26,12 @@ const ProjectCard = ({
       }}
       className="block bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-teal-500/40 transition transform hover:-translate-y-1"
     >
-      {/* IMAGE */}
       <img
         src={image}
         alt={title}
         className="w-full h-48 object-cover"
       />
 
-      {/* CONTENT */}
       <div className="p-4 flex flex-col justify-between h-full">
         <div>
           <h3 className="text-xl font-bold text-teal-400 mb-2">
@@ -45,9 +42,7 @@ const ProjectCard = ({
           </p>
         </div>
 
-        {/* ACTION ICONS */}
         <div className="flex items-center space-x-3">
-          {/* GitHub – single repo */}
           {github && typeof github === "string" && (
             <a
               href={github}
@@ -61,7 +56,6 @@ const ProjectCard = ({
             </a>
           )}
 
-          {/* GitHub – web & mobile */}
           {github && typeof github === "object" && (
             <>
               {github.web && (
@@ -91,7 +85,6 @@ const ProjectCard = ({
             </>
           )}
 
-          {/* LIVE DEMO */}
           {liveUrl && (
             <a
               href={liveUrl}

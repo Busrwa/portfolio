@@ -170,22 +170,31 @@ const Projects = () => {
       description: t.projects.dsc.desc,
       liveUrl: t.projects.dsc.liveUrl,
       image: dsc1,
-      screenshots: [dsc1, dsc2, dsc3, dsc4, dsc5, dsc6, dsc7, dsc8],
+      screenshots: {
+        web: [dsc1, dsc2, dsc3, dsc4, dsc5, dsc6, dsc7, dsc8]
+      },
     },
+
     {
       id: 'swipeIt',
       title: t.projects.swipeIt.title,
       description: t.projects.swipeIt.desc,
       image: swipeItCover,
-      screenshots: [swipeit1, swipeit2, swipeit3, swipeit4, swipeit5, swipeit6, swipeit7, swipeit8, swipeit9, swipeit10, swipeit11, swipeit12, swipeit13, swipeit14],
+      screenshots: {
+        mobile: [swipeit1, swipeit2, swipeit3, swipeit4, swipeit5, swipeit6, swipeit7, swipeit8, swipeit9, swipeit10, swipeit11, swipeit12, swipeit13, swipeit14],
+      },
     },
     {
       id: 'mindCaps',
       title: t.projects.mindCaps.title,
       description: t.projects.mindCaps.desc,
       image: mindCapsCover,
-      github: "https://github.com/Busrwa/MindCaps",
-      screenshots: [mindCaps1, mindCaps2, mindCaps3, mindCaps4, mindCaps5, mindCaps12, mindCaps13, mindCaps14, mindCaps15, mindCaps6, mindCaps7, mindCaps8, mindCaps9, mindCaps10, mindCaps11],
+      github: {
+        mobile: "https://github.com/Busrwa/MindCaps",
+      },
+      screenshots: {
+        mobile: [mindCaps1, mindCaps2, mindCaps3, mindCaps4, mindCaps5, mindCaps6, mindCaps7, mindCaps8, mindCaps9, mindCaps10, mindCaps11, mindCaps12, mindCaps13, mindCaps14, mindCaps15],
+      },
       demoVideo: mindCapsDemo,
     },
     {
@@ -193,8 +202,12 @@ const Projects = () => {
       title: t.projects.fridge.title,
       description: t.projects.fridge.desc,
       image: fridgeCover,
-      github: "https://github.com/Busrwa/whatIsInMyFridge",
-      screenshots: [fridge1, fridge2, fridge3, fridge4, fridge5],
+      github: {
+        mobile: "https://github.com/Busrwa/whatIsInMyFridge",
+      },
+      screenshots: {
+        mobile: [fridge1, fridge2, fridge3, fridge4, fridge5],
+      },
       demoVideo: fridgeDemo,
     },
     {
@@ -202,8 +215,12 @@ const Projects = () => {
       title: t.projects.email.title,
       description: t.projects.email.desc,
       image: emailCover,
-      github: "https://github.com/Busrwa/Otomatik_E-posta_Gonderici",
-      screenshots: [email1, email2, email3],
+      github: {
+        web: "https://github.com/Busrwa/Otomatik_E-posta_Gonderici",
+      },
+      screenshots: {
+        web: [email1, email2, email3],
+      },
       demoVideo: emailDemo,
     },
     {
@@ -211,16 +228,24 @@ const Projects = () => {
       title: t.projects.pdf.title,
       description: t.projects.pdf.desc,
       image: pdfCover,
-      github: "https://github.com/Busrwa/PDF_Birlestirici",
-      screenshots: [pdf1, pdf2, pdf3, pdf4],
+      github: {
+        web: "https://github.com/Busrwa/PDF_Birlestirici",
+      },
+      screenshots: {
+        web: [pdf1, pdf2, pdf3, pdf4],
+      },
     },
     {
       id: 'blog',
       title: t.projects.blog.title,
       description: t.projects.blog.desc,
       image: blogCover,
-      github: "https://github.com/Busrwa/Blog_Scripti",
-      screenshots: [blog1, blog2, blog3, blog4, blog5, blog6, blog7, blog8, blog9, blog10],
+      github: {
+        web: "https://github.com/Busrwa/Blog_Scripti",
+      },
+      screenshots: {
+        web: [blog1, blog2, blog3, blog4, blog5, blog6, blog7, blog8, blog9, blog10],
+      },
       demoVideo: blogDemo,
     },
     {
@@ -228,8 +253,12 @@ const Projects = () => {
       title: t.projects.todo.title,
       description: t.projects.todo.desc,
       image: toDoCover,
-      github: "https://github.com/Busrwa/To_Do_List",
-      screenshots: [toDo1, toDo2, toDo3, toDo4, toDo5, toDo6, toDo7],
+      github: {
+        web: "https://github.com/Busrwa/To_Do_List",
+      },
+      screenshots: {
+        web: [toDo1, toDo2, toDo3, toDo4, toDo5, toDo6, toDo7],
+      },
       demoVideo: toDoDemo,
     },
     {
@@ -237,7 +266,9 @@ const Projects = () => {
       title: t.projects.tv.title,
       description: t.projects.tv.desc,
       image: tvCover,
-      screenshots: [tv1, tv2],
+      screenshots: {
+        mobile: [tv1, tv2],
+      },
       demoVideo: tvDemo,
     },
     {
@@ -245,8 +276,12 @@ const Projects = () => {
       title: t.projects.smartHome.title,
       description: t.projects.smartHome.desc,
       image: smartHomeCover,
-      github: "https://github.com/Busrwa/SmartHomeSecuritySystem",
-      screenshots: [smartHome1],
+      github: {
+        hardware: "https://github.com/Busrwa/SmartHomeSecuritySystem",
+      },
+      screenshots: {
+        hardware: [smartHome1],
+      },
       demoVideo: smartHomeDemo,
     },
   ];

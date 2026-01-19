@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState, useRef, useEffect, useMemo } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,53 +9,87 @@ import { useLanguage } from "../contexts/LanguageContext";
 const ProjectDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { id } = useParams();
   const { t } = useLanguage();
 
   const {
     projectId,
-    screenshots = {},
-    demoVideo,
-    hardwareDemoVideo,
-    github,
-    liveUrl,
+    screenshots: stateScreenshots = {},
+    demoVideo: stateDemoVideo,
+    hardwareDemoVideo: stateHardwareDemoVideo,
+    github: stateGithub,
+    liveUrl: stateLiveUrl,
   } = location.state || {};
 
-  const [showVideo, setShowVideo] = useState(null); // "system" | "hardware"
+  const projectData = t.projects?.[id];
+  const projectIdToUse = projectId || id;
+
+  const normalizeScreenshots = (screenshots) => {
+    if (!screenshots) return {};
+    if (Array.isArray(screenshots)) return { web: screenshots };
+
+    return {
+      hardware: screenshots.hardware || [],
+      web: screenshots.web || [],
+      mobile: screenshots.mobile || [],
+    };
+  };
+
+  const screenshots = useMemo(() => {
+    return Object.keys(stateScreenshots).length
+      ? normalizeScreenshots(stateScreenshots)
+      : normalizeScreenshots(projectData?.screenshots);
+  }, [stateScreenshots, projectData]);
+
+  const demoVideo = stateDemoVideo || projectData?.demoVideo;
+  const hardwareDemoVideo = stateHardwareDemoVideo || projectData?.hardwareDemoVideo;
+  const github = stateGithub || projectData?.github;
+  const liveUrl = stateLiveUrl || projectData?.liveUrl;
+
+  const title = projectData?.title || "";
+  const description = projectData?.desc || "";
+
+  const [showVideo, setShowVideo] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [viewMode, setViewMode] = useState("web"); // hardware | web | mobile
+
+  const [viewMode, setViewMode] = useState("web");
   const swiperRef = useRef(null);
 
   const NAVBAR_HEIGHT = 64;
   const EXTRA_OFFSET = 24;
   const topOffset = NAVBAR_HEIGHT + EXTRA_OFFSET;
 
+  useEffect(() => {
+    if (!projectIdToUse || !projectData) {
+      navigate("/", { replace: true });
+    }
+  }, [projectIdToUse, projectData, navigate]);
+
   const hasViews =
     screenshots &&
-    typeof screenshots === "object" &&
-    (screenshots.hardware || screenshots.web || screenshots.mobile);
+    (screenshots.hardware?.length > 0 ||
+      screenshots.web?.length > 0 ||
+      screenshots.mobile?.length > 0);
+
+  useEffect(() => {
+    if (!hasViews) return;
+
+    if (screenshots.web?.length > 0) setViewMode("web");
+    else if (screenshots.hardware?.length > 0) setViewMode("hardware");
+    else if (screenshots.mobile?.length > 0) setViewMode("mobile");
+  }, [screenshots, hasViews]);
+
+  useEffect(() => {
+    setActiveIndex(0);
+
+    // viewMode değişince slider'ı başa al
+    if (swiperRef.current) {
+      swiperRef.current.slideToLoop(0);
+    }
+  }, [viewMode]);
 
   const currentScreenshots =
     hasViews && screenshots[viewMode] ? screenshots[viewMode] : [];
-
-  if (!location.state || !projectId) {
-    return (
-      <div className="p-8 text-center text-gray-300">
-        <p className="text-xl mb-4">
-          {t.projectDetail?.notFound || "Project not found!"}
-        </p>
-        <button
-          onClick={() => navigate("/")}
-          className="px-4 py-2 bg-teal-400 text-gray-900 rounded hover:bg-teal-500"
-        >
-          {t.projectDetail?.goBack || "Go Back"}
-        </button>
-      </div>
-    );
-  }
-
-  const projectData = t.projects?.[projectId];
-  const title = projectData?.title || "";
-  const description = projectData?.desc || "";
 
   const handlePaginationClick = (index) => {
     if (swiperRef.current) {
@@ -68,7 +102,6 @@ const ProjectDetail = () => {
       className="px-4 md:px-12 py-6 md:py-12 max-w-7xl mx-auto"
       style={{ paddingTop: `${topOffset}px` }}
     >
-      {/* BACK */}
       <button
         onClick={() => navigate(-1)}
         className="mb-6 px-4 py-2 bg-teal-400 text-gray-900 rounded hover:bg-teal-500"
@@ -76,7 +109,6 @@ const ProjectDetail = () => {
         &larr; {t.projectDetail?.back || "Back"}
       </button>
 
-      {/* TITLE */}
       <h1 className="text-3xl md:text-4xl font-bold text-teal-400 mb-4">
         {title}
       </h1>
@@ -84,7 +116,6 @@ const ProjectDetail = () => {
         {description}
       </p>
 
-      {/* ACTION BAR */}
       <div className="flex flex-wrap items-center gap-4 mb-10">
         {liveUrl && (
           <a
@@ -106,7 +137,8 @@ const ProjectDetail = () => {
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-gray-800 hover:bg-teal-400 text-gray-300 hover:text-gray-900 rounded"
               >
-                {t.projectDetail.githubWeb}              </a>
+                {t.projectDetail.githubWeb}
+              </a>
             )}
             {github.mobile && (
               <a
@@ -119,6 +151,17 @@ const ProjectDetail = () => {
               </a>
             )}
           </>
+        )}
+
+        {github && typeof github === "string" && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-gray-800 hover:bg-teal-400 text-gray-300 hover:text-gray-900 rounded"
+          >
+            GitHub
+          </a>
         )}
 
         {demoVideo && (
@@ -139,53 +182,55 @@ const ProjectDetail = () => {
           </button>
         )}
 
-        {/* VIEW TOGGLE */}
         {hasViews && (
           <div className="flex ml-auto bg-gray-800 rounded-lg overflow-hidden">
-            {screenshots.hardware && (
+            {screenshots.hardware?.length > 0 && (
               <button
+                type="button"
                 onClick={() => setViewMode("hardware")}
-                className={`px-4 py-2 text-sm ${viewMode === "hardware"
+                className={`px-4 py-2 text-sm ${
+                  viewMode === "hardware"
                     ? "bg-teal-500 text-white"
                     : "text-gray-300 hover:bg-teal-400 hover:text-gray-900"
-                  }`}
+                }`}
               >
                 {t.projectDetail.viewHardware}
-
               </button>
             )}
-            {screenshots.web && (
+            {screenshots.web?.length > 0 && (
               <button
+                type="button"
                 onClick={() => setViewMode("web")}
-                className={`px-4 py-2 text-sm ${viewMode === "web"
+                className={`px-4 py-2 text-sm ${
+                  viewMode === "web"
                     ? "bg-teal-500 text-white"
                     : "text-gray-300 hover:bg-teal-400 hover:text-gray-900"
-                  }`}
+                }`}
               >
                 {t.projectDetail.viewWeb}
-
               </button>
             )}
-            {screenshots.mobile && (
+            {screenshots.mobile?.length > 0 && (
               <button
+                type="button"
                 onClick={() => setViewMode("mobile")}
-                className={`px-4 py-2 text-sm ${viewMode === "mobile"
+                className={`px-4 py-2 text-sm ${
+                  viewMode === "mobile"
                     ? "bg-teal-500 text-white"
                     : "text-gray-300 hover:bg-teal-400 hover:text-gray-900"
-                  }`}
+                }`}
               >
                 {t.projectDetail.viewMobile}
-
               </button>
             )}
           </div>
         )}
       </div>
 
-      {/* SCREENSHOTS */}
       {currentScreenshots.length > 0 && (
         <div className="w-full max-w-5xl mx-auto">
           <Swiper
+            key={projectIdToUse}  // ❗ sadece projectId
             modules={[Navigation, Autoplay]}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             loop
@@ -211,15 +256,15 @@ const ProjectDetail = () => {
               <span
                 key={i}
                 onClick={() => handlePaginationClick(i)}
-                className={`w-3 h-3 rounded-full cursor-pointer transition-all ${i === activeIndex ? "bg-teal-400 scale-125" : "bg-white"
-                  }`}
+                className={`w-3 h-3 rounded-full cursor-pointer transition-all ${
+                  i === activeIndex ? "bg-teal-400 scale-125" : "bg-white"
+                }`}
               />
             ))}
           </div>
         </div>
       )}
 
-      {/* VIDEO MODAL – RESPONSIVE SIZE */}
       {showVideo && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4">
           <div
