@@ -1,4 +1,3 @@
-// src/pages/ProjectDetail.jsx
 import React, { useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,20 +10,39 @@ const ProjectDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useLanguage();
-  
-  const { projectId, screenshots = [], demoVideo, github, liveUrl } = location.state || {};
-  const [showModal, setShowModal] = useState(false);
+
+  const {
+    projectId,
+    screenshots = {},
+    demoVideo,
+    hardwareDemoVideo,
+    github,
+    liveUrl,
+  } = location.state || {};
+
+  const [showVideo, setShowVideo] = useState(null); // "system" | "hardware"
   const [activeIndex, setActiveIndex] = useState(0);
+  const [viewMode, setViewMode] = useState("web"); // hardware | web | mobile
   const swiperRef = useRef(null);
 
   const NAVBAR_HEIGHT = 64;
   const EXTRA_OFFSET = 24;
   const topOffset = NAVBAR_HEIGHT + EXTRA_OFFSET;
 
+  const hasViews =
+    screenshots &&
+    typeof screenshots === "object" &&
+    (screenshots.hardware || screenshots.web || screenshots.mobile);
+
+  const currentScreenshots =
+    hasViews && screenshots[viewMode] ? screenshots[viewMode] : [];
+
   if (!location.state || !projectId) {
     return (
       <div className="p-8 text-center text-gray-300">
-        <p className="text-xl mb-4">{t.projectDetail?.notFound || "Project not found!"}</p>
+        <p className="text-xl mb-4">
+          {t.projectDetail?.notFound || "Project not found!"}
+        </p>
         <button
           onClick={() => navigate("/")}
           className="px-4 py-2 bg-teal-400 text-gray-900 rounded hover:bg-teal-500"
@@ -35,8 +53,7 @@ const ProjectDetail = () => {
     );
   }
 
-  // Dile göre proje bilgilerini al
-  const projectData = t.projects[projectId];
+  const projectData = t.projects?.[projectId];
   const title = projectData?.title || "";
   const description = projectData?.desc || "";
 
@@ -51,114 +68,190 @@ const ProjectDetail = () => {
       className="px-4 md:px-12 py-6 md:py-12 max-w-7xl mx-auto"
       style={{ paddingTop: `${topOffset}px` }}
     >
-      {/* Back Button */}
+      {/* BACK */}
       <button
         onClick={() => navigate(-1)}
         className="mb-6 px-4 py-2 bg-teal-400 text-gray-900 rounded hover:bg-teal-500"
       >
-        &larr; {t.projectDetail?.back || "Geri"}
+        &larr; {t.projectDetail?.back || "Back"}
       </button>
 
-      {/* Title & Description */}
-      <h1 className="text-3xl md:text-4xl font-bold text-teal-400 mb-4">{title}</h1>
-      <p className="text-gray-300 mb-12 leading-relaxed whitespace-pre-wrap">{description}</p>
+      {/* TITLE */}
+      <h1 className="text-3xl md:text-4xl font-bold text-teal-400 mb-4">
+        {title}
+      </h1>
+      <p className="text-gray-300 mb-10 leading-relaxed whitespace-pre-wrap">
+        {description}
+      </p>
 
-      {/* Live Demo, GitHub & Demo Video Buttons */}
-      <div className="flex flex-wrap gap-4 mb-12">
+      {/* ACTION BAR */}
+      <div className="flex flex-wrap items-center gap-4 mb-10">
         {liveUrl && (
           <a
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded transition font-medium"
+            className="px-4 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded"
           >
             {t.projectDetail?.liveDemo || "Live Demo 🚀"}
           </a>
         )}
-        {github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-gray-800 hover:bg-teal-400 text-gray-300 hover:text-gray-900 rounded transition"
-          >
-            GitHub
-          </a>
+
+        {github && typeof github === "object" && (
+          <>
+            {github.web && (
+              <a
+                href={github.web}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-gray-800 hover:bg-teal-400 text-gray-300 hover:text-gray-900 rounded"
+              >
+                {t.projectDetail.githubWeb}              </a>
+            )}
+            {github.mobile && (
+              <a
+                href={github.mobile}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-gray-800 hover:bg-teal-400 text-gray-300 hover:text-gray-900 rounded"
+              >
+                {t.projectDetail.githubMobile}
+              </a>
+            )}
+          </>
         )}
+
         {demoVideo && (
           <button
-            onClick={() => setShowModal(true)}
-            className="px-4 py-2 bg-gray-800 hover:bg-teal-400 text-gray-300 hover:text-gray-900 rounded transition"
+            onClick={() => setShowVideo("system")}
+            className="px-4 py-2 bg-gray-800 hover:bg-teal-400 text-gray-300 hover:text-gray-900 rounded"
           >
-            {t.projectDetail?.demoVideo || "Demo Video"}
+            {t.projectDetail.demoVideo}
           </button>
+        )}
+
+        {hardwareDemoVideo && (
+          <button
+            onClick={() => setShowVideo("hardware")}
+            className="px-4 py-2 bg-gray-800 hover:bg-teal-400 text-gray-300 hover:text-gray-900 rounded"
+          >
+            {t.projectDetail.hardwareDemo}
+          </button>
+        )}
+
+        {/* VIEW TOGGLE */}
+        {hasViews && (
+          <div className="flex ml-auto bg-gray-800 rounded-lg overflow-hidden">
+            {screenshots.hardware && (
+              <button
+                onClick={() => setViewMode("hardware")}
+                className={`px-4 py-2 text-sm ${viewMode === "hardware"
+                    ? "bg-teal-500 text-white"
+                    : "text-gray-300 hover:bg-teal-400 hover:text-gray-900"
+                  }`}
+              >
+                {t.projectDetail.viewHardware}
+
+              </button>
+            )}
+            {screenshots.web && (
+              <button
+                onClick={() => setViewMode("web")}
+                className={`px-4 py-2 text-sm ${viewMode === "web"
+                    ? "bg-teal-500 text-white"
+                    : "text-gray-300 hover:bg-teal-400 hover:text-gray-900"
+                  }`}
+              >
+                {t.projectDetail.viewWeb}
+
+              </button>
+            )}
+            {screenshots.mobile && (
+              <button
+                onClick={() => setViewMode("mobile")}
+                className={`px-4 py-2 text-sm ${viewMode === "mobile"
+                    ? "bg-teal-500 text-white"
+                    : "text-gray-300 hover:bg-teal-400 hover:text-gray-900"
+                  }`}
+              >
+                {t.projectDetail.viewMobile}
+
+              </button>
+            )}
+          </div>
         )}
       </div>
 
-      {/* Screenshots Carousel */}
-      {screenshots.length > 0 && (
+      {/* SCREENSHOTS */}
+      {currentScreenshots.length > 0 && (
         <div className="w-full max-w-5xl mx-auto">
           <Swiper
             modules={[Navigation, Autoplay]}
-            navigation={{
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            }}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
-            loop={true}
-            className="rounded-xl overflow-hidden shadow-2xl border border-gray-700"
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            loop
+            onSlideChange={(s) => setActiveIndex(s.realIndex)}
+            onSwiper={(s) => (swiperRef.current = s)}
+            className="rounded-xl overflow-hidden border border-gray-700"
           >
-            {screenshots.map((src, index) => (
-              <SwiperSlide key={index}>
+            {currentScreenshots.map((src, i) => (
+              <SwiperSlide key={i}>
                 <img
                   src={src}
-                  alt={`screenshot-${index}`}
-                  className="w-full h-auto max-h-[600px] object-contain bg-black"
+                  alt={`screenshot-${i}`}
+                  className="w-full max-h-[600px] object-contain bg-black"
                 />
               </SwiperSlide>
             ))}
-
-            {/* Navigation Arrows */}
-            <div className="swiper-button-prev text-teal-400 hover:text-teal-200" />
-            <div className="swiper-button-next text-teal-400 hover:text-teal-200" />
+            <div className="swiper-button-prev text-teal-400" />
+            <div className="swiper-button-next text-teal-400" />
           </Swiper>
 
-          {/* Pagination Noktaları */}
           <div className="flex justify-center mt-4 gap-2">
-            {screenshots.map((_, idx) => (
+            {currentScreenshots.map((_, i) => (
               <span
-                key={idx}
-                onClick={() => handlePaginationClick(idx)}
-                className={`w-3 h-3 rounded-full cursor-pointer transition-all ${
-                  idx === activeIndex ? 'bg-teal-400 scale-125' : 'bg-white'
-                }`}
+                key={i}
+                onClick={() => handlePaginationClick(i)}
+                className={`w-3 h-3 rounded-full cursor-pointer transition-all ${i === activeIndex ? "bg-teal-400 scale-125" : "bg-white"
+                  }`}
               />
             ))}
           </div>
         </div>
       )}
 
-      {/* Demo Video Modal */}
-      {showModal && demoVideo && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-4">
-          <div className="bg-gray-900 rounded-xl w-full max-w-6xl p-6 relative shadow-2xl">
+      {/* VIDEO MODAL – RESPONSIVE SIZE */}
+      {showVideo && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4">
+          <div
+            className="relative bg-gray-900 rounded-xl p-4 shadow-2xl"
+            style={{
+              width: "fit-content",
+              maxWidth: "90vw",
+              maxHeight: "90vh",
+            }}
+          >
             <button
-              onClick={() => setShowModal(false)}
-              className="absolute top-0 right-0 z-50 text-gray-300 hover:text-teal-400 text-6xl font-bold p-2 hover:scale-110 transition-transform duration-200"
-              style={{
-                pointerEvents: 'auto',
-                top: '-15px',
-                right: '0px',
-              }}
+              onClick={() => setShowVideo(null)}
+              className="absolute -top-5 -right-5 bg-gray-800 text-gray-300 hover:text-teal-400 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold"
             >
-              &times;
+              ×
             </button>
 
-            <video controls autoPlay className="w-full h-auto rounded-lg shadow-xl relative z-40">
-              <source src={demoVideo} type="video/mp4" />
-              {t.projectDetail?.videoError || "Opps… Your browser does not support the video tag."}
+            <video
+              controls
+              autoPlay
+              className="rounded-lg"
+              style={{
+                maxWidth: "85vw",
+                maxHeight: "80vh",
+              }}
+            >
+              <source
+                src={showVideo === "system" ? demoVideo : hardwareDemoVideo}
+                type="video/mp4"
+              />
+              {t.projectDetail?.videoError ||
+                "Your browser does not support the video tag."}
             </video>
           </div>
         </div>

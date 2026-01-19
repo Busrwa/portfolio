@@ -71,6 +71,24 @@ export const translations = {
     projects: {
       title: "My Projects",
       subtitle: "Here are a few of my personal and academic projects showcasing my skills in React, React Native (Expo), Django, and IoT development.",
+
+      smartBin: {
+        title: "🗑️ Smart Bin – Smart Waste Management System",
+        desc: `Smart Bin is an IoT-based smart waste management system that integrates hardware, software, and cloud technologies. The project is developed using an ESP32 microcontroller.
+
+The system uses two ultrasonic sensors. The first sensor is placed on the lid of the bin and continuously measures the trash fill level. The second ultrasonic sensor is located on the outside of the bin and detects hand or foot movements to enable touchless operation. When this sensor is triggered, a servo motor is activated and the lid opens automatically.
+
+The fill level of the bin is visually indicated using LEDs:
+• Green LED: Empty or low fill level
+• Yellow LED: Medium fill level
+• Red LED: Fully filled
+
+When the bin reaches full capacity, the red LED is activated together with a buzzer to provide an audible alert.
+
+The fill level data collected by the ESP32 is sent to a Firebase database in real time. This data is displayed and monitored through a web application developed with React and a mobile application built using React Native (Expo), allowing remote and real-time tracking of the bin status.
+
+Smart Bin provides a scalable and end-to-end solution for sustainable waste management, hygienic usage, and smart city applications.`
+      },
       dsc: {
         title: "🎓 DSC HKU Website",
         desc: "Official website for Developer Student Clubs Hasan Kalyoncu University - A full-stack web application I developed.\n\nKey Features:\n• Admin panel for dynamic content management\n• Blog and event system with rich text editor (Quill)\n• Sponsor showcase with image upload capability\n• Responsive design optimized for all devices (desktop, tablet, mobile)\n• Contact form with FAQ section and validation\n• Archive system for past events and activities\n• SEO optimized pages with proper meta tags\n• Easter eggs and interactive elements for user engagement\n\nTech Stack:\n• Frontend: React, React Router, CSS3, Axios\n• Backend: Django REST Framework, PostgreSQL\n• Deployment: Netlify (Frontend), Render (Backend)\n• Storage: Cloudinary for image management\n\n⚠️ Project repositories (frontend & backend) are private due to security and organizational policies. Screenshots are provided to showcase the website functionality.",
@@ -156,9 +174,20 @@ export const translations = {
       notFound: "Project not found!",
       goBack: "Go Back",
       liveDemo: "Live Demo 🚀",
-      demoVideo: "Demo Video",
-      videoError: "Opps… Your browser does not support the video tag."
+
+      demoVideo: "System Demo",
+      hardwareDemo: "Hardware Demo",
+
+      githubWeb: "GitHub (Web)",
+      githubMobile: "GitHub (Mobile)",
+
+      viewHardware: "Hardware",
+      viewWeb: "Web",
+      viewMobile: "Mobile",
+
+      videoError: "Oops… Your browser does not support the video tag."
     }
+
   },
 
   tr: {
@@ -221,6 +250,25 @@ export const translations = {
     projects: {
       title: "Projelerim",
       subtitle: "React, React Native (Expo), Django ve IoT geliştirme becerilerimi sergileyen kişisel ve akademik projelerim.",
+
+      smartBin: {
+        title: "🗑️ Smart Bin – Akıllı Atık Yönetim Sistemi",
+        desc: `Smart Bin, donanım, yazılım ve bulut teknolojilerini bir araya getiren IoT tabanlı akıllı bir çöp yönetim sistemidir. Proje, ESP32 mikrodenetleyici kullanılarak geliştirilmiştir.
+
+Sistemde iki adet ultrasonik sensör bulunmaktadır. İlk sensör, çöp kutusunun kapağında konumlandırılmış olup çöp doluluk seviyesini sürekli olarak ölçmektedir. İkinci ultrasonik sensör ise çöp kutusunun dış kısmında yer almakta ve el veya ayak hareketlerini algılayarak temassız kullanım sağlamaktadır. Bu sensör tetiklendiğinde servo motor devreye girer ve çöp kapağı otomatik olarak açılır.
+
+Çöp doluluk durumu LED’ler aracılığıyla kullanıcıya görsel olarak aktarılmaktadır:
+• Yeşil LED: Düşük doluluk veya boş
+• Sarı LED: Orta doluluk
+• Kırmızı LED: Tam doluluk
+
+Çöp kutusu tamamen dolduğunda kırmızı LED ile birlikte buzzer aktif hale gelerek sesli uyarı verir.
+
+Doluluk verileri ESP32 üzerinden Firebase veritabanına gerçek zamanlı olarak gönderilmektedir. Bu veriler, React ile geliştirilen web uygulaması ve React Native (Expo) ile geliştirilen mobil uygulama üzerinden anlık olarak izlenebilmekte ve çöp kutusunun durumu uzaktan takip edilebilmektedir.
+
+Smart Bin, sürdürülebilir atık yönetimi, hijyenik kullanım ve akıllı şehir uygulamaları için ölçeklenebilir ve bütüncül bir çözüm sunmaktadır.`
+      },
+
       dsc: {
         title: "🎓 DSC HKU Web Sitesi",
         desc: "Developer Student Clubs Hasan Kalyoncu Üniversitesi resmi web sitesi - Geliştirdiğim full-stack web uygulaması.\n\nTemel Özellikler:\n• Dinamik içerik yönetimi için admin paneli\n• Zengin metin editörü (Quill) ile blog ve etkinlik sistemi\n• Resim yükleme özelliği ile sponsor vitrini\n• Tüm cihazlar için optimize edilmiş responsive tasarım (masaüstü, tablet, mobil)\n• Doğrulama özellikli iletişim formu ve SSS bölümü\n• Geçmiş etkinlikler ve aktiviteler için arşiv sistemi\n• Uygun meta etiketlerle SEO optimize edilmiş sayfalar\n• Kullanıcı etkileşimi için easter egg'ler ve interaktif öğeler\n\nTeknoloji Stack:\n• Frontend: React, React Router, CSS3, Axios\n• Backend: Django REST Framework, PostgreSQL\n• Deployment: Netlify (Frontend), Render (Backend)\n• Depolama: Görsel yönetimi için Cloudinary\n\n⚠️ Proje depoları (frontend & backend) güvenlik ve kurumsal politikalar nedeniyle gizlidir. Web sitesi işlevselliğini göstermek için ekran görüntüleri sağlanmıştır.",
@@ -306,7 +354,17 @@ export const translations = {
       notFound: "Proje bulunamadı!",
       goBack: "Geri Dön",
       liveDemo: "Canlı Demo 🚀",
-      demoVideo: "Demo Video",
+
+      demoVideo: "Sistem Demosu",
+      hardwareDemo: "Donanım Demosu",
+
+      githubWeb: "GitHub (Web)",
+      githubMobile: "GitHub (Mobil)",
+
+      viewHardware: "Donanım",
+      viewWeb: "Web",
+      viewMobile: "Mobil",
+
       videoError: "Üzgünüz… Tarayıcınız video etiketini desteklemiyor."
     }
   }

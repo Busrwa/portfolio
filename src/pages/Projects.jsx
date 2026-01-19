@@ -99,10 +99,71 @@ import dsc6 from '../assets/dsc/dsc6.png';
 import dsc7 from '../assets/dsc/dsc7.png';
 import dsc8 from '../assets/dsc/dsc7.png';
 
+import smartBinCover from '../assets/smartBin/cover.png';
+import smartBinDemo from '../assets/smartBin/demo_smartbin.mp4';
+import smartBinWeb1 from '../assets/smartBin/smartBinWeb1.png';
+import smartBinWeb2 from '../assets/smartBin/smartBinWeb2.png';
+import smartBinWeb3 from '../assets/smartBin/smartBinWeb3.png';
+import smartBinWeb4 from '../assets/smartBin/smartBinWeb4.png';
+import smartBinWeb5 from '../assets/smartBin/smartBinWeb5.png';
+import smartBinWeb6 from '../assets/smartBin/smartBinWeb6.png';
+import smartBinWeb7 from '../assets/smartBin/smartBinWeb7.png';
+import smartBinWeb8 from '../assets/smartBin/smartBinWeb8.png';
+import smartBinWeb9 from '../assets/smartBin/smartBinWeb9.png';
+import smartBinMobile1 from '../assets/smartBin/smartBinMobil1.jpeg';
+import smartBinMobile2 from '../assets/smartBin/smartBinMobil2.jpeg';
+import smartBinMobile3 from '../assets/smartBin/smartBinMobil3.jpeg';
+import smartBinMobile4 from '../assets/smartBin/smartBinMobil4.jpeg';
+import smartBinMobile5 from '../assets/smartBin/smartBinMobil5.jpeg';
+import smartBinMobile6 from '../assets/smartBin/smartBinMobil6.jpeg';
+import smartBinMobile7 from '../assets/smartBin/smartBinMobil7.jpeg';
+import smartBinHw1 from '../assets/smartBin/smartBinHw1.jpeg';
+import smartBinHw2 from '../assets/smartBin/smartBinHw2.jpeg';
+import smartBinHwDemo from '../assets/smartBin/smartBinHw-Demo.mp4';
+
 const Projects = () => {
   const { t } = useLanguage();
 
   const projects = [
+    {
+      id: 'smartBin',
+      title: t.projects.smartBin.title,
+      description: t.projects.smartBin.desc,
+      liveUrl: "https://smartbinwebsite.netlify.app/",
+      github: {
+        web: "https://github.com/Busrwa/SmartBinWebsite",
+        mobile: "https://github.com/Busrwa/SmartBinMobil"
+      },
+      image: smartBinCover,
+      screenshots: {
+        hardware: [
+          smartBinHw1,
+          smartBinHw2,
+        ],
+        web: [
+          smartBinWeb1,
+          smartBinWeb2,
+          smartBinWeb3,
+          smartBinWeb4,
+          smartBinWeb5,
+          smartBinWeb6,
+          smartBinWeb7,
+          smartBinWeb8,
+          smartBinWeb9,
+        ],
+        mobile: [
+          smartBinMobile1,
+          smartBinMobile2,
+          smartBinMobile3,
+          smartBinMobile4,
+          smartBinMobile5,
+          smartBinMobile6,
+          smartBinMobile7,
+        ]
+      },
+      demoVideo: smartBinDemo,
+      hardwareDemoVideo: smartBinHwDemo,
+    },
     {
       id: 'dsc',
       title: t.projects.dsc.title,
