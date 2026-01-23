@@ -97,7 +97,7 @@ import dsc4 from '../assets/dsc/dsc4.png';
 import dsc5 from '../assets/dsc/dsc5.png';
 import dsc6 from '../assets/dsc/dsc6.png';
 import dsc7 from '../assets/dsc/dsc7.png';
-import dsc8 from '../assets/dsc/dsc7.png';
+import dsc8 from '../assets/dsc/dsc8.png';
 
 import smartBinCover from '../assets/smartBin/cover.png';
 import smartBinDemo from '../assets/smartBin/demo_smartbin.mp4';
@@ -121,10 +121,38 @@ import smartBinHw1 from '../assets/smartBin/smartBinHw1.jpeg';
 import smartBinHw2 from '../assets/smartBin/smartBinHw2.jpeg';
 import smartBinHwDemo from '../assets/smartBin/smartBinHw-Demo.mp4';
 
+import hataDefteriCover from '../assets/hataDefteri/cover.png';
+import hataDefteri1 from '../assets/hataDefteri/smurfia1.jpeg';
+import hataDefteri2 from '../assets/hataDefteri/smurfia2.jpeg';
+import hataDefteri3 from '../assets/hataDefteri/smurfia3.jpeg';
+import hataDefteri4 from '../assets/hataDefteri/smurfia4.jpeg';
+import hataDefteri5 from '../assets/hataDefteri/smurfia5.jpeg';
+import hataDefteri6 from '../assets/hataDefteri/smurfia6.jpeg';
+import hataDefteri7 from '../assets/hataDefteri/smurfia7.jpeg';
+import hataDefteri8 from '../assets/hataDefteri/smurfia8.jpeg';
+import hataDefteri9 from '../assets/hataDefteri/smurfia9.jpeg';
+import hataDefteri10 from '../assets/hataDefteri/smurfia10.jpeg';
+import hataDefteri11 from '../assets/hataDefteri/smurfia11.jpeg';
+import hataDefteri12 from '../assets/hataDefteri/smurfia12.jpeg';
+import hataDefteri13 from '../assets/hataDefteri/smurfia13.jpeg';
+import hataDefteriDemo from '../assets/hataDefteri/demo-smurfia.mp4';
+
 const Projects = () => {
   const { t } = useLanguage();
 
   const projects = [
+    {
+      id: 'hataDefteri',
+      title: t.projects.hataDefteri.title,
+      description: t.projects.hataDefteri.desc,
+      image: hataDefteriCover,
+      screenshots: {
+        mobile: [hataDefteri1, hataDefteri2, hataDefteri3, hataDefteri4, hataDefteri5, hataDefteri6, hataDefteri7, hataDefteri8, hataDefteri9, hataDefteri10, hataDefteri11, hataDefteri12, hataDefteri13],
+      },
+      demoVideo: hataDefteriDemo,
+      liveUrl: "https://play.google.com/",
+
+    },
     {
       id: 'smartBin',
       title: t.projects.smartBin.title,

@@ -71,7 +71,20 @@ export const translations = {
     projects: {
       title: "My Projects",
       subtitle: "Here are a few of my personal and academic projects showcasing my skills in React, React Native (Expo), Django, and IoT development.",
+      hataDefteri: {
+        title: "📝 Smurfia – Mistake Notebook (English Learning)",
+        desc: `Smurfia is a practical learning tool designed for anyone learning English. Record your mistakes, review them, and close your gaps by practicing in a goal-oriented way. Smurfia offers a fast, simple, and effective method for exam preparation or daily practice.
 
+With the Mistake Notebook feature, you can save mistakes encountered during your English learning journey, add explanations and correct answers, and filter mistakes by topic. You can delete or edit your saved mistakes at any time.
+
+The Flashcards feature lets you create your own vocabulary list. Review the words in card format to strengthen your vocabulary memory. By repeating through flashcards, you can systematically improve your vocabulary.
+
+The Test Creation feature generates automatic tests based on the data in your Mistake Notebook. This helps you quickly identify your weaknesses and create a study plan tailored to your strengths and weaknesses. Smurfia is an ideal support tool for exam preparation and daily English practice.
+
+All user data is securely stored on Firebase Firestore. You can delete only your mistake records or vocabulary records without deleting your account. Use the in-app Data Deletion section for data removal.
+
+⚠️ Project repositories (frontend & backend) are private due to security and organizational policies. Screenshots are provided to showcase the app functionality.`
+      },
       smartBin: {
         title: "🗑️ Smart Bin – Smart Waste Management System",
         desc: `Smart Bin is an IoT-based smart waste management system that integrates hardware, software, and cloud technologies. The project is developed using an ESP32 microcontroller.
@@ -255,7 +268,20 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
     projects: {
       title: "Projelerim",
       subtitle: "React, React Native (Expo), Django ve IoT geliştirme becerilerimi sergileyen kişisel ve akademik projelerim.",
+      hataDefteri: {
+        title: "📝 Smurfia – Hata Defteri (İngilizce Öğrenme)",
+        desc: `Smurfia, İngilizce öğrenen herkes için hazırlanmış pratik bir öğrenme aracıdır. Hatalarınızı kaydedin, tekrar edin ve eksiklerinizi hedef odaklı çalışarak kapatın. Sınav hazırlığı ya da günlük çalışma için Smurfia hızlı, basit ve etkili bir yöntem sunar.
 
+Smurfia Hata Defteri bölümü sayesinde İngilizce çalışma sürecinizde karşılaştığınız hataları kayıt altına alabilir, bu hatalara açıklama ve doğru cevap ekleyebilir, kaydettiğiniz hatalara konuya göre filtreleme uygulayabilirsiniz. Hatalarınızı dilediğiniz zaman silebilir ya da düzenleyebilirsiniz.
+
+Kelime Kartları özelliği ile kendi kelime listenizi oluşturabilirsiniz. Eklediğiniz kelimeleri kart formatında tekrar ederek kelime hafızanızı güçlendirebilirsiniz. Kelime kartları üzerinden tekrar yaparak kelime hazinenizi sistematik olarak geliştirebilirsiniz.
+
+Test Oluşturma özelliği ile hata defterinizdeki verilerden otomatik testler oluşturabilirsiniz. Bu sayede eksiklerinizi hızlıca görüp güçlü ve zayıf yönlerinize göre çalışma planı yapabilirsiniz. Smurfia sınavlara hazırlık ve günlük İngilizce pratiği için ideal bir destek sağlar.
+
+Tüm kullanıcı verileriniz Firebase Firestore üzerinde güvenli bir şekilde saklanır. Hesap silmeden sadece hata ve kelime kayıtlarınızı ayrı ayrı silebilirsiniz. Veri silme işlemleri için uygulama içi Veri Silme bölümünü kullanabilirsiniz.
+
+⚠️ Proje depoları (frontend & backend) güvenlik ve kurumsal politikalar nedeniyle gizlidir. Uygulama işlevselliğini göstermek için ekran görüntüleri sağlanmıştır.`
+      },
       smartBin: {
         title: "🗑️ Smart Bin – Akıllı Atık Yönetim Sistemi",
         desc: `Smart Bin, donanım, yazılım ve bulut teknolojilerini bir araya getiren IoT tabanlı akıllı bir çöp yönetim sistemidir. Proje, ESP32 mikrodenetleyici kullanılarak geliştirilmiştir.
