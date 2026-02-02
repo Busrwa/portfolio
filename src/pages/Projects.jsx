@@ -137,10 +137,36 @@ import hataDefteri12 from '../assets/hataDefteri/smurfia12.jpeg';
 import hataDefteri13 from '../assets/hataDefteri/smurfia13.jpeg';
 import hataDefteriDemo from '../assets/hataDefteri/demo-smurfia.mp4';
 
+import lilithiaCover from '../assets/lilithia/lilithia-cover.png';
+import lilithia1 from '../assets/lilithia/lilithia1.jpeg';
+import lilithia2 from '../assets/lilithia/lilithia2.jpeg';
+import lilithia3 from '../assets/lilithia/lilithia3.jpeg';
+import lilithia4 from '../assets/lilithia/lilithia4.jpeg';
+import lilithia5 from '../assets/lilithia/lilithia5.jpeg';
+import lilithia6 from '../assets/lilithia/lilithia6.jpeg';
+import lilithia7 from '../assets/lilithia/lilithia7.jpeg';
+import lilithia8 from '../assets/lilithia/lilithia8.jpeg';
+import lilithia9 from '../assets/lilithia/lilithia9.jpeg';
+import lilithia10 from '../assets/lilithia/lilithia10.jpeg';
+import lilithia11 from '../assets/lilithia/lilithia11.jpeg';
+import lilithiaDemo from '../assets/lilithia/lilithia-demo.mp4';
+
 const Projects = () => {
   const { t } = useLanguage();
 
   const projects = [
+    {
+      id: 'lilithia',
+      title: t.projects.lilithia.title,
+      description: t.projects.lilithia.desc,
+      image: lilithiaCover,
+      liveUrl: "https://play.google.com/",
+      screenshots: {
+        mobile: [lilithia1, lilithia2, lilithia3, lilithia4, lilithia5, lilithia6, lilithia7, lilithia8, lilithia9, lilithia10, lilithia11],
+      },
+      demoVideo: lilithiaDemo,
+    },
+
     {
       id: 'hataDefteri',
       title: t.projects.hataDefteri.title,

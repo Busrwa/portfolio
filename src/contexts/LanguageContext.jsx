@@ -71,6 +71,11 @@ export const translations = {
     projects: {
       title: "My Projects",
       subtitle: "Here are a few of my personal and academic projects showcasing my skills in React, React Native (Expo), Django, and IoT development.",
+      lilithia: {
+        title: "📖 Lilithia – Story & Content Reader App",
+        desc: `Lilithia is a mobile application for reading stories and content. Users can explore, save favorites, and read offline. It features a clean UI with interactive elements to enhance the reading experience.\n\nThe app was built with React Native (Expo) and showcases my skills in mobile development.\n\nDemo video available below.`,
+        liveUrl: "https://play.google.com/store/apps/details?id=com.busrwa.lilithia"
+      },
       hataDefteri: {
         title: "📝 Smurfia – Mistake Notebook (English Learning)",
         desc: `Smurfia is a practical learning tool designed for anyone learning English. Record your mistakes, review them, and close your gaps by practicing in a goal-oriented way. Smurfia offers a fast, simple, and effective method for exam preparation or daily practice.
@@ -268,6 +273,10 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
     projects: {
       title: "Projelerim",
       subtitle: "React, React Native (Expo), Django ve IoT geliştirme becerilerimi sergileyen kişisel ve akademik projelerim.",
+      lilithia: {
+        title: "📖 Lilithia – Hikaye & İçerik Okuma Uygulaması",
+        desc: `Lilithia, kullanıcıların hikaye ve içerikleri okuyabileceği bir mobil uygulamadır. Kullanıcılar içerik keşfedebilir, favorilere ekleyebilir ve çevrimdışı okuyabilir. Okuma deneyimini geliştiren temiz bir arayüz ve etkileşimli öğeler sunar.\n\nUygulama React Native (Expo) ile geliştirilmiş olup mobil geliştirme becerilerimi sergiler.\n\nDemo video aşağıda mevcuttur.`,
+      },
       hataDefteri: {
         title: "📝 Smurfia – Hata Defteri (İngilizce Öğrenme)",
         desc: `Smurfia, İngilizce öğrenen herkes için hazırlanmış pratik bir öğrenme aracıdır. Hatalarınızı kaydedin, tekrar edin ve eksiklerinizi hedef odaklı çalışarak kapatın. Sınav hazırlığı ya da günlük çalışma için Smurfia hızlı, basit ve etkili bir yöntem sunar.
