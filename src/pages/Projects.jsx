@@ -129,7 +129,7 @@ import hataDefteri4 from '../assets/hataDefteri/smurfia4.jpeg';
 import hataDefteri5 from '../assets/hataDefteri/smurfia5.jpeg';
 import hataDefteri6 from '../assets/hataDefteri/smurfia6.jpeg';
 import hataDefteri7 from '../assets/hataDefteri/smurfia7.jpeg';
-//import hataDefteri8 from '../assets/hataDefteri/smurfia8.jpeg';
+import hataDefteri8 from '../assets/hataDefteri/smurfia8.jpeg';
 
 
 import lilithiaCover from '../assets/lilithia/lilithia-cover.png';
