@@ -129,13 +129,8 @@ import hataDefteri4 from '../assets/hataDefteri/smurfia4.jpeg';
 import hataDefteri5 from '../assets/hataDefteri/smurfia5.jpeg';
 import hataDefteri6 from '../assets/hataDefteri/smurfia6.jpeg';
 import hataDefteri7 from '../assets/hataDefteri/smurfia7.jpeg';
-import hataDefteri8 from '../assets/hataDefteri/smurfia8.jpeg';
-import hataDefteri9 from '../assets/hataDefteri/smurfia9.jpeg';
-import hataDefteri10 from '../assets/hataDefteri/smurfia10.jpeg';
-import hataDefteri11 from '../assets/hataDefteri/smurfia11.jpeg';
-import hataDefteri12 from '../assets/hataDefteri/smurfia12.jpeg';
-import hataDefteri13 from '../assets/hataDefteri/smurfia13.jpeg';
-import hataDefteriDemo from '../assets/hataDefteri/demo-smurfia.mp4';
+//import hataDefteri8 from '../assets/hataDefteri/smurfia8.jpeg';
+
 
 import lilithiaCover from '../assets/lilithia/lilithia-cover.png';
 import lilithia1 from '../assets/lilithia/lilithia1.jpeg';
@@ -160,7 +155,7 @@ const Projects = () => {
       title: t.projects.lilithia.title,
       description: t.projects.lilithia.desc,
       image: lilithiaCover,
-      liveUrl: "https://play.google.com/",
+      liveUrl: "https://play.google.com/store/apps/details?id=com.busrwa.lilithia",
       screenshots: {
         mobile: [lilithia1, lilithia2, lilithia3, lilithia4, lilithia5, lilithia6, lilithia7, lilithia8, lilithia9, lilithia10, lilithia11],
       },
@@ -173,10 +168,10 @@ const Projects = () => {
       description: t.projects.hataDefteri.desc,
       image: hataDefteriCover,
       screenshots: {
-        mobile: [hataDefteri1, hataDefteri2, hataDefteri3, hataDefteri4, hataDefteri5, hataDefteri6, hataDefteri7, hataDefteri8, hataDefteri9, hataDefteri10, hataDefteri11, hataDefteri12, hataDefteri13],
+        mobile: [hataDefteri1, hataDefteri2, hataDefteri3, hataDefteri4, hataDefteri5, hataDefteri6, hataDefteri7, hataDefteri8],
       },
-      demoVideo: hataDefteriDemo,
-      liveUrl: "https://play.google.com/",
+      //demoVideo: hataDefteriDemo,
+      liveUrl: "https://play.google.com/store/apps/details?id=com.busrwa.smurfiaapp",
 
     },
     {
