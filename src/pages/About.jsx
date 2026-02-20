@@ -1,106 +1,194 @@
 // src/pages/About.jsx
 import React from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
+import {
+  SiReact, SiDjango, SiFirebase, SiArduino, SiPython,
+  SiFlask, SiJavascript, SiExpo,
+} from "react-icons/si";
+import { FaMicrochip } from "react-icons/fa";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 0) => ({
+    opacity: 1, y: 0,
+    transition: { duration: 0.55, delay: i * 0.1, ease: "easeOut" },
+  }),
+};
+
+const skillGroups = [
+  {
+    label: "Web & Mobile",
+    icon: <SiReact className="text-cyan-400" />,
+    chips: [
+      { label: "React", icon: <SiReact /> },
+      { label: "React Native", icon: <SiExpo /> },
+      { label: "Django", icon: <SiDjango /> },
+      { label: "Flask", icon: <SiFlask /> },
+      { label: "Firebase", icon: <SiFirebase /> },
+      { label: "JavaScript", icon: <SiJavascript /> },
+      { label: "Python", icon: <SiPython /> },
+    ],
+  },
+  {
+    label: "IoT & Hardware",
+    icon: <FaMicrochip className="text-teal-400" />,
+    chips: [
+      { label: "ESP32", icon: <FaMicrochip /> },
+      { label: "Arduino", icon: <SiArduino /> },
+    ],
+  },
+];
 
 const About = () => {
-  const { t } = useLanguage();
-  
+  const { t, language } = useLanguage();
+
+  const langLevels = [
+    { name: t.about.turkish, level: t.about.native, pct: 100 },
+    { name: t.about.english, level: "B2", pct: 72 },
+    { name: t.about.german,  level: "A1", pct: 20 },
+    { name: t.about.greek,   level: "A1", pct: 20 },
+  ];
+
   return (
-    <section id="about" className="p-6 md:p-12 max-w-6xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 md:mb-10 text-center">
-        {t.about.title}
-      </h2>
+    <section id="about" className="py-24 px-6 max-w-6xl mx-auto" style={{ position: "relative", zIndex: 1 }}>
 
-      <p className="text-gray-300 text-center mb-6 max-w-3xl mx-auto px-4 md:px-0 leading-relaxed">
-        {t.about.intro1} <span className="text-teal-400 font-semibold">{t.about.student}</span> {t.about.intro2}
-        <span className="text-teal-400 font-semibold">{t.about.scholarship}</span>{t.about.intro3}
-        <span className="text-teal-400">{t.about.webMobile}</span>,{" "}
-        <span className="text-teal-400">{t.about.iot}</span>{t.about.intro4}
-      </p>
-      
-      <p className="text-gray-300 text-center mb-10 max-w-3xl mx-auto px-4 md:px-0 leading-relaxed">
-        {t.about.experience}<span className="text-teal-400">{t.about.pm}</span>,{" "}
-        <span className="text-teal-400">{t.about.lead}</span>{t.about.international}{t.about.usa}
-      </p>
+      {/* Section header */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <p className="text-teal-400 text-sm font-medium tracking-widest uppercase mb-2">
+          {language === "tr" ? "Hakkımda" : "About"}
+        </p>
+        <h2 className="text-4xl md:text-5xl font-bold text-white" style={{ fontFamily: "'Syne', sans-serif" }}>
+          {t.about.title}
+        </h2>
+        <div className="section-divider mt-4" />
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-        <div className="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl text-center">
-          <h3 className="text-teal-400 font-semibold text-lg mb-3">
-            {t.about.skills.webMobile}
-          </h3>
-          <p className="text-gray-300 text-sm">
-            {t.about.skills.webMobileDesc}
+      {/* Bio */}
+      <div className="grid md:grid-cols-2 gap-12 mb-16 items-start">
+        <motion.div
+          variants={fadeUp}
+          custom={0}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="space-y-4"
+        >
+          <p className="text-gray-300 leading-relaxed">
+            {t.about.intro1}{" "}
+            <span className="text-teal-400 font-medium">{t.about.student}</span>{" "}
+            {t.about.intro2}
+            <span className="text-teal-400 font-medium">{t.about.scholarship}</span>
+            {t.about.intro3}
+            <span className="text-teal-400">{t.about.webMobile}</span>,{" "}
+            <span className="text-teal-400">{t.about.iot}</span>
+            {t.about.intro4}
           </p>
-        </div>
-
-        <div className="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl text-center">
-          <h3 className="text-teal-400 font-semibold text-lg mb-3">
-            {t.about.skills.iot}
-          </h3>
-          <p className="text-gray-300 text-sm">
-            {t.about.skills.iotDesc}
+          <p className="text-gray-300 leading-relaxed">
+            {t.about.experience}
+            <span className="text-teal-400">{t.about.pm}</span>,{" "}
+            <span className="text-teal-400">{t.about.lead}</span>
+            {t.about.international}
+            {t.about.usa}
           </p>
-        </div>
+        </motion.div>
 
-        <div className="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl text-center">
-          <h3 className="text-teal-400 font-semibold text-lg mb-3">
-            {t.about.skills.leadership}
-          </h3>
-          <p className="text-gray-300 text-sm">
-            {t.about.skills.leadershipDesc}
-          </p>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-        <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
-          <h3 className="text-teal-400 font-semibold text-lg mb-5 text-center">
+        {/* Language bars */}
+        <motion.div
+          variants={fadeUp}
+          custom={1}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="bg-[#111827] rounded-2xl p-6 border border-white/5"
+        >
+          <h3 className="text-teal-400 font-semibold mb-5 flex items-center gap-2">
             🌍 {t.about.languages}
           </h3>
-          <div className="space-y-3 w-full">
-            <div className="flex justify-between items-center border-b border-gray-700 pb-2">
-              <span className="text-gray-200 font-medium">{t.about.turkish}</span>
-              <span className="text-sm text-teal-400">{t.about.native}</span>
-            </div>
-            <div className="flex justify-between items-center border-b border-gray-700 pb-2">
-              <span className="text-gray-200 font-medium">{t.about.english}</span>
-              <span className="text-sm text-teal-400">B2</span>
-            </div>
-            <div className="flex justify-between items-center border-b border-gray-700 pb-2">
-              <span className="text-gray-200 font-medium">{t.about.german}</span>
-              <span className="text-sm text-teal-400">A1</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-200 font-medium">{t.about.greek}</span>
-              <span className="text-sm text-teal-400">A1</span>
-            </div>
+          <div className="space-y-4">
+            {langLevels.map((lang) => (
+              <div key={lang.name}>
+                <div className="flex justify-between text-sm mb-1.5">
+                  <span className="text-gray-200 font-medium">{lang.name}</span>
+                  <span className="text-teal-400 text-xs">{lang.level}</span>
+                </div>
+                <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${lang.pct}%` }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="h-full rounded-full bg-gradient-to-r from-teal-500 to-teal-300"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-
-        <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
-          <h3 className="text-teal-400 font-semibold text-lg mb-5 text-center">
-            🎓 {t.about.certificates}
-          </h3>
-          <ul className="text-gray-300 text-sm space-y-2 w-full">
-            <li className="flex items-start">
-              <span className="mr-2 text-teal-400">✔️</span>
-              <span>{t.about.cert1}</span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-teal-400">✔️</span>
-              <span>{t.about.cert2}</span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-teal-400">✔️</span>
-              <span>{t.about.cert3}</span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-teal-400">✔️</span>
-              <span>{t.about.cert4}</span>
-            </li>
-          </ul>
-        </div>
+        </motion.div>
       </div>
+
+      {/* Skills */}
+      <motion.div
+        variants={fadeUp}
+        custom={2}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mb-16"
+      >
+        <h3
+          className="text-center text-xl font-bold text-white mb-8"
+          style={{ fontFamily: "'Syne', sans-serif" }}
+        >
+          {t.about.skills.webMobile} & {t.about.skills.iot}
+        </h3>
+        <div className="space-y-6">
+          {skillGroups.map((group) => (
+            <div key={group.label}>
+              <p className="text-xs text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+                {group.icon} {group.label}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {group.chips.map((chip) => (
+                  <span key={chip.label} className="skill-chip">
+                    <span className="text-teal-400">{chip.icon}</span>
+                    {chip.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Certificates */}
+      <motion.div
+        variants={fadeUp}
+        custom={3}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="bg-[#111827] rounded-2xl p-6 border border-white/5"
+      >
+        <h3 className="text-teal-400 font-semibold mb-5">🎓 {t.about.certificates}</h3>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[t.about.cert1, t.about.cert2, t.about.cert3, t.about.cert4].map((cert) => (
+            <div
+              key={cert}
+              className="flex items-start gap-3 p-3 rounded-xl bg-white/3 border border-white/5 hover:border-teal-400/30 transition-colors"
+            >
+              <span className="text-teal-400 mt-0.5 text-sm">✔</span>
+              <span className="text-gray-300 text-sm leading-snug">{cert}</span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };
