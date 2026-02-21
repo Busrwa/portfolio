@@ -24,7 +24,7 @@ export const translations = {
     // Home
     home: {
       greeting: "Hi, I'm Busra",
-      description: "I'm a 4th-year Software Engineering student passionate about developing modern web and mobile applications with React, React Native (Expo), Django/Flask, and building IoT solutions with Arduino and ESP32.",
+      description: "Full-Stack Developer specializing in React, React Native (Expo), and Django REST Framework — shipping web apps, mobile products, and IoT systems from concept to production.",
       viewResume: "View Resume",
       myProjects: "My Projects"
     },
@@ -32,27 +32,30 @@ export const translations = {
     // About
     about: {
       title: "About Me",
-      intro1: "I am a 4th-year",
-      student: "Software Engineering student",
-      intro2: "at Hasan Kalyoncu University (",
+      intro1: "I am a",
+      student: "Full-Stack Developer",
+      intro2: " with a BSc in Software Engineering from Hasan Kalyoncu University (",
       scholarship: "100% English Program, Full Scholarship",
-      intro3: ", expected graduation: 2026). I am passionate about ",
-      webMobile: "web & mobile development",
-      iot: "IoT solutions",
-      intro4: ", and projects that combine software and hardware.",
-      experience: "My experience includes working as a ",
-      pm: "Project Management Intern at Sca Social",
-      software: "Software Intern at Rigelsan Defense & Security",
-      lead: "University Campus Lead at Google DSC HKU",
-      international: " international work experience",
-      usa: " in the USA through the Work and Travel program.",
+      intro3: ", graduated 2026). I build end-to-end products — from REST APIs and relational databases to polished mobile apps on the Play Store.",
+      experience: "My experience spans ",
+      pm: "Project Management at Sca Social",
+      software: "Software Engineering at Rigelsan Defense & Security",
+      lead: "Campus Lead at Google DSC HKU",
+      international: ", plus international professional experience",
+      usa: " in the USA (Work and Travel).",
       skills: {
-        webMobile: "Web & Mobile Development",
-        webMobileDesc: "React · React Native (Expo) · Django · Firebase",
-        iot: "IoT & Embedded Systems",
-        iotDesc: "ESP32 · Arduino · Sensor Applications",
-        leadership: "Leadership & Projects",
-        leadershipDesc: "Google DSC · Hackathons · IoT Projects · Personal Apps"
+        webMobile: "Frontend & Mobile",
+        webMobileDesc: "React · React Native (Expo) · Component Architecture · Navigation",
+        backend: "Backend & APIs",
+        backendDesc: "Django REST Framework · Flask · Node.js · JWT Auth · CRUD",
+        data: "Database & Cloud",
+        dataDesc: "PostgreSQL · SQLite · Firebase Firestore · Data Modeling",
+        iot: "IoT & Embedded",
+        iotDesc: "ESP32 · Arduino · Sensor Integration · Real-time Systems",
+        deploy: "Deployment & Tools",
+        deployDesc: "Netlify · Render · Google Play Store · Git · Figma",
+        leadership: "Leadership",
+        leadershipDesc: "Google DSC · Hackathons · Team Projects"
       },
       languages: "Languages",
       native: "Native",
@@ -67,10 +70,10 @@ export const translations = {
       cert4: "B2 English — ST Giles, UK (2022)"
     },
 
-    // Projects
+    // Projects — unchanged content, titles same
     projects: {
-      title: "My Projects",
-      subtitle: "Here are a few of my personal and academic projects showcasing my skills in React, React Native (Expo), Django, and IoT development.",
+      title: "Projects",
+      subtitle: "A selection of full-stack web, mobile, and IoT projects — from REST API design and database modeling to Play Store deployment.",
       lilithia: {
         title: "📖 Lilithia – Story & Content Reader App",
         desc: `Lilithia is a mobile application for reading stories and content. Users can explore, save favorites, and read offline. It features a clean UI with interactive elements to enhance the reading experience.\n\nThe app was built with React Native (Expo) and showcases my skills in mobile development.\n\nDemo video available below.`,
@@ -110,7 +113,7 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
       dsc: {
         title: "🎓 DSC HKU Website",
         desc: "Official website for Developer Student Clubs Hasan Kalyoncu University - A full-stack web application I developed.\n\nKey Features:\n• Admin panel for dynamic content management\n• Blog and event system with rich text editor (Quill)\n• Sponsor showcase with image upload capability\n• Responsive design optimized for all devices (desktop, tablet, mobile)\n• Contact form with FAQ section and validation\n• Archive system for past events and activities\n• SEO optimized pages with proper meta tags\n• Easter eggs and interactive elements for user engagement\n\nTech Stack:\n• Frontend: React, React Router, CSS3, Axios\n• Backend: Django REST Framework, PostgreSQL\n• Deployment: Netlify (Frontend), Render (Backend)\n• Storage: Cloudinary for image management\n\n⚠️ Project repositories (frontend & backend) are private due to security and organizational policies. Screenshots are provided to showcase the website functionality.",
-        liveUrl: "https://dschkuu.netlify.app/"
+        liveUrl: "https://dschku.com/"
       },
       swipeIt: {
         title: "📖 Swipe It - Book Recommendation App",
@@ -156,11 +159,11 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
       download: "Download CV",
       education: "Education",
       edu1: "Hasan Kalyoncu University — Gaziantep",
-      edu1Desc: "BSc in Software Engineering · 4th Year",
+      edu1Desc: "BSc in Software Engineering",
       edu1Note: "100% English Program · Full Scholarship",
-      edu1Grad: "Expected Graduation: 2026",
+      edu1Grad: "Graduated: 2026",
       edu2: "St Giles International School — UK",
-      edu2Desc: "B2 English Language Certificate - United Kingdom (UK)",
+      edu2Desc: "B2 English Language Certificate",
       edu2Note: "Completed in 2022",
       experience: "Experience",
       exp1: "— Project Management Intern (Jun–Aug 2025)",
@@ -177,8 +180,8 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
     // Contact
     contact: {
       title: "Get In Touch",
-      subtitle: "Feel free to reach out for collaborations or just a friendly chat!",
-      button: "Say Hello"
+      subtitle: "Open to full-stack developer roles and graduate research opportunities. Feel free to reach out!",
+      button: "Send Message"
     },
 
     // Footer
@@ -192,17 +195,13 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
       notFound: "Project not found!",
       goBack: "Go Back",
       liveDemo: "Live Demo 🚀",
-
       demoVideo: "System Demo",
       hardwareDemo: "Hardware Demo",
-
       githubWeb: "GitHub (Web)",
       githubMobile: "GitHub (Mobile)",
-
       viewHardware: "Hardware",
       viewWeb: "Web",
       viewMobile: "Mobile",
-
       videoError: "Oops… Your browser does not support the video tag."
     },
     notFound: {
@@ -210,7 +209,6 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
       description: "The page you are looking for doesn't exist or the URL is incorrect.",
       button: "Go Back Home"
     }
-
   },
 
   tr: {
@@ -226,7 +224,7 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
     // Home
     home: {
       greeting: "Merhaba, Ben Büşra",
-      description: "Hasan Kalyoncu Üniversitesi Yazılım Mühendisliği 4. sınıf öğrencisiyim. React, React Native (Expo), Django/Flask ile modern web ve mobil uygulamalar geliştiriyor, Arduino ve ESP32 ile IoT çözümleri üretiyorum.",
+      description: "React, React Native (Expo) ve Django REST Framework ile full-stack ürünler geliştiren yazılım mühendisiyim — web uygulamalarından Play Store'daki mobil ürünlere, IoT sistemlerine kadar uçtan uca çözümler üretiyorum.",
       viewResume: "Özgeçmişi Görüntüle",
       myProjects: "Projelerim"
     },
@@ -234,27 +232,30 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
     // About
     about: {
       title: "Hakkımda",
-      intro1: "Hasan Kalyoncu Üniversitesi'nde",
-      student: "Yazılım Mühendisliği",
-      intro2: "4. sınıf öğrencisiyim (",
+      intro1: "Ben bir",
+      student: "Full-Stack Geliştirici",
+      intro2: "yim; Hasan Kalyoncu Üniversitesi Yazılım Mühendisliği mezunuyum (",
       scholarship: "%100 İngilizce Program, Tam Burs",
-      intro3: ", mezuniyet: 2026). ",
-      webMobile: "Web ve mobil geliştirme",
-      iot: "IoT çözümleri",
-      intro4: " ve yazılım-donanım entegrasyonu projelerine tutkuyla bağlıyım.",
+      intro3: ", mezuniyet: 2026). REST API tasarımından ilişkisel veritabanlarına, Play Store'daki mobil uygulamalara kadar uçtan uca ürünler geliştiriyorum.",
       experience: "Deneyimlerim arasında ",
       pm: "Sca Social'da Proje Yönetimi Stajyerliği",
       software: "Rigelsan Savunma'da Yazılım Stajyerliği",
-      lead: "Google DSC HKU Kampüs Lideri",
-      international: " ve uluslararası çalışma deneyimi",
+      lead: "Google DSC HKU Kampüs Liderliği",
+      international: " ve uluslararası profesyonel deneyim",
       usa: " bulunuyor (ABD Work and Travel programı).",
       skills: {
-        webMobile: "Web & Mobil Geliştirme",
-        webMobileDesc: "React · React Native (Expo) · Django · Firebase",
-        iot: "IoT & Gömülü Sistemler",
-        iotDesc: "ESP32 · Arduino · Sensör Uygulamaları",
-        leadership: "Liderlik & Projeler",
-        leadershipDesc: "Google DSC · Hackathonlar · IoT Projeleri · Kişisel Uygulamalar"
+        webMobile: "Frontend & Mobil",
+        webMobileDesc: "React · React Native (Expo) · Bileşen Mimarisi · Navigasyon",
+        backend: "Backend & API",
+        backendDesc: "Django REST Framework · Flask · Node.js · JWT Auth · CRUD",
+        data: "Veritabanı & Bulut",
+        dataDesc: "PostgreSQL · SQLite · Firebase Firestore · Veri Modelleme",
+        iot: "IoT & Gömülü",
+        iotDesc: "ESP32 · Arduino · Sensör Entegrasyonu · Gerçek Zamanlı Sistemler",
+        deploy: "Deployment & Araçlar",
+        deployDesc: "Netlify · Render · Google Play Store · Git · Figma",
+        leadership: "Liderlik",
+        leadershipDesc: "Google DSC · Hackathonlar · Takım Projeleri"
       },
       languages: "Diller",
       native: "Ana Dil",
@@ -271,8 +272,8 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
 
     // Projects
     projects: {
-      title: "Projelerim",
-      subtitle: "React, React Native (Expo), Django ve IoT geliştirme becerilerimi sergileyen kişisel ve akademik projelerim.",
+      title: "Projeler",
+      subtitle: "REST API tasarımı ve veritabanı modellemesinden Play Store deployment'a uzanan full-stack web, mobil ve IoT projelerinden bir seçki.",
       lilithia: {
         title: "📖 Lilithia – Hikaye & İçerik Okuma Uygulaması",
         desc: `Lilithia, kullanıcıların hikaye ve içerikleri okuyabileceği bir mobil uygulamadır. Kullanıcılar içerik keşfedebilir, favorilere ekleyebilir ve çevrimdışı okuyabilir. Okuma deneyimini geliştiren temiz bir arayüz ve etkileşimli öğeler sunar.\n\nUygulama React Native (Expo) ile geliştirilmiş olup mobil geliştirme becerilerimi sergiler.\n\nDemo video aşağıda mevcuttur.`,
@@ -297,7 +298,7 @@ Tüm kullanıcı verileriniz Firebase Firestore üzerinde güvenli bir şekilde 
 
 Sistemde iki adet ultrasonik sensör bulunmaktadır. İlk sensör, çöp kutusunun kapağında konumlandırılmış olup çöp doluluk seviyesini sürekli olarak ölçmektedir. İkinci ultrasonik sensör ise çöp kutusunun dış kısmında yer almakta ve el veya ayak hareketlerini algılayarak temassız kullanım sağlamaktadır. Bu sensör tetiklendiğinde servo motor devreye girer ve çöp kapağı otomatik olarak açılır.
 
-Çöp doluluk durumu LED’ler aracılığıyla kullanıcıya görsel olarak aktarılmaktadır:
+Çöp doluluk durumu LED'ler aracılığıyla kullanıcıya görsel olarak aktarılmaktadır:
 • Yeşil LED: Düşük doluluk veya boş
 • Sarı LED: Orta doluluk
 • Kırmızı LED: Tam doluluk
@@ -308,11 +309,10 @@ Doluluk verileri ESP32 üzerinden Firebase veritabanına gerçek zamanlı olarak
 
 Smart Bin, sürdürülebilir atık yönetimi, hijyenik kullanım ve akıllı şehir uygulamaları için ölçeklenebilir ve bütüncül bir çözüm sunmaktadır.`
       },
-
       dsc: {
         title: "🎓 DSC HKU Web Sitesi",
         desc: "Developer Student Clubs Hasan Kalyoncu Üniversitesi resmi web sitesi - Geliştirdiğim full-stack web uygulaması.\n\nTemel Özellikler:\n• Dinamik içerik yönetimi için admin paneli\n• Zengin metin editörü (Quill) ile blog ve etkinlik sistemi\n• Resim yükleme özelliği ile sponsor vitrini\n• Tüm cihazlar için optimize edilmiş responsive tasarım (masaüstü, tablet, mobil)\n• Doğrulama özellikli iletişim formu ve SSS bölümü\n• Geçmiş etkinlikler ve aktiviteler için arşiv sistemi\n• Uygun meta etiketlerle SEO optimize edilmiş sayfalar\n• Kullanıcı etkileşimi için easter egg'ler ve interaktif öğeler\n\nTeknoloji Stack:\n• Frontend: React, React Router, CSS3, Axios\n• Backend: Django REST Framework, PostgreSQL\n• Deployment: Netlify (Frontend), Render (Backend)\n• Depolama: Görsel yönetimi için Cloudinary\n\n⚠️ Proje depoları (frontend & backend) güvenlik ve kurumsal politikalar nedeniyle gizlidir. Web sitesi işlevselliğini göstermek için ekran görüntüleri sağlanmıştır.",
-        liveUrl: "https://dschkuu.netlify.app/"
+        liveUrl: "https://dschku.com/"
       },
       swipeIt: {
         title: "📖 Swipe It - Kitap Öneri Uygulaması",
@@ -358,11 +358,11 @@ Smart Bin, sürdürülebilir atık yönetimi, hijyenik kullanım ve akıllı şe
       download: "CV İndir",
       education: "Eğitim",
       edu1: "Hasan Kalyoncu Üniversitesi — Gaziantep",
-      edu1Desc: "Yazılım Mühendisliği Lisans · 4. Sınıf",
+      edu1Desc: "Yazılım Mühendisliği Lisans",
       edu1Note: "%100 İngilizce Program · Tam Burs",
-      edu1Grad: "Tahmini Mezuniyet: 2026",
+      edu1Grad: "Mezuniyet: 2026",
       edu2: "St Giles International School — İngiltere",
-      edu2Desc: "B2 İngilizce Sertifikası - Birleşik Krallık",
+      edu2Desc: "B2 İngilizce Sertifikası",
       edu2Note: "Tamamlandı: 2022",
       experience: "Deneyim",
       exp1: "— Proje Yönetimi Stajyeri (Haz–Ağu 2025)",
@@ -379,8 +379,8 @@ Smart Bin, sürdürülebilir atık yönetimi, hijyenik kullanım ve akıllı şe
     // Contact
     contact: {
       title: "İletişime Geçin",
-      subtitle: "İşbirliği veya sohbet için bana ulaşabilirsiniz!",
-      button: "Merhaba De"
+      subtitle: "Full-stack geliştirici pozisyonlarına ve yüksek lisans araştırma fırsatlarına açığım. Benimle iletişime geçmekten çekinmeyin!",
+      button: "Mesaj Gönder"
     },
 
     // Footer
@@ -394,17 +394,13 @@ Smart Bin, sürdürülebilir atık yönetimi, hijyenik kullanım ve akıllı şe
       notFound: "Proje bulunamadı!",
       goBack: "Geri Dön",
       liveDemo: "Canlı Demo 🚀",
-
       demoVideo: "Sistem Demosu",
       hardwareDemo: "Donanım Demosu",
-
       githubWeb: "GitHub (Web)",
       githubMobile: "GitHub (Mobil)",
-
       viewHardware: "Donanım",
       viewWeb: "Web",
       viewMobile: "Mobil",
-
       videoError: "Üzgünüz… Tarayıcınız video etiketini desteklemiyor."
     },
     notFound: {

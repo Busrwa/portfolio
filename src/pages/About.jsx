@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
 import {
   SiReact, SiDjango, SiFirebase, SiArduino, SiPython,
-  SiFlask, SiJavascript, SiExpo,
+  SiFlask, SiJavascript, SiExpo, SiPostgresql, SiNodedotjs,
+  SiNetlify, SiGit, SiFigma,
 } from "react-icons/si";
 import { FaMicrochip } from "react-icons/fa";
 
@@ -18,24 +19,47 @@ const fadeUp = {
 
 const skillGroups = [
   {
-    label: "Web & Mobile",
+    labelKey: "webMobile",
     icon: <SiReact className="text-cyan-400" />,
     chips: [
-      { label: "React", icon: <SiReact /> },
-      { label: "React Native", icon: <SiExpo /> },
-      { label: "Django", icon: <SiDjango /> },
-      { label: "Flask", icon: <SiFlask /> },
-      { label: "Firebase", icon: <SiFirebase /> },
-      { label: "JavaScript", icon: <SiJavascript /> },
-      { label: "Python", icon: <SiPython /> },
+      { label: "React",          icon: <SiReact /> },
+      { label: "React Native",   icon: <SiExpo /> },
+      { label: "JavaScript",     icon: <SiJavascript /> },
     ],
   },
   {
-    label: "IoT & Hardware",
+    labelKey: "backend",
+    icon: <SiDjango className="text-green-400" />,
+    chips: [
+      { label: "Django REST",    icon: <SiDjango /> },
+      { label: "Flask",          icon: <SiFlask /> },
+      { label: "Node.js",        icon: <SiNodedotjs /> },
+      { label: "Python",         icon: <SiPython /> },
+    ],
+  },
+  {
+    labelKey: "data",
+    icon: <SiPostgresql className="text-blue-400" />,
+    chips: [
+      { label: "PostgreSQL",     icon: <SiPostgresql /> },
+      { label: "Firebase",       icon: <SiFirebase /> },
+    ],
+  },
+  {
+    labelKey: "iot",
     icon: <FaMicrochip className="text-teal-400" />,
     chips: [
-      { label: "ESP32", icon: <FaMicrochip /> },
-      { label: "Arduino", icon: <SiArduino /> },
+      { label: "ESP32",          icon: <FaMicrochip /> },
+      { label: "Arduino",        icon: <SiArduino /> },
+    ],
+  },
+  {
+    labelKey: "deploy",
+    icon: <SiNetlify className="text-teal-300" />,
+    chips: [
+      { label: "Netlify",        icon: <SiNetlify /> },
+      { label: "Git",            icon: <SiGit /> },
+      { label: "Figma",          icon: <SiFigma /> },
     ],
   },
 ];
@@ -146,13 +170,14 @@ const About = () => {
           className="text-center text-xl font-bold text-white mb-8"
           style={{ fontFamily: "'Syne', sans-serif" }}
         >
-          {t.about.skills.webMobile} & {t.about.skills.iot}
+          {language === "tr" ? "Teknik Beceriler" : "Technical Skills"}
         </h3>
         <div className="space-y-6">
           {skillGroups.map((group) => (
-            <div key={group.label}>
+            <div key={group.labelKey}>
               <p className="text-xs text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
-                {group.icon} {group.label}
+                {group.icon}
+                {t.about.skills[group.labelKey] || group.labelKey}
               </p>
               <div className="flex flex-wrap gap-2">
                 {group.chips.map((chip) => (

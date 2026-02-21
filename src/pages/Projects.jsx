@@ -122,14 +122,14 @@ import smartBinHw2 from '../assets/smartBin/smartBinHw2.jpeg';
 import smartBinHwDemo from '../assets/smartBin/smartBinHw-Demo.mp4';
 
 import hataDefteriCover from '../assets/hataDefteri/cover.png';
-import hataDefteri1 from '../assets/hataDefteri/smurfia1.jpeg';
-import hataDefteri2 from '../assets/hataDefteri/smurfia2.jpeg';
-import hataDefteri3 from '../assets/hataDefteri/smurfia3.jpeg';
-import hataDefteri4 from '../assets/hataDefteri/smurfia4.jpeg';
-import hataDefteri5 from '../assets/hataDefteri/smurfia5.jpeg';
-import hataDefteri6 from '../assets/hataDefteri/smurfia6.jpeg';
-import hataDefteri7 from '../assets/hataDefteri/smurfia7.jpeg';
-import hataDefteri8 from '../assets/hataDefteri/smurfia8.jpeg';
+import hataDefteri1 from '../assets/hataDefteri/smurfia1.png';
+import hataDefteri2 from '../assets/hataDefteri/smurfia2.png';
+import hataDefteri3 from '../assets/hataDefteri/smurfia3.png';
+import hataDefteri4 from '../assets/hataDefteri/smurfia4.png';
+import hataDefteri5 from '../assets/hataDefteri/smurfia5.png';
+import hataDefteri6 from '../assets/hataDefteri/smurfia6.png';
+import hataDefteri7 from '../assets/hataDefteri/smurfia7.png';
+import hataDefteri8 from '../assets/hataDefteri/smurfia8.png';
 
 
 import lilithiaCover from '../assets/lilithia/lilithia-cover.png';

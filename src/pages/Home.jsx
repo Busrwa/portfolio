@@ -85,8 +85,8 @@ const Home = () => {
 
   const typeWords =
     language === "tr"
-      ? ["Web Uygulamaları Geliştiriyorum", "Mobil Uygulamalar Yapıyorum", "IoT Çözümleri Üretiyorum"]
-      : ["I Build Web Applications", "I Create Mobile Apps", "I Engineer IoT Solutions"];
+      ? ["Full-Stack Web Geliştiriyorum", "Mobil Uygulamalar Yapıyorum", "REST API'ler Tasarlıyorum", "IoT Sistemleri Kuruyorum"]
+      : ["I Build Full-Stack Web Apps", "I Develop Mobile Applications", "I Design REST APIs", "I Engineer IoT Systems"];
 
   const typed = useTypewriter(typeWords);
 
@@ -113,8 +113,8 @@ const Home = () => {
 
   const stats = [
     { value: "13+", label: language === "tr" ? "Proje" : "Projects" },
-    { value: "3+", label: language === "tr" ? "Staj / İş" : "Internships" },
-    { value: "4+", label: language === "tr" ? "Dil" : "Languages" },
+    { value: "2",   label: language === "tr" ? "Play Store Uygulaması" : "Play Store Apps" },
+    { value: "3+",  label: language === "tr" ? "Deneyim" : "Work Experience" },
   ];
 
   return (
@@ -137,7 +137,7 @@ const Home = () => {
           style={{ background: "rgba(20,184,166,0.08)" }}
         >
           <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-          {language === "tr" ? "Yazılım Mühendisliği Öğrencisi" : "Software Engineering Student"}
+          {language === "tr" ? "Full-Stack & Mobil Geliştirici" : "Full-Stack & Mobile Developer"}
         </motion.div>
 
         {/* Main heading */}
