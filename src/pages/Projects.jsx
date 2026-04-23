@@ -172,7 +172,9 @@ const Projects = () => {
       },
       //demoVideo: hataDefteriDemo,
       liveUrl: "https://play.google.com/store/apps/details?id=com.busrwa.smurfiaapp",
-
+      github: {
+        mobile: "https://github.com/Busrwa/HataDefteri",
+      },
     },
     {
       id: 'smartBin',
@@ -222,6 +224,9 @@ const Projects = () => {
       screenshots: {
         web: [dsc1, dsc2, dsc3, dsc4, dsc5, dsc6, dsc7, dsc8]
       },
+      github: {
+        web: "https://github.com/Busrwa/dsc_Website_Frontend",
+      },
     },
 
     {
@@ -232,7 +237,11 @@ const Projects = () => {
       screenshots: {
         mobile: [swipeit1, swipeit2, swipeit3, swipeit4, swipeit5, swipeit6, swipeit7, swipeit8, swipeit9, swipeit10, swipeit11, swipeit12, swipeit13, swipeit14],
       },
+      github: {
+        mobile: "https://github.com/Busrwa/swipeit",
+      },
     },
+
     {
       id: 'mindCaps',
       title: t.projects.mindCaps.title,

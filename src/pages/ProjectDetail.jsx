@@ -158,7 +158,7 @@ const projectMeta = {
     stack: ["React Native", "Expo", "Firebase Auth", "Firebase Firestore", "Reanimated 2", "react-native-deck-swiper"],
     en: {
       overview:
-        "Swipe It is a mobile book and movie discovery app using a Tinder-style swipe interaction model. The problem: traditional recommendation lists have low engagement — users scroll past items without actively deciding. By forcing a binary left/right decision per item, the app drives deliberate preference expression, which accumulates into a weekly popularity ranking system.",
+        "SwipeBooks is a mobile book and movie discovery app using a Tinder-style swipe interaction model. The problem: traditional recommendation lists have low engagement — users scroll past items without actively deciding. By forcing a binary left/right decision per item, the app drives deliberate preference expression, which accumulates into a weekly popularity ranking system.",
       architecture:
         "React Native (Expo) frontend with Firebase as the backend. User sessions are managed via Firebase Auth. Swipe decisions (like/dislike/save) are written to Firestore asynchronously — the swipe animation completes without blocking on the write confirmation, keeping the UI at 60fps. A weekly ranking algorithm aggregates like counts from the `items` collection and runs client-side to avoid requiring cloud functions.",
       database:
@@ -171,7 +171,7 @@ const projectMeta = {
     },
     tr: {
       overview:
-        "Swipe It, Tinder tarzı kaydırma etkileşim modeli kullanan mobil kitap ve film keşif uygulamasıdır. Geleneksel öneri listelerinin düşük etkileşim sorununu çözer: her öğe için zorunlu sol/sağ kararı kasıtlı tercih ifadesini yönlendirir ve haftalık popülerlik sıralamasına birikir.",
+        "SwipeBooks, Tinder tarzı kaydırma etkileşim modeli kullanan mobil kitap ve film keşif uygulamasıdır. Geleneksel öneri listelerinin düşük etkileşim sorununu çözer: her öğe için zorunlu sol/sağ kararı kasıtlı tercih ifadesini yönlendirir ve haftalık popülerlik sıralamasına birikir.",
       architecture:
         "Firebase backend ile React Native (Expo) frontend. Kaydırma kararları (beğenme/beğenmeme/kaydetme) Firestore'a asenkron yazılır — kaydırma animasyonu yazma onayını beklemeden tamamlanır, UI'yi 60fps'te tutar.",
       database:

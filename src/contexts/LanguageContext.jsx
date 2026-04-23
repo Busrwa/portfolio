@@ -116,7 +116,7 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
         liveUrl: "https://dschku.com/"
       },
       swipeIt: {
-        title: "📖 Swipe It - Book Recommendation App",
+        title: "📖 SwipeBooks - Book Recommendation App",
         desc: "A React Native (Expo) mobile app that allows users to swipe through books and movies to discover their favorites.\n\nFeatures:\n- Swipe-based recommendation system (like Tinder)\n- Users can like, dislike, or add items to favorites\n- Firebase Auth for secure user login\n- Firestore database for storing user preferences and top items\n- Detailed view for each book\n- Weekly popularity ranking based on user interactions\n- Bad word filtering and rate-limiting for user submissions\n\n⚠️ This project repository is private to comply with copyright rules. Screenshots are provided to showcase the app functionality."
       },
       mindCaps: {
@@ -315,7 +315,7 @@ Smart Bin, sürdürülebilir atık yönetimi, hijyenik kullanım ve akıllı şe
         liveUrl: "https://dschku.com/"
       },
       swipeIt: {
-        title: "📖 Swipe It - Kitap Öneri Uygulaması",
+        title: "📖 SwipeBooks - Kitap Öneri Uygulaması",
         desc: "Kullanıcıların kitaplar ve filmler arasında kaydırarak favorilerini keşfetmelerini sağlayan React Native (Expo) mobil uygulaması.\n\nÖzellikler:\n- Kaydırma tabanlı öneri sistemi (Tinder benzeri)\n- Beğenme, beğenmeme veya favorilere ekleme\n- Güvenli kullanıcı girişi için Firebase Auth\n- Kullanıcı tercihlerini ve popüler öğeleri saklamak için Firestore\n- Her kitap için detaylı görünüm\n- Kullanıcı etkileşimlerine göre haftalık popülerlik sıralaması\n- Kötü sözcük filtreleme ve kullanıcı gönderileri için hız sınırlama\n\n⚠️ Bu proje deposu telif kurallarına uyum için gizlidir. Uygulama işlevselliğini göstermek için ekran görüntüleri sağlanmıştır."
       },
       mindCaps: {
