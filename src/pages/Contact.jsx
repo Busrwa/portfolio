@@ -1,6 +1,5 @@
 // src/pages/Contact.jsx
 // NOTE: To enable the form, install emailjs-com: npm install @emailjs/browser
-// Then replace YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, YOUR_PUBLIC_KEY in the sendEmail function.
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";

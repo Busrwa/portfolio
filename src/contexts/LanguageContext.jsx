@@ -24,7 +24,7 @@ export const translations = {
     // Home
     home: {
       greeting: "Hi, I'm Busra",
-      description: "Full-Stack Developer specializing in React, React Native (Expo), and Django REST Framework — shipping web apps, mobile products, and IoT systems from concept to production.",
+      description: "Software Engineering graduate building full-stack web applications, mobile products, AI-integrated tools, and IoT systems. Experienced with React, React Native, Django REST Framework, Flask, Firebase, and ESP32.",
       viewResume: "View Resume",
       myProjects: "My Projects"
     },
@@ -33,16 +33,23 @@ export const translations = {
     about: {
       title: "About Me",
       intro1: "I am a",
-      student: "Full-Stack Developer",
+      student: "Software Engineering graduate and Full-Stack Developer",
       intro2: " with a BSc in Software Engineering from Hasan Kalyoncu University (",
       scholarship: "100% English Program, Full Scholarship",
-      intro3: ", graduated 2026). I build end-to-end products — from REST APIs and relational databases to polished mobile apps on the Play Store.",
+      intro3: ", graduated in June 2026). I build end-to-end products — from REST APIs and relational databases to mobile apps, AI-integrated tools, and IoT systems.",
       experience: "My experience spans ",
       pm: "Project Management at Sca Social",
       software: "Software Engineering at Rigelsan Defense & Security",
       lead: "Campus Lead at Google DSC HKU",
       international: ", plus international professional experience",
       usa: " in the USA (Work and Travel).",
+      researchTitle: "Research & Technical Interests",
+      researchIntro: "My current interests connect software engineering practice with applied research directions in intelligent, connected, and user-centered systems.",
+      research1: "IoT and cyber-physical systems",
+      research2: "Mobile-cloud applications",
+      research3: "Software engineering",
+      research4: "AI-assisted software development",
+      research5: "Human-centered intelligent applications",
       skills: {
         webMobile: "Frontend & Mobile",
         webMobileDesc: "React · React Native (Expo) · Component Architecture · Navigation",
@@ -90,38 +97,63 @@ The Flashcards feature lets you create your own vocabulary list. Review the word
 The Test Creation feature generates automatic tests based on the data in your Mistake Notebook. This helps you quickly identify your weaknesses and create a study plan tailored to your strengths and weaknesses. Smurfia is an ideal support tool for exam preparation and daily English practice.
 
 All user data is securely stored on Firebase Firestore. You can delete only your mistake records or vocabulary records without deleting your account. Use the in-app Data Deletion section for data removal.
-
-⚠️ Project repositories (frontend & backend) are private due to security and organizational policies. Screenshots are provided to showcase the app functionality.`
+`
       },
       smartBin: {
         title: "🗑️ Smart Bin – Smart Waste Management System",
-        desc: `Smart Bin is an IoT-based smart waste management system that integrates hardware, software, and cloud technologies. The project is developed using an ESP32 microcontroller.
+        desc: `Smart Bin is an end-to-end IoT waste management system that combines embedded hardware, real-time cloud data, a web dashboard, and a mobile application.
 
-The system uses two ultrasonic sensors. The first sensor is placed on the lid of the bin and continuously measures the trash fill level. The second ultrasonic sensor is located on the outside of the bin and detects hand or foot movements to enable touchless operation. When this sensor is triggered, a servo motor is activated and the lid opens automatically.
+The system uses an ESP32 microcontroller with ultrasonic sensors to measure bin fill level and detect hand/foot movement for touchless lid control. A servo motor opens the lid automatically, while LED indicators and a buzzer provide local status alerts.
 
-The fill level of the bin is visually indicated using LEDs:
-• Green LED: Empty or low fill level
-• Yellow LED: Medium fill level
-• Red LED: Fully filled
+Fill-level data is transmitted to Firebase in real time and visualized through a React web dashboard and a React Native mobile application. This allows users to remotely monitor bin status and receive a clearer view of waste collection needs.
 
-When the bin reaches full capacity, the red LED is activated together with a buzzer to provide an audible alert.
+My work included designing the system flow, integrating ESP32 sensor data with Firebase, developing the React dashboard, building the React Native mobile interface, and connecting the hardware/software components into a working prototype.
 
-The fill level data collected by the ESP32 is sent to a Firebase database in real time. This data is displayed and monitored through a web application developed with React and a mobile application built using React Native (Expo), allowing remote and real-time tracking of the bin status.
+Tech Stack:
+• Hardware: ESP32, ultrasonic sensors, servo motor, LEDs, buzzer
+• Frontend: React
+• Mobile: React Native (Expo)
+• Cloud/Data: Firebase Realtime Database
 
-Smart Bin provides a scalable and end-to-end solution for sustainable waste management, hygienic usage, and smart city applications.`
+This project reflects my interest in IoT systems, mobile-cloud applications, real-time monitoring, and smart city technologies. Future directions include scalable IoT data pipelines, anomaly detection, and intelligent decision-support systems for urban waste management.`
       },
       dsc: {
         title: "🎓 DSC HKU Website",
-        desc: "Official website for Developer Student Clubs Hasan Kalyoncu University - A full-stack web application I developed.\n\nKey Features:\n• Admin panel for dynamic content management\n• Blog and event system with rich text editor (Quill)\n• Sponsor showcase with image upload capability\n• Responsive design optimized for all devices (desktop, tablet, mobile)\n• Contact form with FAQ section and validation\n• Archive system for past events and activities\n• SEO optimized pages with proper meta tags\n• Easter eggs and interactive elements for user engagement\n\nTech Stack:\n• Frontend: React, React Router, CSS3, Axios\n• Backend: Django REST Framework, PostgreSQL\n• Deployment: Netlify (Frontend), Render (Backend)\n• Storage: Cloudinary for image management\n\n⚠️ Project repositories (frontend & backend) are private due to security and organizational policies. Screenshots are provided to showcase the website functionality.",
+        desc: `DSC HKU Website is a full-stack community platform developed for Developer Student Clubs Hasan Kalyoncu University.
+
+The platform was built to manage events, blog posts, sponsors, archives, and community content through a dynamic admin panel. It includes responsive public pages, content management features, image upload support, contact/FAQ sections, and SEO-focused page structure.
+
+My work included developing the React frontend, building and integrating the Django REST Framework backend, designing the content management flow, connecting PostgreSQL data models, and deploying the frontend and backend through Netlify and Render.
+
+Tech Stack:
+• Frontend: React, React Router, CSS3, Axios
+• Backend: Django REST Framework
+• Database: PostgreSQL
+• Media Storage: Cloudinary
+• Deployment: Netlify, Render
+
+This project strengthened my experience in full-stack architecture, REST API integration, admin panel development, database-backed content systems, and production deployment.`,
         liveUrl: "https://dschku.com/"
       },
       swipeIt: {
         title: "📖 SwipeBooks - Book Recommendation App",
-        desc: "A React Native (Expo) mobile app that allows users to swipe through books and movies to discover their favorites.\n\nFeatures:\n- Swipe-based recommendation system (like Tinder)\n- Users can like, dislike, or add items to favorites\n- Firebase Auth for secure user login\n- Firestore database for storing user preferences and top items\n- Detailed view for each book\n- Weekly popularity ranking based on user interactions\n- Bad word filtering and rate-limiting for user submissions\n\n⚠️ This project repository is private to comply with copyright rules. Screenshots are provided to showcase the app functionality."
+        desc: "A React Native (Expo) mobile app that allows users to swipe through books and movies to discover their favorites.\n\nFeatures:\n- Swipe-based recommendation system (like Tinder)\n- Users can like, dislike, or add items to favorites\n- Firebase Auth for secure user login\n- Firestore database for storing user preferences and top items\n- Detailed view for each book\n- Weekly popularity ranking based on user interactions\n- Bad word filtering and rate-limiting for user submissions\n\nScreenshots are provided to showcase the app functionality and user flow."
       },
       mindCaps: {
-        title: "🌿 MindCaps - AI-Powered Psychological Support App",
-        desc: "A React Native (Expo) mobile app integrated with a Flask backend that provides empathetic psychological support.\n\nFeatures:\n- User text analysis and AI-generated supportive messages\n- Emotional analysis in JSON format (joy, sadness, fear, anger, disgust, surprise)\n- Motivational messages from the user's \"future self\"\n- Turkish and English support\n- Integrated React Native frontend and Flask backend\n- Secure handling of user inputs"
+        title: "🌿 MindCaps - AI-Powered Emotional Reflection App",
+        desc: `MindCaps is an AI-powered emotional reflection app built with React Native (Expo) and a Flask backend. Users can write about how they feel, and the app returns structured emotional insights and supportive, non-clinical reflection prompts.
+
+Features:
+- Free-text emotional input from users
+- AI-generated emotional insight in structured JSON format
+- Emotion categories such as joy, sadness, fear, anger, disgust, and surprise
+- Supportive reflection messages generated by the backend
+- "Future self" style motivational prompts
+- Turkish and English language support
+- React Native frontend integrated with a Flask REST API
+- Server-side AI processing to keep API credentials outside the mobile app
+
+MindCaps is designed as a software engineering and AI integration project, not as a medical, diagnostic, or therapy tool.`
       },
       fridge: {
         title: "🧊 What's in Your Fridge? - Recipe App",
@@ -130,22 +162,6 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
       email: {
         title: "📧 Automatic Email Sender",
         desc: "A Python Flask application that automatically sends emails at scheduled times.\n\nFeatures:\n- Input sender & receiver email, subject, message, and schedule\n- Supports one-time, weekly, monthly, and yearly sending\n- Success modal confirms email sent\n- Secure sending via SMTP"
-      },
-      pdf: {
-        title: "📝 PDF Merger",
-        desc: "A Python desktop application with a GUI to merge multiple PDF files into one.\n\nFeatures:\n- Select multiple PDFs\n- Choose output location\n- User-friendly Tkinter interface\n- Success and error notifications"
-      },
-      blog: {
-        title: "📚 Flask Blog App",
-        desc: "A Flask-based blog application using SQLite.\n\nFeatures:\n- User registration and login\n- Add, view, and filter posts by category\n- Categories: News, Technology, Health, Education\n- Modern and responsive UI"
-      },
-      todo: {
-        title: "📝 To-Do List App",
-        desc: "A Python + Flask application to manage personal tasks and notes.\n\nFeatures:\n- User registration and login\n- Add, view, and delete notes\n- User-specific notes stored in SQLite\n- Modern and responsive web interface"
-      },
-      tv: {
-        title: "📺 TV Channels - Live Stream App",
-        desc: "A React Native (Expo) mobile app that displays TV channels in a clean interface.\n\nFeatures:\n- Browse TV channels\n- Watch live streams via embedded WebView\n- Clean and minimal UI for focused viewing\n\n⚠️ This project repository is private to comply with copyright rules. A demo video and screenshots are provided to showcase the app functionality."
       },
       smartHome: {
         title: "🏠 Smart Home Security System",
@@ -161,15 +177,15 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
       edu1: "Hasan Kalyoncu University — Gaziantep",
       edu1Desc: "BSc in Software Engineering",
       edu1Note: "100% English Program · Full Scholarship",
-      edu1Grad: "Graduated: 2026",
+      edu1Grad: "Graduated: June 2026",
       edu2: "St Giles International School — UK",
       edu2Desc: "B2 English Language Certificate",
       edu2Note: "Completed in 2022",
       experience: "Experience",
       exp1: "— Project Management Intern (Jun–Aug 2025)",
-      exp2: "— Campus Lead (2023–2024)",
-      exp3: "— Front Desk Associate (Summer 2023)",
-      exp4: "— Sales Consultant (Summer 2023)",
+      exp2: "— Software Engineering Intern",
+      exp3: "— Campus Lead (2023–2024)",
+      exp4: "— Front Desk Associate (Summer 2023)",
       skills: "Technical Skills",
       skillsLang: "Languages & Frameworks",
       skillsTools: "Tools & Platforms",
@@ -180,7 +196,7 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
     // Contact
     contact: {
       title: "Get In Touch",
-      subtitle: "Open to full-stack developer roles and graduate research opportunities. Feel free to reach out!",
+      subtitle: "Open to full-stack, mobile, and software engineering roles, as well as graduate research opportunities in IoT, mobile-cloud systems, and software engineering.",
       button: "Send Message"
     },
 
@@ -224,7 +240,7 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
     // Home
     home: {
       greeting: "Merhaba, Ben Büşra",
-      description: "React, React Native (Expo) ve Django REST Framework ile full-stack ürünler geliştiren yazılım mühendisiyim — web uygulamalarından Play Store'daki mobil ürünlere, IoT sistemlerine kadar uçtan uca çözümler üretiyorum.",
+      description: "React, React Native, Django REST Framework, Flask, Firebase ve ESP32 ile full-stack web uygulamaları, mobil ürünler, yapay zeka entegreli araçlar ve IoT sistemleri geliştiren Yazılım Mühendisliği mezunuyum.",
       viewResume: "Özgeçmişi Görüntüle",
       myProjects: "Projelerim"
     },
@@ -232,17 +248,24 @@ Smart Bin provides a scalable and end-to-end solution for sustainable waste mana
     // About
     about: {
       title: "Hakkımda",
-      intro1: "Ben bir",
-      student: "Full-Stack Geliştirici",
-      intro2: "yim; Hasan Kalyoncu Üniversitesi Yazılım Mühendisliği mezunuyum (",
+      intro1: "Ben",
+      student: "Yazılım Mühendisliği mezunu ve Full-Stack Geliştiriciyim",
+      intro2: "; Hasan Kalyoncu Üniversitesi Yazılım Mühendisliği bölümünden mezun oldum (",
       scholarship: "%100 İngilizce Program, Tam Burs",
-      intro3: ", mezuniyet: 2026). REST API tasarımından ilişkisel veritabanlarına, Play Store'daki mobil uygulamalara kadar uçtan uca ürünler geliştiriyorum.",
+      intro3: ", mezuniyet: Haziran 2026). REST API tasarımından ilişkisel veritabanlarına, Play Store'daki mobil uygulamalara, yapay zeka entegreli araçlara ve IoT sistemlerine kadar uçtan uca ürünler geliştiriyorum.",
       experience: "Deneyimlerim arasında ",
       pm: "Sca Social'da Proje Yönetimi Stajyerliği",
       software: "Rigelsan Savunma'da Yazılım Stajyerliği",
       lead: "Google DSC HKU Kampüs Liderliği",
       international: " ve uluslararası profesyonel deneyim",
       usa: " bulunuyor (ABD Work and Travel programı).",
+      researchTitle: "Araştırma & Teknik İlgi Alanları",
+      researchIntro: "Güncel ilgi alanlarım, yazılım mühendisliği pratiğini akıllı, bağlantılı ve kullanıcı odaklı sistemler üzerine uygulanabilir araştırma yönleriyle birleştiriyor.",
+      research1: "IoT ve siber-fiziksel sistemler",
+      research2: "Mobil-bulut uygulamaları",
+      research3: "Yazılım mühendisliği",
+      research4: "Yapay zeka destekli yazılım geliştirme",
+      research5: "Kullanıcı odaklı akıllı uygulamalar",
       skills: {
         webMobile: "Frontend & Mobil",
         webMobileDesc: "React · React Native (Expo) · Bileşen Mimarisi · Navigasyon",
@@ -290,37 +313,63 @@ Test Oluşturma özelliği ile hata defterinizdeki verilerden otomatik testler o
 
 Tüm kullanıcı verileriniz Firebase Firestore üzerinde güvenli bir şekilde saklanır. Hesap silmeden sadece hata ve kelime kayıtlarınızı ayrı ayrı silebilirsiniz. Veri silme işlemleri için uygulama içi Veri Silme bölümünü kullanabilirsiniz.
 
-⚠️ Proje depoları (frontend & backend) güvenlik ve kurumsal politikalar nedeniyle gizlidir. Uygulama işlevselliğini göstermek için ekran görüntüleri sağlanmıştır.`
+`
       },
       smartBin: {
         title: "🗑️ Smart Bin – Akıllı Atık Yönetim Sistemi",
-        desc: `Smart Bin, donanım, yazılım ve bulut teknolojilerini bir araya getiren IoT tabanlı akıllı bir çöp yönetim sistemidir. Proje, ESP32 mikrodenetleyici kullanılarak geliştirilmiştir.
+        desc: `Smart Bin, gömülü donanım, gerçek zamanlı bulut verisi, web dashboard ve mobil uygulamayı bir araya getiren uçtan uca bir IoT tabanlı akıllı atık yönetim sistemidir.
 
-Sistemde iki adet ultrasonik sensör bulunmaktadır. İlk sensör, çöp kutusunun kapağında konumlandırılmış olup çöp doluluk seviyesini sürekli olarak ölçmektedir. İkinci ultrasonik sensör ise çöp kutusunun dış kısmında yer almakta ve el veya ayak hareketlerini algılayarak temassız kullanım sağlamaktadır. Bu sensör tetiklendiğinde servo motor devreye girer ve çöp kapağı otomatik olarak açılır.
+Sistem, ESP32 mikrodenetleyici ve ultrasonik sensörler kullanarak çöp kutusunun doluluk seviyesini ölçer ve el/ayak hareketini algılayarak temassız kapak kontrolü sağlar. Servo motor kapağı otomatik olarak açarken, LED göstergeler ve buzzer yerel durum uyarıları verir.
 
-Çöp doluluk durumu LED'ler aracılığıyla kullanıcıya görsel olarak aktarılmaktadır:
-• Yeşil LED: Düşük doluluk veya boş
-• Sarı LED: Orta doluluk
-• Kırmızı LED: Tam doluluk
+Doluluk verileri Firebase’e gerçek zamanlı olarak aktarılır ve React ile geliştirilen web dashboard ile React Native mobil uygulama üzerinden görselleştirilir. Böylece kullanıcılar çöp kutusunun durumunu uzaktan takip edebilir ve atık toplama ihtiyacını daha net görebilir.
 
-Çöp kutusu tamamen dolduğunda kırmızı LED ile birlikte buzzer aktif hale gelerek sesli uyarı verir.
+Bu projede sistem akışının tasarlanması, ESP32 sensör verilerinin Firebase ile entegre edilmesi, React dashboard’un geliştirilmesi, React Native mobil arayüzün oluşturulması ve donanım-yazılım bileşenlerinin çalışan bir prototipte birleştirilmesi üzerine çalıştım.
 
-Doluluk verileri ESP32 üzerinden Firebase veritabanına gerçek zamanlı olarak gönderilmektedir. Bu veriler, React ile geliştirilen web uygulaması ve React Native (Expo) ile geliştirilen mobil uygulama üzerinden anlık olarak izlenebilmekte ve çöp kutusunun durumu uzaktan takip edilebilmektedir.
+Teknoloji Stack:
+• Donanım: ESP32, ultrasonik sensörler, servo motor, LED’ler, buzzer
+• Frontend: React
+• Mobil: React Native (Expo)
+• Bulut/Veri: Firebase Realtime Database
 
-Smart Bin, sürdürülebilir atık yönetimi, hijyenik kullanım ve akıllı şehir uygulamaları için ölçeklenebilir ve bütüncül bir çözüm sunmaktadır.`
+Bu proje; IoT sistemleri, mobil-bulut uygulamaları, gerçek zamanlı izleme ve akıllı şehir teknolojilerine olan ilgimi yansıtmaktadır. Gelecek geliştirme yönleri arasında ölçeklenebilir IoT veri akışları, anomali tespiti ve şehir atık yönetimi için akıllı karar destek sistemleri yer almaktadır.`
       },
       dsc: {
         title: "🎓 DSC HKU Web Sitesi",
-        desc: "Developer Student Clubs Hasan Kalyoncu Üniversitesi resmi web sitesi - Geliştirdiğim full-stack web uygulaması.\n\nTemel Özellikler:\n• Dinamik içerik yönetimi için admin paneli\n• Zengin metin editörü (Quill) ile blog ve etkinlik sistemi\n• Resim yükleme özelliği ile sponsor vitrini\n• Tüm cihazlar için optimize edilmiş responsive tasarım (masaüstü, tablet, mobil)\n• Doğrulama özellikli iletişim formu ve SSS bölümü\n• Geçmiş etkinlikler ve aktiviteler için arşiv sistemi\n• Uygun meta etiketlerle SEO optimize edilmiş sayfalar\n• Kullanıcı etkileşimi için easter egg'ler ve interaktif öğeler\n\nTeknoloji Stack:\n• Frontend: React, React Router, CSS3, Axios\n• Backend: Django REST Framework, PostgreSQL\n• Deployment: Netlify (Frontend), Render (Backend)\n• Depolama: Görsel yönetimi için Cloudinary\n\n⚠️ Proje depoları (frontend & backend) güvenlik ve kurumsal politikalar nedeniyle gizlidir. Web sitesi işlevselliğini göstermek için ekran görüntüleri sağlanmıştır.",
+        desc: `DSC HKU Web Sitesi, Developer Student Clubs Hasan Kalyoncu University için geliştirilmiş full-stack bir topluluk platformudur.
+
+Platform; etkinlikler, blog yazıları, sponsorlar, arşiv içerikleri ve topluluk duyurularının dinamik bir admin paneli üzerinden yönetilebilmesi için tasarlanmıştır. Responsive public sayfalar, içerik yönetimi özellikleri, görsel yükleme desteği, iletişim/SSS bölümleri ve SEO odaklı sayfa yapısı içerir.
+
+Bu projede React frontend’in geliştirilmesi, Django REST Framework backend’in oluşturulması ve entegre edilmesi, içerik yönetimi akışının tasarlanması, PostgreSQL veri modellerinin bağlanması ve frontend/backend deployment süreçleri üzerine çalıştım.
+
+Teknoloji Stack:
+• Frontend: React, React Router, CSS3, Axios
+• Backend: Django REST Framework
+• Veritabanı: PostgreSQL
+• Medya Depolama: Cloudinary
+• Deployment: Netlify, Render
+
+Bu proje; full-stack mimari, REST API entegrasyonu, admin panel geliştirme, veritabanı destekli içerik sistemleri ve production deployment alanlarındaki deneyimimi güçlendirdi.`,
         liveUrl: "https://dschku.com/"
       },
       swipeIt: {
         title: "📖 SwipeBooks - Kitap Öneri Uygulaması",
-        desc: "Kullanıcıların kitaplar ve filmler arasında kaydırarak favorilerini keşfetmelerini sağlayan React Native (Expo) mobil uygulaması.\n\nÖzellikler:\n- Kaydırma tabanlı öneri sistemi (Tinder benzeri)\n- Beğenme, beğenmeme veya favorilere ekleme\n- Güvenli kullanıcı girişi için Firebase Auth\n- Kullanıcı tercihlerini ve popüler öğeleri saklamak için Firestore\n- Her kitap için detaylı görünüm\n- Kullanıcı etkileşimlerine göre haftalık popülerlik sıralaması\n- Kötü sözcük filtreleme ve kullanıcı gönderileri için hız sınırlama\n\n⚠️ Bu proje deposu telif kurallarına uyum için gizlidir. Uygulama işlevselliğini göstermek için ekran görüntüleri sağlanmıştır."
+        desc: "Kullanıcıların kitaplar ve filmler arasında kaydırarak favorilerini keşfetmelerini sağlayan React Native (Expo) mobil uygulaması.\n\nÖzellikler:\n- Kaydırma tabanlı öneri sistemi (Tinder benzeri)\n- Beğenme, beğenmeme veya favorilere ekleme\n- Güvenli kullanıcı girişi için Firebase Auth\n- Kullanıcı tercihlerini ve popüler öğeleri saklamak için Firestore\n- Her kitap için detaylı görünüm\n- Kullanıcı etkileşimlerine göre haftalık popülerlik sıralaması\n- Kötü sözcük filtreleme ve kullanıcı gönderileri için hız sınırlama\n\nEkran görüntüleri, uygulamanın işlevselliğini ve kullanıcı akışını göstermek için sağlanmıştır."
       },
       mindCaps: {
-        title: "🌿 MindCaps - Yapay Zeka Destekli Psikolojik Destek Uygulaması",
-        desc: "Empatik psikolojik destek sağlayan Flask backend entegreli React Native (Expo) mobil uygulaması.\n\nÖzellikler:\n- Kullanıcı metni analizi ve yapay zeka destekli destek mesajları\n- JSON formatında duygusal analiz (neşe, üzüntü, korku, öfke, tiksinme, şaşkınlık)\n- Kullanıcının \"gelecekteki benliğinden\" motivasyon mesajları\n- Türkçe ve İngilizce destek\n- Entegre React Native frontend ve Flask backend\n- Kullanıcı girdilerinin güvenli işlenmesi"
+        title: "🌿 MindCaps - Yapay Zeka Destekli Duygusal Farkındalık Uygulaması",
+        desc: `MindCaps, React Native (Expo) ve Flask backend ile geliştirilmiş yapay zeka destekli bir duygusal farkındalık uygulamasıdır. Kullanıcılar nasıl hissettiklerini serbest metin olarak yazabilir; uygulama ise yapılandırılmış duygu içgörüleri ve klinik olmayan destekleyici düşünme mesajları üretir.
+
+Özellikler:
+- Kullanıcıdan serbest metin duygu girişi
+- JSON formatında yapay zeka destekli duygu içgörüsü
+- Neşe, üzüntü, korku, öfke, tiksinme ve şaşkınlık gibi duygu kategorileri
+- Backend tarafından üretilen destekleyici yansıtma mesajları
+- "Gelecekteki benlik" tarzında motivasyon mesajları
+- Türkçe ve İngilizce dil desteği
+- Flask REST API ile entegre React Native frontend
+- API bilgilerinin mobil uygulama dışında kalması için server-side AI işleme
+
+MindCaps; tıbbi, tanısal veya terapi amaçlı bir araç değil, yazılım mühendisliği ve yapay zeka entegrasyonu odaklı bir projedir.`
       },
       fridge: {
         title: "🧊 Buzdolabında Ne Var? - Tarif Uygulaması",
@@ -329,22 +378,6 @@ Smart Bin, sürdürülebilir atık yönetimi, hijyenik kullanım ve akıllı şe
       email: {
         title: "📧 Otomatik E-posta Gönderici",
         desc: "Belirlenen zamanlarda otomatik olarak e-posta gönderen Python Flask uygulaması.\n\nÖzellikler:\n- Gönderici ve alıcı e-posta, konu, mesaj ve program girişi\n- Tek seferlik, haftalık, aylık ve yıllık gönderimi destekler\n- Başarı modalı e-posta gönderimini onaylar\n- SMTP ile güvenli gönderim"
-      },
-      pdf: {
-        title: "📝 PDF Birleştirici",
-        desc: "Birden fazla PDF dosyasını tek bir dosyada birleştirmek için GUI'li Python masaüstü uygulaması.\n\nÖzellikler:\n- Birden fazla PDF seçimi\n- Çıktı konumu seçimi\n- Kullanıcı dostu Tkinter arayüzü\n- Başarı ve hata bildirimleri"
-      },
-      blog: {
-        title: "📚 Flask Blog Uygulaması",
-        desc: "SQLite kullanan Flask tabanlı blog uygulaması.\n\nÖzellikler:\n- Kullanıcı kaydı ve girişi\n- Kategori bazlı gönderi ekleme, görüntüleme ve filtreleme\n- Kategoriler: Haberler, Teknoloji, Sağlık, Eğitim\n- Modern ve duyarlı arayüz"
-      },
-      todo: {
-        title: "📝 Yapılacaklar Listesi Uygulaması",
-        desc: "Kişisel görevleri ve notları yönetmek için Python + Flask uygulaması.\n\nÖzellikler:\n- Kullanıcı kaydı ve girişi\n- Not ekleme, görüntüleme ve silme\n- SQLite'da saklanan kullanıcıya özel notlar\n- Modern ve duyarlı web arayüzü"
-      },
-      tv: {
-        title: "📺 TV Kanalları - Canlı Yayın Uygulaması",
-        desc: "Temiz bir arayüzde TV kanallarını gösteren React Native (Expo) mobil uygulaması.\n\nÖzellikler:\n- TV kanallarına göz atma\n- Gömülü WebView ile canlı yayın izleme\n- Odaklanmış izleme için temiz ve minimal arayüz\n\n⚠️ Bu proje deposu telif kurallarına uyum için gizlidir. Uygulama işlevselliğini göstermek için demo video ve ekran görüntüleri sağlanmıştır."
       },
       smartHome: {
         title: "🏠 Akıllı Ev Güvenlik Sistemi",
@@ -360,15 +393,15 @@ Smart Bin, sürdürülebilir atık yönetimi, hijyenik kullanım ve akıllı şe
       edu1: "Hasan Kalyoncu Üniversitesi — Gaziantep",
       edu1Desc: "Yazılım Mühendisliği Lisans",
       edu1Note: "%100 İngilizce Program · Tam Burs",
-      edu1Grad: "Mezuniyet: 2026",
+      edu1Grad: "Mezuniyet: Haziran 2026",
       edu2: "St Giles International School — İngiltere",
       edu2Desc: "B2 İngilizce Sertifikası",
       edu2Note: "Tamamlandı: 2022",
       experience: "Deneyim",
       exp1: "— Proje Yönetimi Stajyeri (Haz–Ağu 2025)",
-      exp2: "— Kampüs Lideri (2023–2024)",
-      exp3: "— Resepsiyonist (Yaz 2023)",
-      exp4: "— Satış Danışmanı (Yaz 2023)",
+      exp2: "— Yazılım Mühendisliği Stajyeri",
+      exp3: "— Kampüs Lideri (2023–2024)",
+      exp4: "— Resepsiyonist (Yaz 2023)",
       skills: "Teknik Beceriler",
       skillsLang: "Diller & Framework'ler",
       skillsTools: "Araçlar & Platformlar",
@@ -379,7 +412,7 @@ Smart Bin, sürdürülebilir atık yönetimi, hijyenik kullanım ve akıllı şe
     // Contact
     contact: {
       title: "İletişime Geçin",
-      subtitle: "Full-stack geliştirici pozisyonlarına ve yüksek lisans araştırma fırsatlarına açığım. Benimle iletişime geçmekten çekinmeyin!",
+      subtitle: "Full-stack, mobil ve yazılım mühendisliği rollerine; ayrıca IoT, mobile-cloud systems ve software engineering alanlarında yüksek lisans araştırma fırsatlarına açığım.",
       button: "Mesaj Gönder"
     },
 

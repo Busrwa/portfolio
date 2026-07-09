@@ -2,45 +2,39 @@
 import React from "react";
 import { FaGithub, FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../contexts/LanguageContext";
 
 // Map project id to tech badges
 const techMap = {
-  lilithia:   ["React Native", "Expo", "Firebase"],
-  hataDefteri:["React Native", "Expo", "Firebase"],
-  smartBin:   ["ESP32", "IoT", "React", "React Native"],
-  dsc:        ["React", "Django", "PostgreSQL"],
-  swipeIt:    ["React Native", "Firebase", "Expo"],
-  mindCaps:   ["React Native", "Flask", "AI"],
-  fridge:     ["React Native", "Expo", "API"],
-  email:      ["Python", "Flask", "SMTP"],
-  pdf:        ["Python", "Tkinter"],
-  blog:       ["Flask", "SQLite"],
-  todo:       ["Python", "Flask"],
-  tv:         ["React Native", "WebView"],
-  smartHome:  ["ESP32", "Flask", "Arduino"],
+  lilithia: ["React Native", "Expo", "Firebase"],
+  hataDefteri: ["React Native", "Expo", "Firebase"],
+  smartBin: ["ESP32", "IoT", "React", "React Native"],
+  dsc: ["React", "Django", "PostgreSQL"],
+  swipeIt: ["React Native", "Firebase", "Expo"],
+  mindCaps: ["React Native", "Flask", "AI"],
+  fridge: ["React Native", "Expo", "API"],
+  email: ["Python", "Flask", "SMTP"],
+  smartHome: ["ESP32", "Flask", "Arduino"],
 };
 
 // Category label
 const categoryMap = {
-  lilithia:   { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
-  hataDefteri:{ label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
-  smartBin:   { label: "IoT + Full Stack", color: "from-teal-500/20 to-teal-500/5" },
-  dsc:        { label: "Web", color: "from-blue-500/20 to-blue-500/5" },
-  swipeIt:    { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
-  mindCaps:   { label: "AI + Mobile", color: "from-emerald-500/20 to-emerald-500/5" },
-  fridge:     { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
-  email:      { label: "Desktop", color: "from-orange-500/20 to-orange-500/5" },
-  pdf:        { label: "Desktop", color: "from-orange-500/20 to-orange-500/5" },
-  blog:       { label: "Web", color: "from-blue-500/20 to-blue-500/5" },
-  todo:       { label: "Web", color: "from-blue-500/20 to-blue-500/5" },
-  tv:         { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
-  smartHome:  { label: "IoT", color: "from-teal-500/20 to-teal-500/5" },
+  lilithia: { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
+  hataDefteri: { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
+  smartBin: { label: "IoT + Full Stack", color: "from-teal-500/20 to-teal-500/5" },
+  dsc: { label: "Web", color: "from-blue-500/20 to-blue-500/5" },
+  swipeIt: { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
+  mindCaps: { label: "AI + Mobile", color: "from-emerald-500/20 to-emerald-500/5" },
+  fridge: { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
+  email: { label: "Web Utility", color: "from-orange-500/20 to-orange-500/5" },
+  smartHome: { label: "IoT", color: "from-teal-500/20 to-teal-500/5" },
 };
 
 const ProjectCard = ({
   id, title, description, image, github, liveUrl,
   screenshots = {}, demoVideo, hardwareDemoVideo,
 }) => {
+  const { language } = useLanguage();
   const techs = techMap[id] || [];
   const cat = categoryMap[id] || { label: "Project", color: "from-gray-500/20 to-gray-500/5" };
 
@@ -71,7 +65,7 @@ const ProjectCard = ({
         {/* Hover overlay - teal tint only, no bottom gradient to avoid flicker */}
         <div className="absolute inset-0 bg-teal-400/0 group-hover:bg-teal-400/8 transition-colors duration-300 flex items-end p-4">
           <span className="text-teal-400 text-sm font-medium flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            View Project <FaArrowRight size={11} />
+            {language === "tr" ? "Projeyi Gör" : "View Project"} <FaArrowRight size={11} />
           </span>
         </div>
       </div>
@@ -147,7 +141,7 @@ const ProjectCard = ({
             </button>
           )}
           <span className="ml-auto text-xs text-gray-600 group-hover:text-teal-400 transition-colors flex items-center gap-1">
-            Details <FaArrowRight size={10} />
+            {language === "tr" ? "Detaylar" : "Details"} <FaArrowRight size={10} />
           </span>
         </div>
       </div>

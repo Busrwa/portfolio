@@ -31,7 +31,7 @@ const TimelineItem = ({ title, sub, note, date, index }) => (
         <h4 className="text-gray-100 font-semibold text-sm" style={{ fontFamily: "'Syne', sans-serif" }}>{title}</h4>
         {date && <span className="text-xs text-teal-400 shrink-0">{date}</span>}
       </div>
-      {sub  && <p className="text-teal-400/80 text-xs mb-0.5">{sub}</p>}
+      {sub && <p className="text-teal-400/80 text-xs mb-0.5">{sub}</p>}
       {note && <p className="text-gray-500 text-xs">{note}</p>}
     </div>
   </motion.div>
@@ -42,30 +42,30 @@ const skillRows = [
     label: "Languages & Frameworks",
     labelTr: "Diller & Framework'ler",
     items: [
-      { icon: <SiPython />,     name: "Python" },
-      { icon: <SiDjango />,     name: "Django / DRF" },
-      { icon: <SiFlask />,      name: "Flask" },
+      { icon: <SiPython />, name: "Python" },
+      { icon: <SiDjango />, name: "Django / DRF" },
+      { icon: <SiFlask />, name: "Flask" },
       { icon: <SiJavascript />, name: "JavaScript" },
-      { icon: <SiReact />,      name: "React" },
-      { icon: <SiReact />,      name: "React Native" },
+      { icon: <SiReact />, name: "React" },
+      { icon: <SiReact />, name: "React Native" },
     ],
   },
   {
     label: "Tools & Platforms",
     labelTr: "Araçlar & Platformlar",
     items: [
-      { icon: <SiFirebase />,    name: "Firebase" },
-      { icon: <SiGit />,         name: "Git / GitHub" },
-      { icon: <SiPostgresql />,  name: "SQL / PostgreSQL" },
-      { icon: <SiFigma />,       name: "Figma" },
+      { icon: <SiFirebase />, name: "Firebase" },
+      { icon: <SiGit />, name: "Git / GitHub" },
+      { icon: <SiPostgresql />, name: "SQL / PostgreSQL" },
+      { icon: <SiFigma />, name: "Figma" },
     ],
   },
   {
     label: "Other",
     labelTr: "Diğer",
     items: [
-      { icon: <SiArduino />,    name: "Arduino" },
-      { icon: <FaMicrochip />,  name: "ESP32 (IoT)" },
+      { icon: <SiArduino />, name: "Arduino" },
+      { icon: <FaMicrochip />, name: "ESP32 (IoT)" },
     ],
   },
 ];
@@ -73,29 +73,49 @@ const skillRows = [
 const Resume = () => {
   const { t, language } = useLanguage();
 
-  const resumeFile     = language === "tr" ? "/Busra_Yagcioglu_CV.pdf" : "/Busra_Yagcioglu_CV_ENG.pdf";
-  const resumeFileName = language === "tr" ? "Busra_Yagcioglu_CV.pdf"  : "Busra_Yagcioglu_CV_ENG.pdf";
+  const resumeFile = language === "tr" ? "/Busra_Yagcioglu_CV.pdf" : "/Busra_Yagcioglu_CV_ENG.pdf";
+  const resumeFileName = language === "tr" ? "Busra_Yagcioglu_CV.pdf" : "Busra_Yagcioglu_CV_ENG.pdf";
 
   const education = [
     {
       title: t.resume.edu1,
-      sub:   t.resume.edu1Desc,
-      note:  `${t.resume.edu1Note} · ${t.resume.edu1Grad}`,
-      date:  "2022–2026",
+      sub: t.resume.edu1Desc,
+      note: `${t.resume.edu1Note} · ${t.resume.edu1Grad}`,
+      date: "2022–2026",
     },
     {
       title: t.resume.edu2,
-      sub:   t.resume.edu2Desc,
-      note:  t.resume.edu2Note,
-      date:  "2022",
+      sub: t.resume.edu2Desc,
+      note: t.resume.edu2Note,
+      date: "2022",
     },
   ];
 
   const experience = [
-    { title: "Sca Social",                     sub: t.resume.exp1, date: "Jun–Aug 2025", link: "https://scasocial.com/" },
-    { title: "Google DSC HKU",                 sub: t.resume.exp2, date: "2023–2024",    link: "https://gdg.community.dev/" },
-    { title: "Carousel Oceanfront Hotel, USA", sub: t.resume.exp3, date: "Summer 2023",  link: "https://carouselhotel.com/" },
-    { title: "Dolle's Candyland Inc., USA",    sub: t.resume.exp4, date: "Summer 2023",  link: "https://dolles.com" },
+    {
+      title: "Sca Social",
+      sub: t.resume.exp1,
+      date: "Jun–Aug 2025",
+      link: "https://scasocial.com/",
+    },
+    {
+      title: "Rigelsan Defense & Security",
+      sub: t.resume.exp2,
+      date: "2025",
+      link: "https://rigelsan.com/",
+    },
+    {
+      title: "Google DSC HKU",
+      sub: t.resume.exp3,
+      date: "2023–2024",
+      link: "https://gdg.community.dev/",
+    },
+    {
+      title: "Carousel Oceanfront Hotel, USA",
+      sub: t.resume.exp4,
+      date: "Summer 2023",
+      link: "https://carouselhotel.com/",
+    },
   ];
 
   return (

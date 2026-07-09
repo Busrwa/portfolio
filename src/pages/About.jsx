@@ -22,44 +22,44 @@ const skillGroups = [
     labelKey: "webMobile",
     icon: <SiReact className="text-cyan-400" />,
     chips: [
-      { label: "React",          icon: <SiReact /> },
-      { label: "React Native",   icon: <SiExpo /> },
-      { label: "JavaScript",     icon: <SiJavascript /> },
+      { label: "React", icon: <SiReact /> },
+      { label: "React Native", icon: <SiExpo /> },
+      { label: "JavaScript", icon: <SiJavascript /> },
     ],
   },
   {
     labelKey: "backend",
     icon: <SiDjango className="text-green-400" />,
     chips: [
-      { label: "Django REST",    icon: <SiDjango /> },
-      { label: "Flask",          icon: <SiFlask /> },
-      { label: "Node.js",        icon: <SiNodedotjs /> },
-      { label: "Python",         icon: <SiPython /> },
+      { label: "Django REST", icon: <SiDjango /> },
+      { label: "Flask", icon: <SiFlask /> },
+      { label: "Node.js", icon: <SiNodedotjs /> },
+      { label: "Python", icon: <SiPython /> },
     ],
   },
   {
     labelKey: "data",
     icon: <SiPostgresql className="text-blue-400" />,
     chips: [
-      { label: "PostgreSQL",     icon: <SiPostgresql /> },
-      { label: "Firebase",       icon: <SiFirebase /> },
+      { label: "PostgreSQL", icon: <SiPostgresql /> },
+      { label: "Firebase", icon: <SiFirebase /> },
     ],
   },
   {
     labelKey: "iot",
     icon: <FaMicrochip className="text-teal-400" />,
     chips: [
-      { label: "ESP32",          icon: <FaMicrochip /> },
-      { label: "Arduino",        icon: <SiArduino /> },
+      { label: "ESP32", icon: <FaMicrochip /> },
+      { label: "Arduino", icon: <SiArduino /> },
     ],
   },
   {
     labelKey: "deploy",
     icon: <SiNetlify className="text-teal-300" />,
     chips: [
-      { label: "Netlify",        icon: <SiNetlify /> },
-      { label: "Git",            icon: <SiGit /> },
-      { label: "Figma",          icon: <SiFigma /> },
+      { label: "Netlify", icon: <SiNetlify /> },
+      { label: "Git", icon: <SiGit /> },
+      { label: "Figma", icon: <SiFigma /> },
     ],
   },
 ];
@@ -70,10 +70,16 @@ const About = () => {
   const langLevels = [
     { name: t.about.turkish, level: t.about.native, pct: 100 },
     { name: t.about.english, level: "B2", pct: 72 },
-    { name: t.about.german,  level: "A1", pct: 20 },
-    { name: t.about.greek,   level: "A1", pct: 20 },
+    { name: t.about.german, level: "A1", pct: 20 },
+    { name: t.about.greek, level: "A1", pct: 20 },
   ];
-
+  const researchItems = [
+    t.about.research1,
+    t.about.research2,
+    t.about.research3,
+    t.about.research4,
+    t.about.research5,
+  ];
   return (
     <section id="about" className="py-24 px-6 max-w-6xl mx-auto" style={{ position: "relative", zIndex: 1 }}>
 
@@ -110,13 +116,11 @@ const About = () => {
             {t.about.intro2}
             <span className="text-teal-400 font-medium">{t.about.scholarship}</span>
             {t.about.intro3}
-            <span className="text-teal-400">{t.about.webMobile}</span>,{" "}
-            <span className="text-teal-400">{t.about.iot}</span>
-            {t.about.intro4}
           </p>
           <p className="text-gray-300 leading-relaxed">
             {t.about.experience}
             <span className="text-teal-400">{t.about.pm}</span>,{" "}
+            <span className="text-teal-400">{t.about.software}</span>,{" "}
             <span className="text-teal-400">{t.about.lead}</span>
             {t.about.international}
             {t.about.usa}
@@ -156,11 +160,36 @@ const About = () => {
           </div>
         </motion.div>
       </div>
+      {/* Research Interests */}
+      <motion.div
+        variants={fadeUp}
+        custom={2}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mb-16 bg-[#111827] rounded-2xl p-6 border border-white/5"
+      >
+        <h3 className="text-teal-400 font-semibold mb-3">
+          🔬 {t.about.researchTitle}
+        </h3>
+
+        <p className="text-gray-300 text-sm leading-relaxed mb-5 max-w-3xl">
+          {t.about.researchIntro}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {researchItems.map((item) => (
+            <span key={item} className="skill-chip">
+              {item}
+            </span>
+          ))}
+        </div>
+      </motion.div>
 
       {/* Skills */}
       <motion.div
         variants={fadeUp}
-        custom={2}
+        custom={3}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -195,7 +224,7 @@ const About = () => {
       {/* Certificates */}
       <motion.div
         variants={fadeUp}
-        custom={3}
+        custom={4}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

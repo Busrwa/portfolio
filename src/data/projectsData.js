@@ -1,0 +1,309 @@
+// src/data/projectsData.js
+
+// FRIDGE
+import fridgeCover from "../assets/fridge/fridge-cover.png";
+import fridge1 from "../assets/fridge/fridge1.png";
+import fridge2 from "../assets/fridge/fridge2.png";
+import fridge3 from "../assets/fridge/fridge3.png";
+import fridge4 from "../assets/fridge/fridge4.png";
+import fridge5 from "../assets/fridge/fridge5.png";
+import fridgeDemo from "../assets/fridge/fridge-demo.mp4";
+
+// EMAIL
+import emailCover from "../assets/email/email1.png";
+import email1 from "../assets/email/email1.png";
+import email2 from "../assets/email/email2.png";
+import email3 from "../assets/email/email3.png";
+import emailDemo from "../assets/email/email-demo.mp4";
+
+// MINDCAPS
+import mindCapsCover from "../assets/mindcaps/icon.png";
+import mindCaps1 from "../assets/mindcaps/mindcaps1.png";
+import mindCaps2 from "../assets/mindcaps/mindcaps2.png";
+import mindCaps3 from "../assets/mindcaps/mindcaps3.png";
+import mindCaps4 from "../assets/mindcaps/mindcaps4.png";
+import mindCaps5 from "../assets/mindcaps/mindcaps5.png";
+import mindCaps6 from "../assets/mindcaps/mindcaps6.png";
+import mindCaps7 from "../assets/mindcaps/mindcaps7.png";
+import mindCaps8 from "../assets/mindcaps/mindcaps8.png";
+import mindCaps9 from "../assets/mindcaps/mindcaps9.png";
+import mindCaps10 from "../assets/mindcaps/mindcaps10.png";
+import mindCaps11 from "../assets/mindcaps/mindcaps11.png";
+import mindCaps12 from "../assets/mindcaps/mindcaps12.png";
+import mindCaps13 from "../assets/mindcaps/mindcaps13.png";
+import mindCaps14 from "../assets/mindcaps/mindcaps14.png";
+import mindCaps15 from "../assets/mindcaps/mindcaps15.png";
+import mindCapsDemo from "../assets/mindcaps/mincaps-demo.mp4";
+
+// SMART HOME
+import smartHomeCover from "../assets/smartHome/smartHome1.jpg";
+import smartHome1 from "../assets/smartHome/smartHome1.jpg";
+import smartHomeDemo from "../assets/smartHome/smartHome-demo.mp4";
+
+// SWIPE IT
+import swipeItCover from "../assets/swipeIt/swipeit-cover.png";
+import swipeit1 from "../assets/swipeIt/swipeIt1.jpg";
+import swipeit2 from "../assets/swipeIt/swipeIt2.jpg";
+import swipeit3 from "../assets/swipeIt/swipeIt3.jpg";
+import swipeit4 from "../assets/swipeIt/swipeIt4.jpg";
+import swipeit5 from "../assets/swipeIt/swipeIt5.jpg";
+import swipeit6 from "../assets/swipeIt/swipeIt6.jpg";
+import swipeit7 from "../assets/swipeIt/swipeIt7.jpg";
+import swipeit8 from "../assets/swipeIt/swipeIt8.jpg";
+import swipeit9 from "../assets/swipeIt/swipeIt9.jpg";
+import swipeit10 from "../assets/swipeIt/swipeIt10.jpg";
+import swipeit11 from "../assets/swipeIt/swipeIt11.jpg";
+import swipeit12 from "../assets/swipeIt/swipeIt12.jpg";
+import swipeit13 from "../assets/swipeIt/swipeIt13.jpg";
+import swipeit14 from "../assets/swipeIt/swipeIt14.jpg";
+
+// DSC
+import dsc1 from "../assets/dsc/dsc1.png";
+import dsc2 from "../assets/dsc/dsc2.png";
+import dsc3 from "../assets/dsc/dsc3.png";
+import dsc4 from "../assets/dsc/dsc4.png";
+import dsc5 from "../assets/dsc/dsc5.png";
+import dsc6 from "../assets/dsc/dsc6.png";
+import dsc7 from "../assets/dsc/dsc7.png";
+import dsc8 from "../assets/dsc/dsc8.png";
+
+// SMART BIN
+import smartBinCover from "../assets/smartBin/cover.png";
+import smartBinDemo from "../assets/smartBin/demo_smartbin.mp4";
+import smartBinWeb1 from "../assets/smartBin/smartBinWeb1.png";
+import smartBinWeb2 from "../assets/smartBin/smartBinWeb2.png";
+import smartBinWeb3 from "../assets/smartBin/smartBinWeb3.png";
+import smartBinWeb4 from "../assets/smartBin/smartBinWeb4.png";
+import smartBinWeb5 from "../assets/smartBin/smartBinWeb5.png";
+import smartBinWeb6 from "../assets/smartBin/smartBinWeb6.png";
+import smartBinWeb7 from "../assets/smartBin/smartBinWeb7.png";
+import smartBinWeb8 from "../assets/smartBin/smartBinWeb8.png";
+import smartBinWeb9 from "../assets/smartBin/smartBinWeb9.png";
+import smartBinMobile1 from "../assets/smartBin/smartBinMobil1.jpeg";
+import smartBinMobile2 from "../assets/smartBin/smartBinMobil2.jpeg";
+import smartBinMobile3 from "../assets/smartBin/smartBinMobil3.jpeg";
+import smartBinMobile4 from "../assets/smartBin/smartBinMobil4.jpeg";
+import smartBinMobile5 from "../assets/smartBin/smartBinMobil5.jpeg";
+import smartBinMobile6 from "../assets/smartBin/smartBinMobil6.jpeg";
+import smartBinMobile7 from "../assets/smartBin/smartBinMobil7.jpeg";
+import smartBinHw1 from "../assets/smartBin/smartBinHw1.jpeg";
+import smartBinHw2 from "../assets/smartBin/smartBinHw2.jpeg";
+import smartBinHwDemo from "../assets/smartBin/smartBinHw-Demo.mp4";
+
+// HATA DEFTERI / SMURFIA
+import hataDefteriCover from "../assets/hataDefteri/cover.png";
+import hataDefteri1 from "../assets/hataDefteri/smurfia1.png";
+import hataDefteri2 from "../assets/hataDefteri/smurfia2.png";
+import hataDefteri3 from "../assets/hataDefteri/smurfia3.png";
+import hataDefteri4 from "../assets/hataDefteri/smurfia4.png";
+import hataDefteri5 from "../assets/hataDefteri/smurfia5.png";
+import hataDefteri6 from "../assets/hataDefteri/smurfia6.png";
+import hataDefteri7 from "../assets/hataDefteri/smurfia7.png";
+import hataDefteri8 from "../assets/hataDefteri/smurfia8.png";
+
+// LILITHIA
+import lilithiaCover from "../assets/lilithia/lilithia-cover.png";
+import lilithia1 from "../assets/lilithia/lilithia1.jpeg";
+import lilithia2 from "../assets/lilithia/lilithia2.jpeg";
+import lilithia3 from "../assets/lilithia/lilithia3.jpeg";
+import lilithia4 from "../assets/lilithia/lilithia4.jpeg";
+import lilithia5 from "../assets/lilithia/lilithia5.jpeg";
+import lilithia6 from "../assets/lilithia/lilithia6.jpeg";
+import lilithia7 from "../assets/lilithia/lilithia7.jpeg";
+import lilithia8 from "../assets/lilithia/lilithia8.jpeg";
+import lilithia9 from "../assets/lilithia/lilithia9.jpeg";
+import lilithia10 from "../assets/lilithia/lilithia10.jpeg";
+import lilithia11 from "../assets/lilithia/lilithia11.jpeg";
+import lilithiaDemo from "../assets/lilithia/lilithia-demo.mp4";
+
+export const getProjectsData = (t) => [
+  {
+    id: "smartBin",
+    title: t.projects.smartBin.title,
+    description: t.projects.smartBin.desc,
+    liveUrl: "https://smartbinwebsite.netlify.app/",
+    github: {
+      web: "https://github.com/Busrwa/SmartBinWebsite",
+      mobile: "https://github.com/Busrwa/SmartBinMobil",
+    },
+    image: smartBinCover,
+    screenshots: {
+      hardware: [smartBinHw1, smartBinHw2],
+      web: [
+        smartBinWeb1,
+        smartBinWeb2,
+        smartBinWeb3,
+        smartBinWeb4,
+        smartBinWeb5,
+        smartBinWeb6,
+        smartBinWeb7,
+        smartBinWeb8,
+        smartBinWeb9,
+      ],
+      mobile: [
+        smartBinMobile1,
+        smartBinMobile2,
+        smartBinMobile3,
+        smartBinMobile4,
+        smartBinMobile5,
+        smartBinMobile6,
+        smartBinMobile7,
+      ],
+    },
+    demoVideo: smartBinDemo,
+    hardwareDemoVideo: smartBinHwDemo,
+  },
+  {
+    id: "dsc",
+    title: t.projects.dsc.title,
+    description: t.projects.dsc.desc,
+    liveUrl: t.projects.dsc.liveUrl,
+    image: dsc1,
+    screenshots: {
+      web: [dsc1, dsc2, dsc3, dsc4, dsc5, dsc6, dsc7, dsc8],
+    },
+    github: {
+      web: "https://github.com/Busrwa/dsc_Website_Frontend",
+    },
+  },
+  {
+    id: "mindCaps",
+    title: t.projects.mindCaps.title,
+    description: t.projects.mindCaps.desc,
+    image: mindCapsCover,
+    github: {
+      mobile: "https://github.com/Busrwa/MindCaps",
+    },
+    screenshots: {
+      mobile: [
+        mindCaps1,
+        mindCaps2,
+        mindCaps3,
+        mindCaps4,
+        mindCaps5,
+        mindCaps6,
+        mindCaps7,
+        mindCaps8,
+        mindCaps9,
+        mindCaps10,
+        mindCaps11,
+        mindCaps12,
+        mindCaps13,
+        mindCaps14,
+        mindCaps15,
+      ],
+    },
+    demoVideo: mindCapsDemo,
+  },
+  {
+    id: "hataDefteri",
+    title: t.projects.hataDefteri.title,
+    description: t.projects.hataDefteri.desc,
+    image: hataDefteriCover,
+    screenshots: {
+      mobile: [
+        hataDefteri1,
+        hataDefteri2,
+        hataDefteri3,
+        hataDefteri4,
+        hataDefteri5,
+        hataDefteri6,
+        hataDefteri7,
+        hataDefteri8,
+      ],
+    },
+    liveUrl: "https://play.google.com/store/apps/details?id=com.busrwa.smurfiaapp",
+    github: {
+      mobile: "https://github.com/Busrwa/HataDefteri",
+    },
+  },
+  {
+    id: "lilithia",
+    title: t.projects.lilithia.title,
+    description: t.projects.lilithia.desc,
+    image: lilithiaCover,
+    liveUrl: "https://play.google.com/store/apps/details?id=com.busrwa.lilithia",
+    screenshots: {
+      mobile: [
+        lilithia1,
+        lilithia2,
+        lilithia3,
+        lilithia4,
+        lilithia5,
+        lilithia6,
+        lilithia7,
+        lilithia8,
+        lilithia9,
+        lilithia10,
+        lilithia11,
+      ],
+    },
+    demoVideo: lilithiaDemo,
+  },
+  {
+    id: "swipeIt",
+    title: t.projects.swipeIt.title,
+    description: t.projects.swipeIt.desc,
+    image: swipeItCover,
+    screenshots: {
+      mobile: [
+        swipeit1,
+        swipeit2,
+        swipeit3,
+        swipeit4,
+        swipeit5,
+        swipeit6,
+        swipeit7,
+        swipeit8,
+        swipeit9,
+        swipeit10,
+        swipeit11,
+        swipeit12,
+        swipeit13,
+        swipeit14,
+      ],
+    },
+    github: {
+      mobile: "https://github.com/Busrwa/swipeit",
+    },
+  },
+  {
+    id: "fridge",
+    title: t.projects.fridge.title,
+    description: t.projects.fridge.desc,
+    image: fridgeCover,
+    github: {
+      mobile: "https://github.com/Busrwa/whatIsInMyFridge",
+    },
+    screenshots: {
+      mobile: [fridge1, fridge2, fridge3, fridge4, fridge5],
+    },
+    demoVideo: fridgeDemo,
+  },
+  {
+    id: "email",
+    title: t.projects.email.title,
+    description: t.projects.email.desc,
+    image: emailCover,
+    github: {
+      web: "https://github.com/Busrwa/Otomatik_E-posta_Gonderici",
+    },
+    screenshots: {
+      web: [email1, email2, email3],
+    },
+    demoVideo: emailDemo,
+  },
+  {
+    id: "smartHome",
+    title: t.projects.smartHome.title,
+    description: t.projects.smartHome.desc,
+    image: smartHomeCover,
+    github: {
+      web: "https://github.com/Busrwa/SmartHomeSecuritySystem",
+    },
+    screenshots: {
+      hardware: [smartHome1],
+    },
+    demoVideo: smartHomeDemo,
+  },
+];

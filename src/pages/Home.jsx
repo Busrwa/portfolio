@@ -112,9 +112,9 @@ const Home = () => {
   ];
 
   const stats = [
-    { value: "13+", label: language === "tr" ? "Proje" : "Projects" },
-    { value: "2",   label: language === "tr" ? "Play Store Uygulaması" : "Play Store Apps" },
-    { value: "3+",  label: language === "tr" ? "Deneyim" : "Work Experience" },
+    { value: "9", label: language === "tr" ? "Seçilmiş Proje" : "Selected Projects" },
+    { value: "2", label: language === "tr" ? "Play Store Uygulaması" : "Play Store Apps" },
+    { value: "3+", label: language === "tr" ? "Deneyim" : "Work Experience" },
   ];
 
   return (
