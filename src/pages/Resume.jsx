@@ -93,6 +93,15 @@ const Resume = () => {
 
   const experience = [
     {
+      title: "Logicute",
+      sub:
+        language === "tr"
+          ? "— Mobil Uygulama Geliştirici Stajyeri (CO-OP)"
+          : "— Mobile Application Developer Intern (CO-OP)",
+      date: language === "tr" ? "Şub–May 2026" : "Feb–May 2026",
+      link: "https://www.logicute.com/",
+    },
+    {
       title: "Sca Social",
       sub: t.resume.exp1,
       date: "Jun–Aug 2025",
