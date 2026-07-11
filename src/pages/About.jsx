@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
 import {
   SiReact, SiDjango, SiFirebase, SiArduino, SiPython,
-  SiFlask, SiJavascript, SiExpo, SiPostgresql, SiNodedotjs,
+  SiFlask, SiJavascript, SiExpo, SiPostgresql,
   SiNetlify, SiGit, SiFigma,
 } from "react-icons/si";
 import { FaMicrochip } from "react-icons/fa";
@@ -23,7 +23,8 @@ const skillGroups = [
     icon: <SiReact className="text-cyan-400" />,
     chips: [
       { label: "React", icon: <SiReact /> },
-      { label: "React Native", icon: <SiExpo /> },
+      { label: "React Native", icon: <SiReact /> },
+      { label: "Expo", icon: <SiExpo /> },
       { label: "JavaScript", icon: <SiJavascript /> },
     ],
   },
@@ -33,7 +34,7 @@ const skillGroups = [
     chips: [
       { label: "Django REST", icon: <SiDjango /> },
       { label: "Flask", icon: <SiFlask /> },
-      { label: "Node.js", icon: <SiNodedotjs /> },
+      { label: "REST API", icon: <SiGit /> },
       { label: "Python", icon: <SiPython /> },
     ],
   },
@@ -43,6 +44,7 @@ const skillGroups = [
     chips: [
       { label: "PostgreSQL", icon: <SiPostgresql /> },
       { label: "Firebase", icon: <SiFirebase /> },
+      { label: "Firestore", icon: <SiFirebase /> },
     ],
   },
   {
@@ -58,6 +60,7 @@ const skillGroups = [
     icon: <SiNetlify className="text-teal-300" />,
     chips: [
       { label: "Netlify", icon: <SiNetlify /> },
+      { label: "Render", icon: <SiNetlify /> },
       { label: "Git", icon: <SiGit /> },
       { label: "Figma", icon: <SiFigma /> },
     ],
@@ -71,7 +74,6 @@ const About = () => {
     { name: t.about.turkish, level: t.about.native, pct: 100 },
     { name: t.about.english, level: "B2", pct: 72 },
     { name: t.about.german, level: "A1", pct: 20 },
-    { name: t.about.greek, level: "A1", pct: 20 },
   ];
   const researchItems = [
     t.about.research1,
@@ -232,7 +234,7 @@ const About = () => {
       >
         <h3 className="text-teal-400 font-semibold mb-5">🎓 {t.about.certificates}</h3>
         <div className="grid sm:grid-cols-2 gap-3">
-          {[t.about.cert1, t.about.cert2, t.about.cert3, t.about.cert4].map((cert) => (
+          {[t.about.cert1, t.about.cert2, t.about.cert5, t.about.cert4, t.about.cert3].map((cert) => (
             <div
               key={cert}
               className="flex items-start gap-3 p-3 rounded-xl bg-white/3 border border-white/5 hover:border-teal-400/30 transition-colors"

@@ -5,6 +5,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 import {
   SiReact, SiDjango, SiFirebase, SiArduino, SiPython,
   SiFlask, SiJavascript, SiPostgresql, SiFigma, SiGit,
+  SiExpo, SiNetlify,
 } from "react-icons/si";
 import { FaMicrochip } from "react-icons/fa";
 
@@ -39,37 +40,54 @@ const TimelineItem = ({ title, sub, note, date, index }) => (
 
 const skillRows = [
   {
-    label: "Languages & Frameworks",
-    labelTr: "Diller & Framework'ler",
+    label: "Frontend & Mobile",
+    labelTr: "Frontend & Mobil",
+    items: [
+      { icon: <SiJavascript />, name: "JavaScript" },
+      { icon: <SiReact />, name: "React" },
+      { icon: <SiReact />, name: "React Native" },
+      { icon: <SiExpo />, name: "Expo" },
+    ],
+  },
+  {
+    label: "Backend & APIs",
+    labelTr: "Backend & API",
     items: [
       { icon: <SiPython />, name: "Python" },
       { icon: <SiDjango />, name: "Django / DRF" },
       { icon: <SiFlask />, name: "Flask" },
-      { icon: <SiJavascript />, name: "JavaScript" },
-      { icon: <SiReact />, name: "React" },
-      { icon: <SiReact />, name: "React Native" },
+      { icon: <SiGit />, name: "REST API" },
     ],
   },
   {
-    label: "Tools & Platforms",
-    labelTr: "Araçlar & Platformlar",
+    label: "Data & Cloud",
+    labelTr: "Veri & Bulut",
     items: [
       { icon: <SiFirebase />, name: "Firebase" },
-      { icon: <SiGit />, name: "Git / GitHub" },
+      { icon: <SiFirebase />, name: "Firestore" },
       { icon: <SiPostgresql />, name: "SQL / PostgreSQL" },
+    ],
+  },
+  {
+    label: "IoT & Embedded",
+    labelTr: "IoT & Gömülü Sistemler",
+    items: [
+      { icon: <SiArduino />, name: "Arduino" },
+      { icon: <FaMicrochip />, name: "ESP32" },
+      { icon: <FaMicrochip />, name: "C/C++" },
+    ],
+  },
+  {
+    label: "Tools & Deployment",
+    labelTr: "Araçlar & Yayına Alma",
+    items: [
+      { icon: <SiNetlify />, name: "Netlify" },
+      { icon: <SiGit />, name: "Render" },
+      { icon: <SiGit />, name: "Git / GitHub" },
       { icon: <SiFigma />, name: "Figma" },
     ],
   },
-  {
-    label: "Other",
-    labelTr: "Diğer",
-    items: [
-      { icon: <SiArduino />, name: "Arduino" },
-      { icon: <FaMicrochip />, name: "ESP32 (IoT)" },
-    ],
-  },
 ];
-
 const Resume = () => {
   const { t, language } = useLanguage();
 
@@ -104,14 +122,8 @@ const Resume = () => {
     {
       title: "Sca Social",
       sub: t.resume.exp1,
-      date: "Jun–Aug 2025",
+      date: language === "tr" ? "Haz–Ağu 2025" : "Jun–Aug 2025",
       link: "https://scasocial.com/",
-    },
-    {
-      title: "Rigelsan Defense & Security",
-      sub: t.resume.exp2,
-      date: "2025",
-      link: "https://rigelsan.com/",
     },
     {
       title: "Google DSC HKU",
@@ -120,9 +132,9 @@ const Resume = () => {
       link: "https://gdg.community.dev/",
     },
     {
-      title: "Carousel Oceanfront Hotel, USA",
+      title: "Carousel Oceanfront Hotel & Condos / Dolle’s Candyland Inc.",
       sub: t.resume.exp4,
-      date: "Summer 2023",
+      date: language === "tr" ? "Yaz 2023" : "Summer 2023",
       link: "https://carouselhotel.com/",
     },
   ];
@@ -273,7 +285,7 @@ const Resume = () => {
           <span className="text-teal-400">📜</span> {t.resume.certificates}
         </h3>
         <div className="grid sm:grid-cols-2 gap-3">
-          {[t.about.cert1, t.about.cert2, t.about.cert3, t.about.cert4].map((cert) => (
+          {[t.about.cert1, t.about.cert2, t.about.cert5, t.about.cert4, t.about.cert3].map((cert) => (
             <div
               key={cert}
               className="flex items-start gap-3 p-3 rounded-xl bg-white/3 border border-white/5 hover:border-teal-400/30 transition-colors"

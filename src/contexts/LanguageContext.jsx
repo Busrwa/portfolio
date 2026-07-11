@@ -24,7 +24,7 @@ export const translations = {
     // Home
     home: {
       greeting: "Hi, I'm Busra",
-      description: "Software Engineering graduate building full-stack web applications, mobile products, AI-integrated tools, and IoT systems. Experienced with React, React Native, Django REST Framework, Flask, Firebase, and ESP32.",
+      description: "Software Engineering graduate building full-stack web applications, mobile products, AI-integrated tools, and IoT systems. Experienced with React, React Native, Expo, Django REST Framework, Flask, Firebase, Render, and ESP32.",
       viewResume: "View Resume",
       myProjects: "My Projects"
     },
@@ -54,7 +54,7 @@ export const translations = {
         webMobile: "Frontend & Mobile",
         webMobileDesc: "React · React Native (Expo) · Component Architecture · Navigation",
         backend: "Backend & APIs",
-        backendDesc: "Django REST Framework · Flask · Node.js · JWT Auth · CRUD",
+        backendDesc: "Django REST Framework · Flask · REST API · API Integration",
         data: "Database & Cloud",
         dataDesc: "PostgreSQL · SQLite · Firebase Firestore · Data Modeling",
         iot: "IoT & Embedded",
@@ -69,12 +69,12 @@ export const translations = {
       turkish: "Turkish",
       english: "English",
       german: "German",
-      greek: "Greek",
       certificates: "Certificates",
       cert1: "Project Management Intern — Sca Social (2025)",
-      cert2: "Google DSC Campus Representative (2024)",
+      cert2: "Google DSC Campus Lead / Campus Representative (2024)",
       cert3: "Work and Travel — USA (2023)",
-      cert4: "B2 English — ST Giles, UK (2022)"
+      cert4: "B2 English — ST Giles, UK (2022)",
+      cert5: "Game and App Academy — App Development with Flutter (2023)",
     },
 
     // Projects — unchanged content, titles same
@@ -183,7 +183,6 @@ MindCaps is designed as a software engineering and AI integration project, not a
       edu2Note: "Completed in 2022",
       experience: "Experience",
       exp1: "— Project Management Intern (Jun–Aug 2025)",
-      exp2: "— Software Engineering Intern",
       exp3: "— Campus Lead (2023–2024)",
       exp4: "— Front Desk Associate (Summer 2023)",
       skills: "Technical Skills",
@@ -240,7 +239,7 @@ MindCaps is designed as a software engineering and AI integration project, not a
     // Home
     home: {
       greeting: "Merhaba, Ben Büşra",
-      description: "React, React Native, Django REST Framework, Flask, Firebase ve ESP32 ile full-stack web uygulamaları, mobil ürünler, yapay zeka entegreli araçlar ve IoT sistemleri geliştiren Yazılım Mühendisliği mezunuyum.",
+      description: "React, React Native, Expo, Render, Django REST Framework, Flask, Firebase ve ESP32 ile full-stack web uygulamaları, mobil ürünler, yapay zeka entegreli araçlar ve IoT sistemleri geliştiren Yazılım Mühendisliği mezunuyum.",
       viewResume: "Özgeçmişi Görüntüle",
       myProjects: "Projelerim"
     },
@@ -270,7 +269,7 @@ MindCaps is designed as a software engineering and AI integration project, not a
         webMobile: "Frontend & Mobil",
         webMobileDesc: "React · React Native (Expo) · Bileşen Mimarisi · Navigasyon",
         backend: "Backend & API",
-        backendDesc: "Django REST Framework · Flask · Node.js · JWT Auth · CRUD",
+        backendDesc: "Django REST Framework · Flask · REST API · API Entegrasyonu",
         data: "Veritabanı & Bulut",
         dataDesc: "PostgreSQL · SQLite · Firebase Firestore · Veri Modelleme",
         iot: "IoT & Gömülü",
@@ -285,12 +284,12 @@ MindCaps is designed as a software engineering and AI integration project, not a
       turkish: "Türkçe",
       english: "İngilizce",
       german: "Almanca",
-      greek: "Yunanca",
       certificates: "Sertifikalar",
       cert1: "Proje Yönetimi Stajı — Sca Social (2025)",
-      cert2: "Google DSC Kampüs Temsilcisi (2024)",
+      cert2: "Google DSC Kampüs Lideri / Kampüs Temsilcisi (2024)",
       cert3: "Work and Travel — ABD (2023)",
-      cert4: "B2 İngilizce — ST Giles, İngiltere (2022)"
+      cert4: "B2 İngilizce — ST Giles, İngiltere (2022)",
+      cert5: "Game and App Academy — Flutter ile Uygulama Geliştirme (2023)",
     },
 
     // Projects
@@ -399,7 +398,6 @@ MindCaps; tıbbi, tanısal veya terapi amaçlı bir araç değil, yazılım müh
       edu2Note: "Tamamlandı: 2022",
       experience: "Deneyim",
       exp1: "— Proje Yönetimi Stajyeri (Haz–Ağu 2025)",
-      exp2: "— Yazılım Mühendisliği Stajyeri",
       exp3: "— Kampüs Lideri (2023–2024)",
       exp4: "— Resepsiyonist (Yaz 2023)",
       skills: "Teknik Beceriler",
@@ -412,7 +410,7 @@ MindCaps; tıbbi, tanısal veya terapi amaçlı bir araç değil, yazılım müh
     // Contact
     contact: {
       title: "İletişime Geçin",
-      subtitle: "Full-stack, mobil ve yazılım mühendisliği rollerine; ayrıca IoT, mobile-cloud systems ve software engineering alanlarında yüksek lisans araştırma fırsatlarına açığım.",
+      subtitle: "Full-stack, mobil ve yazılım mühendisliği rollerine; ayrıca IoT, mobil-bulut sistemleri ve yazılım mühendisliği alanlarındaki yüksek lisans ve araştırma fırsatlarına açığım.",
       button: "Mesaj Gönder"
     },
 
