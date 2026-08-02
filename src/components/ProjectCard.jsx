@@ -67,7 +67,15 @@ const categoryMap = {
       "border-[#b6c1a6] bg-[#f0f4e9]/90 text-[#526147]",
   },
 };
-
+const categoryLabelTr = {
+  Mobile: "Mobil",
+  "IoT + Full Stack": "IoT + Full-Stack",
+  Web: "Web",
+  "AI + Mobile": "Yapay Zekâ + Mobil",
+  "Web Utility": "Web Aracı",
+  IoT: "IoT",
+  Project: "Proje",
+};
 const ProjectCard = ({
   id,
   title,
@@ -89,7 +97,18 @@ const ProjectCard = ({
       style:
         "border-[#d8c7bb] bg-[#fffaf5]/90 text-[#6d5a52]",
     };
-
+  const actionText =
+    language === "tr"
+      ? {
+        githubWeb: "GitHub Web",
+        githubMobile: "GitHub Mobil",
+        liveDemo: "Canlı Demo",
+      }
+      : {
+        githubWeb: "GitHub Web",
+        githubMobile: "GitHub Mobile",
+        liveDemo: "Live Demo",
+      };
   const projectState = {
     projectId: id,
     screenshots,
@@ -105,9 +124,8 @@ const ProjectCard = ({
       <Link
         to={`/project-detail/${id}`}
         state={projectState}
-        aria-label={`${title} ${
-          language === "tr" ? "proje detayları" : "project details"
-        }`}
+        aria-label={`${title} ${language === "tr" ? "proje detayları" : "project details"
+          }`}
         className="absolute inset-0 z-10 rounded-[26px]"
       />
 
@@ -128,7 +146,9 @@ const ProjectCard = ({
         <span
           className={`absolute left-4 top-4 rounded-full border px-3 py-1.5 text-[0.66rem] font-semibold uppercase tracking-[0.1em] shadow-sm backdrop-blur-md ${category.style}`}
         >
-          {category.label}
+          {language === "tr"
+            ? categoryLabelTr[category.label] || category.label
+            : category.label}
         </span>
 
         {/* Hover detail label */}
@@ -196,8 +216,8 @@ const ProjectCard = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-[#dfd0c5] bg-white/65 text-[#77655c] transition hover:-translate-y-0.5 hover:border-[#9e2a22]/40 hover:bg-white hover:text-[#9e2a22]"
-                  title="GitHub Web"
-                  aria-label={`${title} GitHub Web`}
+                  title={actionText.githubWeb}
+                  aria-label={`${title} ${actionText.githubWeb}`}
                 >
                   <FaGithub size={15} />
                 </a>
@@ -209,8 +229,8 @@ const ProjectCard = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-[#dfd0c5] bg-white/65 text-[#77655c] transition hover:-translate-y-0.5 hover:border-[#9e2a22]/40 hover:bg-white hover:text-[#9e2a22]"
-                  title="GitHub Mobile"
-                  aria-label={`${title} GitHub Mobile`}
+                  title={actionText.githubMobile}
+                  aria-label={`${title} ${actionText.githubMobile}`}
                 >
                   <FaGithub size={15} />
                 </a>
@@ -224,8 +244,8 @@ const ProjectCard = ({
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-9 w-9 items-center justify-center rounded-full border border-[#dfd0c5] bg-white/65 text-[#77655c] transition hover:-translate-y-0.5 hover:border-[#9e2a22]/40 hover:bg-white hover:text-[#9e2a22]"
-              title="Live Demo"
-              aria-label={`${title} Live Demo`}
+              title={actionText.liveDemo}
+              aria-label={`${title} ${actionText.liveDemo}`}
             >
               <FaExternalLinkAlt size={13} />
             </a>

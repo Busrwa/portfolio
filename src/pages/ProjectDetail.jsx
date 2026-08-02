@@ -339,7 +339,17 @@ const Section = ({ icon, title, children }) => (
 // ─────────────────────────────────────────────────────────────────────────────
 // LIGHTBOX COMPONENT
 // ─────────────────────────────────────────────────────────────────────────────
-const Lightbox = ({ src, onClose, onPrev, onNext, total, current }) => {
+const Lightbox = ({
+  src,
+  onClose,
+  onPrev,
+  onNext,
+  total,
+  current,
+  language,
+  title,
+}) => {
+  const isTurkish = language === "tr";
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "Escape") onClose();
@@ -363,7 +373,14 @@ const Lightbox = ({ src, onClose, onPrev, onNext, total, current }) => {
         {/* Prev button */}
         {total > 1 && (
           <button
-            onClick={(e) => { e.stopPropagation(); onPrev(); }}
+            type="button"
+            aria-label={
+              isTurkish ? "Önceki görsel" : "Previous image"
+            }
+            onClick={(e) => {
+              e.stopPropagation();
+              onPrev();
+            }}
             className="absolute left-4 md:left-8 z-10 flex items-center justify-center rounded-full transition-all"
             style={{
               width: 44, height: 44,
@@ -386,7 +403,11 @@ const Lightbox = ({ src, onClose, onPrev, onNext, total, current }) => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.2 }}
           src={src}
-          alt="enlarged"
+          alt={
+            isTurkish
+              ? `${title} büyütülmüş ekran görüntüsü ${current + 1}`
+              : `${title} enlarged screenshot ${current + 1}`
+          }
           onClick={(e) => e.stopPropagation()}
           style={{
             maxWidth: "90vw",
@@ -401,7 +422,14 @@ const Lightbox = ({ src, onClose, onPrev, onNext, total, current }) => {
         {/* Next button */}
         {total > 1 && (
           <button
-            onClick={(e) => { e.stopPropagation(); onNext(); }}
+            type="button"
+            aria-label={
+              isTurkish ? "Sonraki görsel" : "Next image"
+            }
+            onClick={(e) => {
+              e.stopPropagation();
+              onNext();
+            }}
             className="absolute right-4 md:right-8 z-10 flex items-center justify-center rounded-full transition-all"
             style={{
               width: 44, height: 44,
@@ -419,6 +447,10 @@ const Lightbox = ({ src, onClose, onPrev, onNext, total, current }) => {
 
         {/* Close */}
         <button
+          type="button"
+          aria-label={
+            isTurkish ? "Görseli kapat" : "Close image"
+          }
           onClick={onClose}
           className="absolute top-4 right-4 flex items-center justify-center rounded-full transition-all"
           style={{
@@ -699,7 +731,8 @@ const ProjectDetail = () => {
             ←
           </span>
 
-          {t.projectDetail?.back || "Back"}
+          {t.projectDetail?.back ||
+            (language === "tr" ? "Geri" : "Back")}
         </button>
 
         {/* Header */}
@@ -729,7 +762,10 @@ const ProjectDetail = () => {
                 rel="noopener noreferrer"
                 className="project-action-primary"
               >
-                {t.projectDetail?.liveDemo || "Live Demo 🚀"}
+                {t.projectDetail?.liveDemo ||
+                  (language === "tr"
+                    ? "Canlı Demo 🚀"
+                    : "Live Demo 🚀")}
               </a>
             )}
             {github && typeof github === "object" && (
@@ -803,8 +839,8 @@ const ProjectDetail = () => {
                       type="button"
                       onClick={() => setViewMode("hardware")}
                       className={`border-r border-[#e8dbd1] px-4 py-2 text-sm font-medium transition-colors ${viewMode === "hardware"
-                          ? "bg-[#9e2a22] text-white"
-                          : "text-[#77655c] hover:bg-[#f8eee7] hover:text-[#9e2a22]"
+                        ? "bg-[#9e2a22] text-white"
+                        : "text-[#77655c] hover:bg-[#f8eee7] hover:text-[#9e2a22]"
                         }`}
                     >
                       {t.projectDetail.viewHardware}
@@ -816,8 +852,8 @@ const ProjectDetail = () => {
                       type="button"
                       onClick={() => setViewMode("web")}
                       className={`border-r border-[#e8dbd1] px-4 py-2 text-sm font-medium transition-colors ${viewMode === "web"
-                          ? "bg-[#9e2a22] text-white"
-                          : "text-[#77655c] hover:bg-[#f8eee7] hover:text-[#9e2a22]"
+                        ? "bg-[#9e2a22] text-white"
+                        : "text-[#77655c] hover:bg-[#f8eee7] hover:text-[#9e2a22]"
                         }`}
                     >
                       {t.projectDetail.viewWeb}
@@ -829,8 +865,8 @@ const ProjectDetail = () => {
                       type="button"
                       onClick={() => setViewMode("mobile")}
                       className={`px-4 py-2 text-sm font-medium transition-colors ${viewMode === "mobile"
-                          ? "bg-[#9e2a22] text-white"
-                          : "text-[#77655c] hover:bg-[#f8eee7] hover:text-[#9e2a22]"
+                        ? "bg-[#9e2a22] text-white"
+                        : "text-[#77655c] hover:bg-[#f8eee7] hover:text-[#9e2a22]"
                         }`}
                     >
                       {t.projectDetail.viewMobile}
@@ -864,7 +900,11 @@ const ProjectDetail = () => {
                       <SwiperSlide key={i} className="screenshot-slide">
                         <img
                           src={src}
-                          alt={`screenshot-${i}`}
+                          alt={
+                            language === "tr"
+                              ? `${title} ekran görüntüsü ${i + 1}`
+                              : `${title} screenshot ${i + 1}`
+                          }
                           onClick={() => openLightbox(i)}
                           style={{
                             width: "100%",
@@ -879,8 +919,31 @@ const ProjectDetail = () => {
                   </Swiper>
 
                   {/* Custom navigation arrows */}
-                  <button ref={prevRef} className="custom-swiper-prev">‹</button>
-                  <button ref={nextRef} className="custom-swiper-next">›</button>
+                  <button
+                    ref={prevRef}
+                    type="button"
+                    aria-label={
+                      language === "tr"
+                        ? "Önceki ekran görüntüsü"
+                        : "Previous screenshot"
+                    }
+                    className="custom-swiper-prev"
+                  >
+                    ‹
+                  </button>
+
+                  <button
+                    ref={nextRef}
+                    type="button"
+                    aria-label={
+                      language === "tr"
+                        ? "Sonraki ekran görüntüsü"
+                        : "Next screenshot"
+                    }
+                    className="custom-swiper-next"
+                  >
+                    ›
+                  </button>
                 </div>
 
                 {/* Zoom hint */}
@@ -926,8 +989,13 @@ const ProjectDetail = () => {
                 {metaLang.role && <Section icon={icons.role} title={labels.role}>         {metaLang.role}</Section>}
               </>
             ) : (
-              <Section icon="📋" title="Description">
-                <p className="whitespace-pre-wrap">{projectData?.desc}</p>
+              <Section
+                icon="📋"
+                title={language === "tr" ? "Açıklama" : "Description"}
+              >
+                <p className="whitespace-pre-wrap">
+                  {projectData?.desc}
+                </p>
               </Section>
             )}
           </div>
@@ -947,6 +1015,12 @@ const ProjectDetail = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <button
+              type="button"
+              aria-label={
+                language === "tr"
+                  ? "Videoyu kapat"
+                  : "Close video"
+              }
               onClick={() => setShowVideo(null)}
               className="absolute -top-4 -right-4 rounded-full w-9 h-9 flex items-center justify-center text-lg font-bold transition-colors"
               style={{ background: "#1f2937", border: "1px solid rgba(255,255,255,0.1)", color: "#9ca3af" }}
@@ -972,6 +1046,8 @@ const ProjectDetail = () => {
           onClose={closeLightbox}
           onPrev={lightboxPrev}
           onNext={lightboxNext}
+          language={language}
+          title={title}
         />
       )}
     </div>

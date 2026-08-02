@@ -229,8 +229,7 @@ const Resume = () => {
       link: "https://gdg.community.dev/",
     },
     {
-      title:
-        "Carousel Oceanfront Hotel & Condos / Dolle’s Candyland Inc.",
+      title: "Carousel Oceanfront Hotel & Condos",
       sub: t.resume.exp4,
       date:
         language === "tr"

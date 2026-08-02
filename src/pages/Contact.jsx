@@ -2,9 +2,56 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaArrowRight } from "react-icons/fa";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState("idle");
+  const { language } = useLanguage();
+
+  const copy =
+    language === "tr"
+      ? {
+        eyebrow: "İletişime Geçelim",
+        title: "İletişime Geç",
+        description:
+          "Projeler, iş fırsatları, iş birlikleri veya kısa bir sohbet için benimle iletişime geçebilirsiniz.",
+        nameLabel: "Adınız",
+        namePlaceholder: "Adınız",
+        emailLabel: "E-posta Adresi",
+        emailPlaceholder: "ornek@email.com",
+        subjectLabel: "Konu",
+        subjectPlaceholder:
+          "Proje, iş fırsatı veya iş birliği",
+        messageLabel: "Mesaj",
+        messagePlaceholder: "Mesajınızı yazın...",
+        send: "Mesaj Gönder",
+        sending: "Gönderiliyor...",
+        success: "Mesajınız başarıyla gönderildi.",
+        error:
+          "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
+        honeypot: "Bu alanı doldurmayın:",
+      }
+      : {
+        eyebrow: "Let's Connect",
+        title: "Get In Touch",
+        description:
+          "Feel free to reach out for projects, opportunities, collaborations, or just a friendly chat!",
+        nameLabel: "Your Name",
+        namePlaceholder: "Name",
+        emailLabel: "Email Address",
+        emailPlaceholder: "name@example.com",
+        subjectLabel: "Subject",
+        subjectPlaceholder:
+          "Project, opportunity or collaboration",
+        messageLabel: "Message",
+        messagePlaceholder: "Write your message...",
+        send: "Send Message",
+        sending: "Sending...",
+        success: "Your message was sent successfully.",
+        error:
+          "The message could not be sent. Please try again.",
+        honeypot: "Do not fill this out:",
+      };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -146,16 +193,14 @@ export default function Contact() {
       >
         <div className="w-full max-w-2xl rounded-[30px] border border-white/75 bg-[#fffaf5]/95 p-8 shadow-[0_20px_55px_rgba(80,50,35,0.08)] md:p-11">
           <div className="eyebrow mb-5">
-            Let&apos;s Connect
+            {copy.eyebrow}
           </div>
-
           <h2 className="mb-6 font-['Cormorant_Garamond'] text-5xl font-medium leading-[0.94] text-[#2b211d] sm:text-6xl md:text-7xl">
-            Get In Touch
+            {copy.title}
           </h2>
 
           <p className="mb-8 max-w-lg text-base leading-8 text-[#6d5a52] md:text-lg">
-            Feel free to reach out for collaborations or
-            just a friendly chat!
+            {copy.description}
           </p>
           <form
             name="portfolio-contact"
@@ -174,7 +219,7 @@ export default function Contact() {
             {/* Spam protection */}
             <p className="hidden">
               <label>
-                Do not fill this out:
+                {copy.honeypot}
                 <input name="bot-field" />
               </label>
             </p>
@@ -182,7 +227,7 @@ export default function Contact() {
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="block">
                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.12em] text-[#795f55]">
-                  Your Name
+                  {copy.nameLabel}
                 </span>
 
                 <input
@@ -190,14 +235,14 @@ export default function Contact() {
                   name="name"
                   required
                   autoComplete="name"
-                  placeholder="Name"
+                  placeholder={copy.namePlaceholder}
                   className="w-full rounded-[14px] border border-[#dccdc2] bg-white/70 px-4 py-3 text-sm text-[#2b211d] outline-none transition placeholder:text-[#aa9890] focus:border-[#9e2a22]/55 focus:bg-white focus:ring-4 focus:ring-[#9e2a22]/5"
                 />
               </label>
 
               <label className="block">
                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.12em] text-[#795f55]">
-                  Email Address
+                  {copy.emailLabel}
                 </span>
 
                 <input
@@ -205,7 +250,7 @@ export default function Contact() {
                   name="email"
                   required
                   autoComplete="email"
-                  placeholder="name@example.com"
+                  placeholder={copy.emailPlaceholder}
                   className="w-full rounded-[14px] border border-[#dccdc2] bg-white/70 px-4 py-3 text-sm text-[#2b211d] outline-none transition placeholder:text-[#aa9890] focus:border-[#9e2a22]/55 focus:bg-white focus:ring-4 focus:ring-[#9e2a22]/5"
                 />
               </label>
@@ -213,27 +258,27 @@ export default function Contact() {
 
             <label className="block">
               <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.12em] text-[#795f55]">
-                Subject
+                {copy.subjectLabel}
               </span>
 
               <input
                 type="text"
                 name="subject"
-                placeholder="Project, opportunity or collaboration"
+                placeholder={copy.subjectPlaceholder}
                 className="w-full rounded-[14px] border border-[#dccdc2] bg-white/70 px-4 py-3 text-sm text-[#2b211d] outline-none transition placeholder:text-[#aa9890] focus:border-[#9e2a22]/55 focus:bg-white focus:ring-4 focus:ring-[#9e2a22]/5"
               />
             </label>
 
             <label className="block">
               <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.12em] text-[#795f55]">
-                Message
+                {copy.messageLabel}
               </span>
 
               <textarea
                 name="message"
                 required
                 rows={5}
-                placeholder="Write your message..."
+                placeholder={copy.messagePlaceholder}
                 className="w-full resize-y rounded-[14px] border border-[#dccdc2] bg-white/70 px-4 py-3 text-sm leading-6 text-[#2b211d] outline-none transition placeholder:text-[#aa9890] focus:border-[#9e2a22]/55 focus:bg-white focus:ring-4 focus:ring-[#9e2a22]/5"
               />
             </label>
@@ -247,8 +292,8 @@ export default function Contact() {
                 <FaEnvelope size={15} />
 
                 {formStatus === "sending"
-                  ? "Sending..."
-                  : "Send Message"}
+                  ? copy.sending
+                  : copy.send}
 
                 <FaArrowRight size={12} />
               </button>
@@ -259,13 +304,13 @@ export default function Contact() {
               >
                 {formStatus === "success" && (
                   <span className="font-medium text-[#62775f]">
-                    Your message was sent successfully.
+                    {copy.success}
                   </span>
                 )}
 
                 {formStatus === "error" && (
                   <span className="font-medium text-[#9e2a22]">
-                    The message could not be sent. Please try again.
+                    {copy.error}
                   </span>
                 )}
               </div>
