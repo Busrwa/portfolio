@@ -228,15 +228,6 @@ const Resume = () => {
       date: "2023–2024",
       link: "https://gdg.community.dev/",
     },
-    {
-      title: "Carousel Oceanfront Hotel & Condos",
-      sub: t.resume.exp4,
-      date:
-        language === "tr"
-          ? "Yaz 2023"
-          : "Summer 2023",
-      link: "https://carouselhotel.com/",
-    },
   ];
 
   const certificates = [
