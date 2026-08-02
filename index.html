@@ -60,8 +60,36 @@
 </head>
 
 <body>
+  <!--
+    Static copy required so Netlify can detect
+    the JavaScript-rendered contact form.
+  -->
+  <form
+    name="portfolio-contact"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    hidden
+  >
+    <input
+      type="hidden"
+      name="form-name"
+      value="portfolio-contact"
+    />
+
+    <input name="bot-field" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="subject" />
+    <textarea name="message"></textarea>
+  </form>
+
   <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+
+  <script
+    type="module"
+    src="/src/main.jsx"
+  ></script>
 </body>
 
 </html>

@@ -309,46 +309,31 @@ const projectMeta = {
 // ─────────────────────────────────────────────────────────────────────────────
 
 const TechBadge = ({ label }) => (
-  <span
-    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border"
-    style={{
-      background: "rgba(20,184,166,0.08)",
-      borderColor: "rgba(20,184,166,0.25)",
-      color: "#2dd4bf",
-      fontFamily: "'DM Sans', sans-serif",
-    }}
-  >
+  <span className="inline-flex items-center rounded-full border border-[#dfcfc4] bg-[#f8eee7] px-3 py-1.5 text-xs font-medium text-[#745f55]">
     {label}
   </span>
 );
 
 const Section = ({ icon, title, children }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
+  <motion.section
+    initial={{ opacity: 0, y: 22 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.4 }}
-    className="mb-5"
+    viewport={{ once: true, amount: 0.15 }}
+    transition={{ duration: 0.5, ease: "easeOut" }}
+    className="mb-6"
   >
-    <h3
-      className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest mb-2.5"
-      style={{ color: "#14b8a6", fontFamily: "'Syne', sans-serif" }}
-    >
-      <span>{icon}</span>
+    <h3 className="mb-3 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.16em] text-[#9e2a22]">
+      <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#dcc9bc] bg-[#f8eee7] text-sm">
+        {icon}
+      </span>
+
       {title}
     </h3>
-    <div
-      className="rounded-xl p-4 text-sm leading-relaxed"
-      style={{
-        background: "rgba(255,255,255,0.03)",
-        border: "1px solid rgba(255,255,255,0.07)",
-        color: "#9ca3af",
-        fontFamily: "'DM Sans', sans-serif",
-      }}
-    >
+
+    <div className="rounded-[22px] border border-[#dfd0c5] bg-[#fffaf5]/85 p-5 text-sm leading-7 text-[#66544d] shadow-[0_12px_30px_rgba(79,49,35,0.055)] md:p-6">
       {children}
     </div>
-  </motion.div>
+  </motion.section>
 );
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -387,7 +372,7 @@ const Lightbox = ({ src, onClose, onPrev, onNext, total, current }) => {
               color: "#fff",
               fontSize: 20,
             }}
-            onMouseEnter={(e) => e.currentTarget.style.background = "rgba(20,184,166,0.4)"}
+            onMouseEnter={(e) => e.currentTarget.style.background = "rgba(158,42,34,0.48)"}
             onMouseLeave={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.1)"}
           >
             ‹
@@ -425,7 +410,7 @@ const Lightbox = ({ src, onClose, onPrev, onNext, total, current }) => {
               color: "#fff",
               fontSize: 20,
             }}
-            onMouseEnter={(e) => e.currentTarget.style.background = "rgba(20,184,166,0.4)"}
+            onMouseEnter={(e) => e.currentTarget.style.background = "rgba(158,42,34,0.48)"}
             onMouseLeave={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.1)"}
           >
             ›
@@ -443,7 +428,7 @@ const Lightbox = ({ src, onClose, onPrev, onNext, total, current }) => {
             color: "#9ca3af",
             fontSize: 18,
           }}
-          onMouseEnter={(e) => e.currentTarget.style.color = "#14b8a6"}
+          onMouseEnter={(e) => e.currentTarget.style.color = "#f0b2a8"}
           onMouseLeave={(e) => e.currentTarget.style.color = "#9ca3af"}
         >
           ×
@@ -598,65 +583,122 @@ const ProjectDetail = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#0b1120", minHeight: "100vh" }}>
+    <div className="min-h-screen bg-[#f7f2eb] text-[#2b211d]">
       {/* Swiper custom nav styles */}
       <style>{`
-        .custom-swiper-prev,
-        .custom-swiper-next {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 10;
-          width: 38px;
-          height: 38px;
-          border-radius: 50%;
-          background: rgba(20,184,166,0.15);
-          border: 1px solid rgba(20,184,166,0.4);
-          color: #2dd4bf;
-          font-size: 18px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          transition: background 0.2s, color 0.2s;
-          user-select: none;
-        }
-        .custom-swiper-prev { left: 8px; }
-        .custom-swiper-next { right: 8px; }
-        .custom-swiper-prev:hover,
-        .custom-swiper-next:hover {
-          background: rgba(20,184,166,0.35);
-          color: #fff;
-        }
-        .custom-swiper-prev.swiper-button-disabled,
-        .custom-swiper-next.swiper-button-disabled {
-          opacity: 0.3;
-          cursor: not-allowed;
-        }
-        .screenshot-slide {
-          cursor: zoom-in;
-        }
-        .screenshot-slide img {
-          transition: transform 0.2s;
-        }
-        .screenshot-slide:hover img {
-          transform: scale(1.01);
-        }
-      `}</style>
+  .custom-swiper-prev,
+  .custom-swiper-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    background: rgba(255, 250, 245, 0.92);
+    border: 1px solid rgba(158, 42, 34, 0.25);
+    color: #9e2a22;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      border-color 0.2s ease;
+    user-select: none;
+    box-shadow: 0 8px 22px rgba(70, 42, 30, 0.12);
+  }
 
-      <section
-        className="px-4 md:px-10 max-w-7xl mx-auto pb-20"
-        style={{ paddingTop: "88px" }}
-      >
+  .custom-swiper-prev {
+    left: 12px;
+  }
+
+  .custom-swiper-next {
+    right: 12px;
+  }
+
+  .custom-swiper-prev:hover,
+  .custom-swiper-next:hover {
+    transform: translateY(-50%) scale(1.06);
+    background: #ffffff;
+    border-color: rgba(158, 42, 34, 0.55);
+  }
+
+  .custom-swiper-prev.swiper-button-disabled,
+  .custom-swiper-next.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .screenshot-slide {
+    cursor: zoom-in;
+  }
+
+  .screenshot-slide img {
+    transition: transform 0.3s ease;
+  }
+
+  .screenshot-slide:hover img {
+    transform: scale(1.012);
+  }
+
+  .project-action-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 17px;
+    border-radius: 11px;
+    background: linear-gradient(180deg, #ad2d24, #8f221b);
+    border: 1px solid rgba(110, 25, 20, 0.35);
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(159, 46, 35, 0.16);
+    transition: all 0.25s ease;
+  }
+
+  .project-action-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(159, 46, 35, 0.22);
+  }
+
+  .project-action-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 17px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #dfd0c5;
+    color: #68564e;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
+  }
+
+  .project-action-secondary:hover {
+    transform: translateY(-2px);
+    background: #ffffff;
+    border-color: rgba(158, 42, 34, 0.38);
+    color: #9e2a22;
+  }
+`}</style>
+
+      <section className="relative mx-auto max-w-7xl px-5 pb-24 pt-28 md:px-10 md:pb-28 md:pt-32">
         {/* Back */}
         <button
+          type="button"
           onClick={() => navigate(-1)}
-          className="mb-8 flex items-center gap-2 text-sm transition-colors group"
-          style={{ color: "#6b7280" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "#14b8a6")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "#6b7280")}
+          className="group mb-9 inline-flex items-center gap-2 rounded-full border border-[#ded0c5] bg-white/60 px-4 py-2 text-sm font-medium text-[#77655c] transition hover:-translate-y-0.5 hover:border-[#9e2a22]/40 hover:bg-white hover:text-[#9e2a22]"
         >
-          <span className="group-hover:-translate-x-1 transition-transform inline-block">←</span>
+          <span className="inline-block transition-transform group-hover:-translate-x-1">
+            ←
+          </span>
+
           {t.projectDetail?.back || "Back"}
         </button>
 
@@ -666,10 +708,7 @@ const ProjectDetail = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <h1
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Syne', sans-serif" }}
-          >
+          <h1 className="mb-5 max-w-5xl font-['Cormorant_Garamond'] text-4xl font-semibold leading-[0.98] text-[#2b211d] sm:text-5xl md:text-6xl">
             {title}
           </h1>
 
@@ -688,14 +727,7 @@ const ProjectDetail = () => {
                 href={liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-xl text-sm font-semibold transition-all"
-                style={{
-                  background: "#14b8a6",
-                  color: "#111827",
-                  boxShadow: "0 4px 20px rgba(20,184,166,0.25)",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#2dd4bf")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "#14b8a6")}
+                className="project-action-primary"
               >
                 {t.projectDetail?.liveDemo || "Live Demo 🚀"}
               </a>
@@ -703,21 +735,21 @@ const ProjectDetail = () => {
             {github && typeof github === "object" && (
               <>
                 {github.web && (
-                  <a href={github.web} target="_blank" rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-xl text-sm transition-all border"
-                    style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.08)", color: "#9ca3af" }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(20,184,166,0.4)"; e.currentTarget.style.color = "#14b8a6"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.color = "#9ca3af"; }}
+                  <a
+                    href={github.web}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-action-secondary"
                   >
                     {t.projectDetail.githubWeb}
                   </a>
                 )}
                 {github.mobile && (
-                  <a href={github.mobile} target="_blank" rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-xl text-sm transition-all border"
-                    style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.08)", color: "#9ca3af" }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(20,184,166,0.4)"; e.currentTarget.style.color = "#14b8a6"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.color = "#9ca3af"; }}
+                  <a
+                    href={github.mobile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-action-secondary"
                   >
                     {t.projectDetail.githubMobile}
                   </a>
@@ -725,29 +757,29 @@ const ProjectDetail = () => {
               </>
             )}
             {github && typeof github === "string" && (
-              <a href={github} target="_blank" rel="noopener noreferrer"
-                className="px-4 py-2 rounded-xl text-sm transition-all border"
-                style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.08)", color: "#9ca3af" }}
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-action-secondary"
               >
                 GitHub
               </a>
             )}
             {demoVideo && (
-              <button onClick={() => setShowVideo("system")}
-                className="px-4 py-2 rounded-xl text-sm transition-all border"
-                style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.08)", color: "#9ca3af" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(20,184,166,0.4)"; e.currentTarget.style.color = "#14b8a6"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.color = "#9ca3af"; }}
+              <button
+                type="button"
+                onClick={() => setShowVideo("system")}
+                className="project-action-secondary"
               >
                 {t.projectDetail.demoVideo}
               </button>
             )}
             {hardwareDemoVideo && (
-              <button onClick={() => setShowVideo("hardware")}
-                className="px-4 py-2 rounded-xl text-sm transition-all border"
-                style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.08)", color: "#9ca3af" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(20,184,166,0.4)"; e.currentTarget.style.color = "#14b8a6"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.color = "#9ca3af"; }}
+              <button
+                type="button"
+                onClick={() => setShowVideo("hardware")}
+                className="project-action-secondary"
               >
                 {t.projectDetail.hardwareDemo}
               </button>
@@ -762,30 +794,45 @@ const ProjectDetail = () => {
           <div className="xl:sticky xl:top-24">
             {/* View toggle */}
             {hasViews &&
-              (screenshots.hardware?.length > 0 || screenshots.web?.length > 0) &&
+              (screenshots.hardware?.length > 0 ||
+                screenshots.web?.length > 0) &&
               screenshots.mobile?.length > 0 && (
-                <div
-                  className="flex mb-4 rounded-xl overflow-hidden w-fit border"
-                  style={{ background: "#111827", borderColor: "rgba(255,255,255,0.06)" }}
-                >
+                <div className="mb-4 flex w-fit overflow-hidden rounded-xl border border-[#dfd0c5] bg-[#fffaf5]/85 shadow-[0_8px_20px_rgba(79,49,35,0.06)]">
                   {screenshots.hardware?.length > 0 && (
-                    <button type="button" onClick={() => setViewMode("hardware")}
-                      className="px-4 py-2 text-sm transition-colors"
-                      style={viewMode === "hardware" ? { background: "#0d9488", color: "#fff" } : { color: "#6b7280" }}>
+                    <button
+                      type="button"
+                      onClick={() => setViewMode("hardware")}
+                      className={`border-r border-[#e8dbd1] px-4 py-2 text-sm font-medium transition-colors ${viewMode === "hardware"
+                          ? "bg-[#9e2a22] text-white"
+                          : "text-[#77655c] hover:bg-[#f8eee7] hover:text-[#9e2a22]"
+                        }`}
+                    >
                       {t.projectDetail.viewHardware}
                     </button>
                   )}
+
                   {screenshots.web?.length > 0 && (
-                    <button type="button" onClick={() => setViewMode("web")}
-                      className="px-4 py-2 text-sm transition-colors"
-                      style={viewMode === "web" ? { background: "#0d9488", color: "#fff" } : { color: "#6b7280" }}>
+                    <button
+                      type="button"
+                      onClick={() => setViewMode("web")}
+                      className={`border-r border-[#e8dbd1] px-4 py-2 text-sm font-medium transition-colors ${viewMode === "web"
+                          ? "bg-[#9e2a22] text-white"
+                          : "text-[#77655c] hover:bg-[#f8eee7] hover:text-[#9e2a22]"
+                        }`}
+                    >
                       {t.projectDetail.viewWeb}
                     </button>
                   )}
+
                   {screenshots.mobile?.length > 0 && (
-                    <button type="button" onClick={() => setViewMode("mobile")}
-                      className="px-4 py-2 text-sm transition-colors"
-                      style={viewMode === "mobile" ? { background: "#0d9488", color: "#fff" } : { color: "#6b7280" }}>
+                    <button
+                      type="button"
+                      onClick={() => setViewMode("mobile")}
+                      className={`px-4 py-2 text-sm font-medium transition-colors ${viewMode === "mobile"
+                          ? "bg-[#9e2a22] text-white"
+                          : "text-[#77655c] hover:bg-[#f8eee7] hover:text-[#9e2a22]"
+                        }`}
+                    >
                       {t.projectDetail.viewMobile}
                     </button>
                   )}
@@ -794,7 +841,7 @@ const ProjectDetail = () => {
 
             {currentScreenshots.length > 0 && (
               <>
-                <div className="relative" style={{ borderRadius: 12, overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)" }}>
+                <div className="relative overflow-hidden rounded-[24px] border border-[#dccdc2] bg-[#fffaf5] shadow-[0_18px_44px_rgba(79,49,35,0.09)]">
                   <Swiper
                     key={`${projectIdToUse}-${viewMode}`}
                     modules={[Navigation, Autoplay]}
@@ -823,7 +870,7 @@ const ProjectDetail = () => {
                             width: "100%",
                             objectFit: "contain",
                             maxHeight: "600px",
-                            background: "#0b1120",
+                            background: "#eee4dc",
                             display: "block",
                           }}
                         />
@@ -837,7 +884,7 @@ const ProjectDetail = () => {
                 </div>
 
                 {/* Zoom hint */}
-                <p className="text-center mt-2 text-xs" style={{ color: "rgba(255,255,255,0.25)", fontFamily: "'DM Sans', sans-serif" }}>
+                <p className="mt-3 text-center text-xs text-[#9a877d]">
                   {language === "tr" ? "Büyütmek için resme tıklayın" : "Click image to enlarge"}
                 </p>
 
@@ -853,7 +900,10 @@ const ProjectDetail = () => {
                       style={{
                         width: i === activeIndex ? "20px" : "8px",
                         height: "8px",
-                        background: i === activeIndex ? "#14b8a6" : "rgba(255,255,255,0.2)",
+                        background:
+                          i === activeIndex
+                            ? "#9e2a22"
+                            : "rgba(158,42,34,0.18)",
                       }}
                     />
                   ))}
@@ -900,7 +950,7 @@ const ProjectDetail = () => {
               onClick={() => setShowVideo(null)}
               className="absolute -top-4 -right-4 rounded-full w-9 h-9 flex items-center justify-center text-lg font-bold transition-colors"
               style={{ background: "#1f2937", border: "1px solid rgba(255,255,255,0.1)", color: "#9ca3af" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#14b8a6")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#f0b2a8")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#9ca3af")}
             >
               ×

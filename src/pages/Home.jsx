@@ -3,11 +3,15 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  FaGithub, FaLinkedin, FaMedium, FaInstagram, FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaMedium,
+  FaInstagram,
+  FaEnvelope,
 } from "react-icons/fa";
 import { useLanguage } from "../contexts/LanguageContext";
 
-// Typewriter hook
+/* ─── Typewriter hook ───────────────────────────────── */
 const useTypewriter = (words, speed = 80, pause = 1800) => {
   const [display, setDisplay] = useState("");
   const [wordIdx, setWordIdx] = useState(0);
@@ -16,67 +20,33 @@ const useTypewriter = (words, speed = 80, pause = 1800) => {
 
   useEffect(() => {
     const current = words[wordIdx % words.length];
-    const timeout = setTimeout(() => {
+
+    const timeout = window.setTimeout(() => {
       if (!deleting) {
         setDisplay(current.slice(0, charIdx + 1));
+
         if (charIdx + 1 === current.length) {
-          setTimeout(() => setDeleting(true), pause);
+          window.setTimeout(() => setDeleting(true), pause);
         } else {
-          setCharIdx((c) => c + 1);
+          setCharIdx((value) => value + 1);
         }
       } else {
         setDisplay(current.slice(0, charIdx - 1));
+
         if (charIdx - 1 === 0) {
           setDeleting(false);
-          setWordIdx((w) => (w + 1) % words.length);
+          setWordIdx((value) => (value + 1) % words.length);
           setCharIdx(0);
         } else {
-          setCharIdx((c) => c - 1);
+          setCharIdx((value) => value - 1);
         }
       }
     }, deleting ? speed / 2 : speed);
-    return () => clearTimeout(timeout);
-  }, [charIdx, deleting, wordIdx, words, speed, pause]);
+
+    return () => window.clearTimeout(timeout);
+  }, [charIdx, deleting, pause, speed, wordIdx, words]);
 
   return display;
-};
-
-// Floating particles background
-const Particles = () => {
-  const dots = Array.from({ length: 28 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 3 + 1,
-    dur: Math.random() * 8 + 6,
-    delay: Math.random() * 4,
-  }));
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {dots.map((d) => (
-        <div
-          key={d.id}
-          className="absolute rounded-full bg-teal-400/20"
-          style={{
-            left: `${d.x}%`,
-            top: `${d.y}%`,
-            width: d.size,
-            height: d.size,
-            animation: `float ${d.dur}s ease-in-out ${d.delay}s infinite`,
-          }}
-        />
-      ))}
-      {/* Grid lines */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(20,184,166,1) 1px, transparent 1px), linear-gradient(90deg, rgba(20,184,166,1) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-    </div>
-  );
 };
 
 const Home = () => {
@@ -85,175 +55,340 @@ const Home = () => {
 
   const typeWords =
     language === "tr"
-      ? ["Full-Stack Web Geliştiriyorum", "Mobil Uygulamalar Yapıyorum", "REST API'ler Tasarlıyorum", "IoT Sistemleri Kuruyorum"]
-      : ["I Build Full-Stack Web Apps", "I Develop Mobile Applications", "I Design REST APIs", "I Engineer IoT Systems"];
+      ? [
+          "Full-Stack Web Geliştiriyorum",
+          "Mobil Uygulamalar Yapıyorum",
+          "REST API'ler Tasarlıyorum",
+          "IoT Sistemleri Kuruyorum",
+        ]
+      : [
+          "I Build Full-Stack Web Apps",
+          "I Develop Mobile Applications",
+          "I Design REST APIs",
+          "I Engineer IoT Systems",
+        ];
 
   const typed = useTypewriter(typeWords);
 
-  const resumeFile = language === "tr" ? "/Busra_Yagcioglu_CV.pdf" : "/Busra_Yagcioglu_CV_ENG.pdf";
-  const resumeFileName = language === "tr" ? "Busra_Yagcioglu_CV.pdf" : "Busra_Yagcioglu_CV_ENG.pdf";
+  const resumeFile =
+    language === "tr"
+      ? "/Busra_Yagcioglu_CV.pdf"
+      : "/Busra_Yagcioglu_CV_ENG.pdf";
+
+  const resumeFileName =
+    language === "tr"
+      ? "Busra_Yagcioglu_CV.pdf"
+      : "Busra_Yagcioglu_CV_ENG.pdf";
 
   useEffect(() => {
-    if (location.state?.scrollTo) {
-      const el = document.querySelector(location.state.scrollTo);
-      if (el) {
-        const y = el.getBoundingClientRect().top + window.pageYOffset - 64;
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
+    if (!location.state?.scrollTo) return;
+
+    const element = document.querySelector(location.state.scrollTo);
+
+    if (element) {
+      const y =
+        element.getBoundingClientRect().top +
+        window.pageYOffset -
+        72;
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
     }
   }, [location.state]);
 
   const socials = [
-    { href: "mailto:busrayagcioglu2003@gmail.com", icon: <FaEnvelope />, label: "Email" },
-    { href: "https://github.com/Busrwa", icon: <FaGithub />, label: "GitHub" },
-    { href: "https://www.linkedin.com/in/busra-yagcioglu/", icon: <FaLinkedin />, label: "LinkedIn" },
-    { href: "https://medium.com/@busrayagcioglu2003", icon: <FaMedium />, label: "Medium" },
-    { href: "https://www.instagram.com/busra_yagciogluu/", icon: <FaInstagram />, label: "Instagram" },
+    {
+      href: "mailto:busrayagcioglu2003@gmail.com",
+      icon: <FaEnvelope />,
+      label: "Email",
+    },
+    {
+      href: "https://github.com/Busrwa",
+      icon: <FaGithub />,
+      label: "GitHub",
+    },
+    {
+      href: "https://www.linkedin.com/in/busra-yagcioglu/",
+      icon: <FaLinkedin />,
+      label: "LinkedIn",
+    },
+    {
+      href: "https://medium.com/@busrayagcioglu2003",
+      icon: <FaMedium />,
+      label: "Medium",
+    },
+    {
+      href: "https://www.instagram.com/busra_yagciogluu/",
+      icon: <FaInstagram />,
+      label: "Instagram",
+    },
   ];
 
   const stats = [
-    { value: "9", label: language === "tr" ? "Seçilmiş Proje" : "Selected Projects" },
-    { value: "2", label: language === "tr" ? "Play Store Uygulaması" : "Play Store Apps" },
-    { value: "3+", label: language === "tr" ? "Deneyim" : "Work Experience" },
+    {
+      value: "9",
+      label:
+        language === "tr"
+          ? "Seçilmiş Proje"
+          : "Selected Projects",
+    },
+    {
+      value: "2",
+      label:
+        language === "tr"
+          ? "Play Store Uygulaması"
+          : "Play Store Apps",
+    },
+    {
+      value: "3+",
+      label:
+        language === "tr"
+          ? "Deneyim"
+          : "Work Experience",
+    },
   ];
 
   return (
     <section
       id="home"
-      className="relative flex flex-col items-center justify-center min-h-screen text-center px-6 overflow-hidden mesh-bg"
+      className="relative min-h-screen overflow-hidden bg-[#f7f2eb] px-5 pb-16 pt-28 md:px-10 md:pb-20 md:pt-32"
     >
-      <Particles />
+      {/* Subtle editorial glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[7%] top-[18%] h-72 w-72 rounded-full bg-[#efd8c9]/55 blur-3xl"
+      />
 
-      {/* Glow orb */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-teal-500/5 blur-3xl pointer-events-none" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[10%] top-[17%] h-80 w-80 rounded-full bg-[#ddd4b8]/35 blur-3xl"
+      />
 
-      <div className="relative z-10 max-w-3xl mx-auto">
-        {/* Eyebrow label */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal-400/30 bg-teal-400/8 text-teal-400 text-sm font-medium mb-6"
-          style={{ background: "rgba(20,184,166,0.08)" }}
-        >
-          <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-          {language === "tr" ? "Full-Stack & Mobil Geliştirici" : "Full-Stack & Mobile Developer"}
-        </motion.div>
+      {/* Subtle technical lines */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-32 hidden h-56 w-56 opacity-[0.18] lg:block"
+        style={{
+          backgroundImage:
+            "linear-gradient(90deg, transparent 49%, #c8a96b 50%, transparent 51%), linear-gradient(transparent 49%, #c8a96b 50%, transparent 51%)",
+          backgroundSize: "42px 42px",
+          maskImage:
+            "linear-gradient(to left, black, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to left, black, transparent)",
+        }}
+      />
 
-        {/* Main heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight"
-          style={{ fontFamily: "'Syne', sans-serif" }}
-        >
-          {language === "tr" ? "Merhaba, Ben " : "Hi, I'm "}
-          <span className="text-teal-400 text-glow">
-            {language === "tr" ? "Büşra" : "Busra"}
-          </span>
-        </motion.h1>
-
-        {/* Typewriter */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-xl md:text-2xl text-gray-400 mb-6 h-9 font-light"
-        >
-          <span className="text-teal-300">{typed}</span>
-          <span className="typewriter-cursor" />
-        </motion.div>
-
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-gray-400 max-w-xl mx-auto mb-8 leading-relaxed text-base md:text-lg"
-        >
-          {t.home.description}
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.65 }}
-          className="flex flex-wrap justify-center gap-3 mb-10"
-        >
-          <a
-            href={resumeFile}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-teal-400 text-gray-900 font-semibold rounded-xl hover:bg-teal-300 transition-all transform hover:scale-105 shadow-lg shadow-teal-400/25 text-sm"
+      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-9rem)] max-w-7xl items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-4">
+        {/* ─── Text content ──────────────────────────── */}
+        <div className="order-2 mx-auto w-full max-w-2xl text-center lg:order-1 lg:mx-0 lg:text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55 }}
+            className="eyebrow mb-6 justify-center lg:justify-start"
           >
-            {language === "tr" ? "Özgeçmişi Görüntüle (TR)" : "View Resume (EN)"}
-          </a>
-          <a
-            href={resumeFile}
-            download={resumeFileName}
-            className="px-6 py-3 bg-white/5 border border-white/10 text-gray-200 font-semibold rounded-xl hover:bg-white/10 transition-all hover:scale-105 text-sm"
-          >
-            {t.resume.download}
-          </a>
-          <a
-            href="#projects"
-            className="px-6 py-3 border border-teal-400/40 text-teal-400 rounded-xl hover:bg-teal-400/10 transition-all hover:scale-105 text-sm"
-          >
-            {t.home.myProjects} →
-          </a>
-        </motion.div>
+            {language === "tr"
+              ? "Full-Stack & Mobil Geliştirici"
+              : "Full-Stack & Mobile Developer"}
+          </motion.div>
 
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="flex justify-center gap-8 mb-10"
-        >
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-2xl font-bold text-teal-400" style={{ fontFamily: "'Syne', sans-serif" }}>{s.value}</div>
-              <div className="text-xs text-gray-500 mt-0.5">{s.label}</div>
-            </div>
-          ))}
-        </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.08,
+            }}
+            className="editorial-title mb-7 text-[4.3rem] font-medium sm:text-[5.6rem] md:text-[6.8rem] lg:text-[7.5rem]"
+          >
+            <span className="block">
+              {language === "tr" ? "Büşra" : "Busra"}
+            </span>
 
-        {/* Social icons */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9 }}
-          className="flex justify-center gap-4"
-        >
-          {socials.map((s) => (
+            <span className="block">
+              {language === "tr" ? "Yağcıoğlu" : "Yagcioglu"}
+            </span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.35 }}
+            className="mb-6 min-h-8 text-lg font-medium text-[#9e2a22] sm:text-xl md:text-2xl"
+          >
+            <span>{typed}</span>
+            <span className="typewriter-cursor" />
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.44,
+              duration: 0.6,
+            }}
+            className="mx-auto mb-8 max-w-xl text-base leading-8 text-[#6d5a52] md:text-lg lg:mx-0"
+          >
+            {t.home.description}
+          </motion.p>
+
+          {/* CTA buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.56 }}
+            className="mb-9 flex flex-wrap justify-center gap-3 lg:justify-start"
+          >
             <a
-              key={s.label}
-              href={s.href}
-              target={s.href.startsWith("mailto") ? undefined : "_blank"}
-              rel="noopener noreferrer"
-              aria-label={s.label}
-              className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-teal-400 hover:border-teal-400/50 hover:bg-teal-400/10 transition-all hover:scale-110 text-lg"
+              href="#projects"
+              className="btn-primary"
             >
-              {s.icon}
+              {t.home.myProjects}
+              <span aria-hidden="true">→</span>
             </a>
-          ))}
+
+            <a
+              href={resumeFile}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              {language === "tr"
+                ? "Özgeçmişi Görüntüle"
+                : "View Resume"}
+            </a>
+
+            <a
+              href={resumeFile}
+              download={resumeFileName}
+              className="btn-secondary"
+            >
+              {t.resume.download}
+              <span aria-hidden="true">↓</span>
+            </a>
+          </motion.div>
+
+          {/* Social links */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.68 }}
+            className="mb-10 flex justify-center gap-3 lg:justify-start"
+          >
+            {socials.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target={
+                  social.href.startsWith("mailto")
+                    ? undefined
+                    : "_blank"
+                }
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                title={social.label}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d7c4b7] bg-white/60 text-lg text-[#3c302a] transition duration-300 hover:-translate-y-1 hover:border-[#9e2a22] hover:bg-white hover:text-[#9e2a22]"
+              >
+                {social.icon}
+              </a>
+            ))}
+          </motion.div>
+
+          {/* Stats */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="mx-auto grid max-w-xl grid-cols-3 divide-x divide-[#dacabe] border-y border-[#dacabe] py-5 lg:mx-0"
+          >
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="px-2 text-center lg:text-left"
+              >
+                <div className="font-['Cormorant_Garamond'] text-3xl font-semibold text-[#2b211d] md:text-4xl">
+                  {stat.value}
+                </div>
+
+                <div className="mt-1 text-[0.68rem] uppercase tracking-[0.12em] text-[#8b756b] sm:text-xs">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* ─── Floral-tech artwork ───────────────────── */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            scale: 0.94,
+            x: 35,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.9,
+            delay: 0.15,
+            ease: "easeOut",
+          }}
+          className="relative order-1 flex min-h-[350px] items-center justify-center lg:order-2 lg:min-h-[680px]"
+        >
+          <div
+            aria-hidden="true"
+            className="absolute h-[78%] w-[78%] rounded-full border border-[#c8a96b]/20"
+          />
+
+          <div
+            aria-hidden="true"
+            className="absolute h-[61%] w-[61%] rounded-full border border-[#9e2a22]/10"
+          />
+
+          <img
+            src="/tech-flower-hero.png"
+            alt=""
+            aria-hidden="true"
+            className="relative z-10 max-h-[620px] w-auto max-w-[88vw] object-contain sm:max-w-[530px] lg:max-h-[700px] lg:max-w-[620px]"
+            style={{
+              filter:
+                "drop-shadow(0 24px 30px rgba(54, 39, 29, 0.18))",
+              animation:
+                "float 7s ease-in-out infinite",
+            }}
+          />
+
+          <div
+            aria-hidden="true"
+            className="absolute bottom-[8%] right-[8%] h-px w-32 bg-gradient-to-r from-transparent via-[#c8a96b] to-transparent opacity-70"
+          />
+
+          <div
+            aria-hidden="true"
+            className="absolute bottom-[4%] right-[6%] h-2 w-2 rounded-full bg-[#c8a96b] shadow-[0_0_16px_rgba(200,169,107,0.8)]"
+          />
         </motion.div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
+      <motion.a
+        href="#about"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-600"
+        transition={{ delay: 1.1 }}
+        className="absolute bottom-5 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-2 text-[0.66rem] uppercase tracking-[0.2em] text-[#8b756b] md:flex"
       >
-        <span className="text-xs tracking-widest uppercase">
-          {language === "tr" ? "kaydır" : "scroll"}
+        <span>
+          {language === "tr" ? "Kaydır" : "Scroll"}
         </span>
-        <div className="w-px h-8 bg-gradient-to-b from-gray-600 to-transparent" />
-      </motion.div>
+
+        <span className="h-8 w-px bg-gradient-to-b from-[#9e2a22] to-transparent" />
+      </motion.a>
     </section>
   );
 };

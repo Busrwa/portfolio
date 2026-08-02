@@ -1,10 +1,13 @@
 // src/components/ProjectCard.jsx
 import React from "react";
-import { FaGithub, FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaArrowRight,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 
-// Map project id to tech badges
 const techMap = {
   lilithia: ["React Native", "Expo", "Firebase"],
   hataDefteri: ["React Native", "Expo", "Firebase"],
@@ -17,135 +20,228 @@ const techMap = {
   smartHome: ["ESP32", "Flask", "Arduino"],
 };
 
-// Category label
 const categoryMap = {
-  lilithia: { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
-  hataDefteri: { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
-  smartBin: { label: "IoT + Full Stack", color: "from-teal-500/20 to-teal-500/5" },
-  dsc: { label: "Web", color: "from-blue-500/20 to-blue-500/5" },
-  swipeIt: { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
-  mindCaps: { label: "AI + Mobile", color: "from-emerald-500/20 to-emerald-500/5" },
-  fridge: { label: "Mobile", color: "from-violet-500/20 to-violet-500/5" },
-  email: { label: "Web Utility", color: "from-orange-500/20 to-orange-500/5" },
-  smartHome: { label: "IoT", color: "from-teal-500/20 to-teal-500/5" },
+  lilithia: {
+    label: "Mobile",
+    style:
+      "border-[#c8aecb] bg-[#f7eef7]/90 text-[#725475]",
+  },
+  hataDefteri: {
+    label: "Mobile",
+    style:
+      "border-[#c8aecb] bg-[#f7eef7]/90 text-[#725475]",
+  },
+  smartBin: {
+    label: "IoT + Full Stack",
+    style:
+      "border-[#b6c1a6] bg-[#f0f4e9]/90 text-[#526147]",
+  },
+  dsc: {
+    label: "Web",
+    style:
+      "border-[#b8c4cd] bg-[#eff4f5]/90 text-[#51636d]",
+  },
+  swipeIt: {
+    label: "Mobile",
+    style:
+      "border-[#c8aecb] bg-[#f7eef7]/90 text-[#725475]",
+  },
+  mindCaps: {
+    label: "AI + Mobile",
+    style:
+      "border-[#b4c0aa] bg-[#eff4eb]/90 text-[#526247]",
+  },
+  fridge: {
+    label: "Mobile",
+    style:
+      "border-[#c8aecb] bg-[#f7eef7]/90 text-[#725475]",
+  },
+  email: {
+    label: "Web Utility",
+    style:
+      "border-[#d5bd9c] bg-[#faf1e4]/90 text-[#7b5d3d]",
+  },
+  smartHome: {
+    label: "IoT",
+    style:
+      "border-[#b6c1a6] bg-[#f0f4e9]/90 text-[#526147]",
+  },
 };
 
 const ProjectCard = ({
-  id, title, description, image, github, liveUrl,
-  screenshots = {}, demoVideo, hardwareDemoVideo,
+  id,
+  title,
+  description,
+  image,
+  github,
+  liveUrl,
+  screenshots = {},
+  demoVideo,
+  hardwareDemoVideo,
 }) => {
   const { language } = useLanguage();
+
   const techs = techMap[id] || [];
-  const cat = categoryMap[id] || { label: "Project", color: "from-gray-500/20 to-gray-500/5" };
+
+  const category =
+    categoryMap[id] || {
+      label: "Project",
+      style:
+        "border-[#d8c7bb] bg-[#fffaf5]/90 text-[#6d5a52]",
+    };
+
+  const projectState = {
+    projectId: id,
+    screenshots,
+    demoVideo,
+    hardwareDemoVideo,
+    github,
+    liveUrl,
+  };
 
   return (
-    <Link
-      to={`/project-detail/${id}`}
-      state={{ projectId: id, screenshots, demoVideo, hardwareDemoVideo, github, liveUrl }}
-      className="project-card group relative block bg-[#111827] rounded-2xl overflow-hidden border border-white/5 hover:border-teal-400/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-400/10"
-    >
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-[26px] border border-[#ddcfc4] bg-[#fffaf5] shadow-[0_12px_34px_rgba(82,52,38,0.07)] transition duration-300 hover:-translate-y-1.5 hover:border-[#c5a48e] hover:shadow-[0_22px_46px_rgba(82,52,38,0.12)]">
+      {/* Card navigation overlay */}
+      <Link
+        to={`/project-detail/${id}`}
+        state={projectState}
+        aria-label={`${title} ${
+          language === "tr" ? "proje detayları" : "project details"
+        }`}
+        className="absolute inset-0 z-10 rounded-[26px]"
+      />
+
       {/* Image */}
-      <div className="relative h-48 bg-[#0b1120]">
+      <div className="relative aspect-[16/10] overflow-hidden bg-[#eee4dc]">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.035]"
         />
-        {/* Static bottom fade - always visible, no animation */}
+
         <div
-          className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-          style={{ background: "linear-gradient(to top, #111827 0%, transparent 100%)" }}
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#2b211d]/35 via-[#2b211d]/5 to-transparent"
         />
 
         {/* Category badge */}
-        <span className="absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 text-gray-300">
-          {cat.label}
+        <span
+          className={`absolute left-4 top-4 rounded-full border px-3 py-1.5 text-[0.66rem] font-semibold uppercase tracking-[0.1em] shadow-sm backdrop-blur-md ${category.style}`}
+        >
+          {category.label}
         </span>
 
-        {/* Hover overlay - teal tint only, no bottom gradient to avoid flicker */}
-        <div className="absolute inset-0 bg-teal-400/0 group-hover:bg-teal-400/8 transition-colors duration-300 flex items-end p-4">
-          <span className="text-teal-400 text-sm font-medium flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {language === "tr" ? "Projeyi Gör" : "View Project"} <FaArrowRight size={11} />
+        {/* Hover detail label */}
+        <div className="pointer-events-none absolute inset-0 flex items-end bg-[#9e2a22]/0 p-5 transition duration-300 group-hover:bg-[#9e2a22]/5">
+          <span className="flex translate-y-2 items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-white opacity-0 drop-shadow-md transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            {language === "tr"
+              ? "Projeyi Gör"
+              : "View Project"}
+
+            <FaArrowRight size={10} />
           </span>
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-5">
-        <h3
-          className="text-lg font-bold text-white mb-2 group-hover:text-teal-400 transition-colors line-clamp-1"
-          style={{ fontFamily: "'Syne', sans-serif" }}
-        >
+      <div className="flex flex-1 flex-col p-5 md:p-6">
+        <h3 className="mb-3 line-clamp-1 font-['Cormorant_Garamond'] text-2xl font-semibold leading-tight text-[#2b211d] transition-colors duration-300 group-hover:text-[#9e2a22] md:text-[1.75rem]">
           {title}
         </h3>
-        <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 mb-4">
+
+        <p className="mb-5 line-clamp-3 text-sm leading-7 text-[#6d5a52]">
           {description}
         </p>
 
-        {/* Tech badges */}
+        {/* Technologies */}
         {techs.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mb-4">
+          <div className="mb-5 flex flex-wrap gap-2">
             {techs.slice(0, 4).map((tech) => (
-              <span key={tech} className="tech-badge">{tech}</span>
+              <span
+                key={tech}
+                className="rounded-full border border-[#e2d4ca] bg-[#f8eee7] px-3 py-1 text-[0.68rem] font-medium text-[#745f55]"
+              >
+                {tech}
+              </span>
             ))}
+
             {techs.length > 4 && (
-              <span className="tech-badge">+{techs.length - 4}</span>
+              <span className="rounded-full border border-[#e2d4ca] bg-[#f8eee7] px-3 py-1 text-[0.68rem] font-medium text-[#745f55]">
+                +{techs.length - 4}
+              </span>
             )}
           </div>
         )}
 
-        {/* Action icons */}
-        <div className="flex items-center gap-3 pt-3 border-t border-white/5">
+        {/* Footer */}
+        <div className="relative z-20 mt-auto flex items-center gap-2 border-t border-[#eaded5] pt-4">
           {github && typeof github === "string" && (
-            <button
-              type="button"
-              onClick={(e) => { e.preventDefault(); window.open(github, "_blank"); }}
-              className="text-gray-500 hover:text-teal-400 transition-colors"
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#dfd0c5] bg-white/65 text-[#77655c] transition hover:-translate-y-0.5 hover:border-[#9e2a22]/40 hover:bg-white hover:text-[#9e2a22]"
               title="GitHub"
+              aria-label={`${title} GitHub`}
             >
-              <FaGithub size={17} />
-            </button>
+              <FaGithub size={15} />
+            </a>
           )}
+
           {github && typeof github === "object" && (
             <>
               {github.web && (
-                <button
-                  type="button"
-                  onClick={(e) => { e.preventDefault(); window.open(github.web, "_blank"); }}
-                  className="text-gray-500 hover:text-teal-400 transition-colors"
+                <a
+                  href={github.web}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#dfd0c5] bg-white/65 text-[#77655c] transition hover:-translate-y-0.5 hover:border-[#9e2a22]/40 hover:bg-white hover:text-[#9e2a22]"
                   title="GitHub Web"
+                  aria-label={`${title} GitHub Web`}
                 >
-                  <FaGithub size={17} />
-                </button>
+                  <FaGithub size={15} />
+                </a>
               )}
+
               {github.mobile && (
-                <button
-                  type="button"
-                  onClick={(e) => { e.preventDefault(); window.open(github.mobile, "_blank"); }}
-                  className="text-gray-500 hover:text-teal-400 transition-colors"
+                <a
+                  href={github.mobile}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#dfd0c5] bg-white/65 text-[#77655c] transition hover:-translate-y-0.5 hover:border-[#9e2a22]/40 hover:bg-white hover:text-[#9e2a22]"
                   title="GitHub Mobile"
+                  aria-label={`${title} GitHub Mobile`}
                 >
-                  <FaGithub size={17} />
-                </button>
+                  <FaGithub size={15} />
+                </a>
               )}
             </>
           )}
+
           {liveUrl && (
-            <button
-              type="button"
-              onClick={(e) => { e.preventDefault(); window.open(liveUrl, "_blank"); }}
-              className="text-gray-500 hover:text-teal-400 transition-colors"
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#dfd0c5] bg-white/65 text-[#77655c] transition hover:-translate-y-0.5 hover:border-[#9e2a22]/40 hover:bg-white hover:text-[#9e2a22]"
               title="Live Demo"
+              aria-label={`${title} Live Demo`}
             >
-              <FaExternalLinkAlt size={14} />
-            </button>
+              <FaExternalLinkAlt size={13} />
+            </a>
           )}
-          <span className="ml-auto text-xs text-gray-600 group-hover:text-teal-400 transition-colors flex items-center gap-1">
-            {language === "tr" ? "Detaylar" : "Details"} <FaArrowRight size={10} />
+
+          <span className="pointer-events-none ml-auto flex items-center gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[#8a7469] transition-colors group-hover:text-[#9e2a22]">
+            {language === "tr" ? "Detaylar" : "Details"}
+
+            <FaArrowRight
+              size={10}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
           </span>
         </div>
       </div>
-    </Link>
+    </article>
   );
 };
 
